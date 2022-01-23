@@ -1,35 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class InteractableObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private bool isInteractable = true;
+
+    // Use this function to define desired behavior on interaction
+    protected abstract void DoInteraction();
+
+    // Use this function to initiate interaction
+    public bool TryInteract()
     {
-        
+        if (isInteractable)
+        {
+            DoInteraction();
+            return true;
+        }
+
+        return false;
     }
 
-    // Update is called once per frame
-    void Update()
+    // Use to enable or disable interaction
+    public void SetInteractable(bool state)
     {
-        
+        isInteractable = state;
     }
-
-    /// <summary>Try to interact with this object</summary>
-    public void TryInteract()
-    {
-        // TODO
-        InteractAction();
-    }
-
-    /// <summary>Cause this interactable object to be highlighted if <paramref name = "isMarked"/> is true and not otherwise</summary>
-    public void SetMark(bool isMarked)
-    {
-        // TODO
-    }
-
-    protected abstract void InteractAction();
-
-    
 }
