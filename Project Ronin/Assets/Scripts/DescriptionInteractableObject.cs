@@ -16,7 +16,8 @@ public class DescriptionInteractableObject : InteractableObject
         
     }
 
-    protected override void InteractAction()
+
+    protected override void DoInteraction()
     {
         // TODO
     }
