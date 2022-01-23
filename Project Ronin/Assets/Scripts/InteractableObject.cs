@@ -8,23 +8,20 @@ public abstract class InteractableObject : MonoBehaviour
     protected abstract void DoInteraction();
 
     // Use this function to initiate interaction
-    public void Interact()
+    public bool TryInteract()
     {
         if (isInteractable)
         {
             DoInteraction();
+            return true;
         }
-    }    
-    
-    // Use to enable interaction 
-    public void ActivateInteractable()
-    {
-        isInteractable = true;
+
+        return false;
     }
-    
-    // Use to disallow interaction
-    public void DeactivateInteractable()
+
+    // Use to enable or disable interaction
+    public void SetInteractable(bool state)
     {
-        isInteractable = false;
+        isInteractable = state;
     }
 }
