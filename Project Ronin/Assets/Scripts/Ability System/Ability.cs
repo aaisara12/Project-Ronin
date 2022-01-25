@@ -3,25 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public abstract class Ability
+/// <summary>
+/// Gameplay abilities, inherit this class to implement behavior.
+/// Protected methods are provided to help search for attributes.
+/// 
+/// TODO: discuss the possibility of abilities dependend on other abilities.
+/// </summary>
+public abstract class Ability : MonoBehaviour
 {
-    // inherited interface
-    public abstract void Start();
-    public abstract void Update();
+    public abstract void ResetAbility();
 
-    // target search functions
-    protected void ForEachInRadius(float radius, Action<Attribute> action)
+    /// <summary>
+    /// Apply a function to all the Attributes objects.
+    /// </summary>
+    /// <param name="filter">if a given Attributes object should be operated on</param>
+    /// <param name="action">action to apply to given Attribute</param>
+    protected void ForEachAttr(Func<Attributes, bool> filter, Action<Attributes> action)
     {
-        // TODO: search
-        // TODO: for each result apply the action
-    }
-
-    // wild card function
-    protected void ForEach(Func<IEnumerable<Attribute>> condition, Action<Attribute> action)
-    {
-        foreach (Attribute attr in condition())
+        foreach (Attributes attr in Attributes.activeAttributes)
         {
-            action(attr);
+            if (filter(attr))
+            {
+                action(attr);
+            }
         }
     }
 }
