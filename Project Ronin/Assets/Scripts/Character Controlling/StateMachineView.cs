@@ -8,7 +8,9 @@ using Yarn.Unity;
 
 public class StateMachineView : DialogueViewBase
 {
-    public DialogueRunner dialogueRunner;
+    [SerializeField]
+    DialogueRunner dialogueRunner = null;
+    IStateTable characterStateTable = null;
 
     // condition objects used for evaluation
     private abstract class Condition
@@ -82,6 +84,9 @@ public class StateMachineView : DialogueViewBase
     Action<int> currentCallback = null;
     Stack<Condition> conditionBuilder = new Stack<Condition>();
 
+    // state
+    ICharacterState currentState;
+
     private void Awake()
     {
         dialogueRunner.AddCommandHandler("transition", HandleAddTransitionOpen);
@@ -92,7 +97,23 @@ public class StateMachineView : DialogueViewBase
 
     private void Start()
     {
-        // TODO: initialize runner
+        characterStateTable = GetComponent<IStateTable>();
+        if (!dialogueRunner) dialogueRunner = GetComponent<DialogueRunner>();
+
+        dialogueRunner.StartDialogue("Entry");
+    }
+
+    private void Update()
+    {
+        currentState?.Update();
+
+        for (int i = 0; i < activeTransitions.Count; i++)
+        {
+            if (activeTransitions[i].Evaluate())
+            {
+                currentCallback(i); // TODO: test if this starts at 1 or 0
+            }
+        }
     }
 
     public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
@@ -102,11 +123,15 @@ public class StateMachineView : DialogueViewBase
 
     public override void NodeComplete(string nextNode, Action onComplete)
     {
-        // TODO: load next state (node name is the key to states)
+        // load next state (node name is the key to states)
+        currentState.OnExit();
+        currentState = characterStateTable.GetState(nextNode);
+        currentState.OnEnter();
+
         base.NodeComplete(nextNode, onComplete);
     }
 
-    // handlers building the -
+    // handlers
     private void HandleAddTransitionOpen()
     {
         // seems there's nothing to do
