@@ -77,6 +77,11 @@ public class Attributes : MonoBehaviour
         onAttributeChange.Invoke();
     }
 
+    public bool CheckTag(string tagName)
+    {
+        return attributeTags.Contains(tagName);
+    }
+
     public void AddTag(string newTag, float duration = -1)
     {
         if (attributeTags.Contains(newTag))

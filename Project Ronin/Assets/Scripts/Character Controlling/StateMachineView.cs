@@ -10,6 +10,9 @@ public class StateMachineView : DialogueViewBase
 {
     [SerializeField]
     DialogueRunner dialogueRunner = null;
+    [SerializeField]
+    Attributes attributes = null;
+
     IStateTable characterStateTable = null;
 
     // condition objects used for evaluation
@@ -27,7 +30,11 @@ public class StateMachineView : DialogueViewBase
     {
         Func<bool> condition;
 
-        SimpleCondition() { done = true; }
+        public SimpleCondition(Func<bool> newCondition)
+        {
+            done = true;
+            condition = newCondition;
+        }
 
         public override bool Evaluate()
         {
@@ -99,6 +106,7 @@ public class StateMachineView : DialogueViewBase
     {
         characterStateTable = GetComponent<IStateTable>();
         if (!dialogueRunner) dialogueRunner = GetComponent<DialogueRunner>();
+        if (!attributes) attributes = GetComponent<Attributes>();
 
         dialogueRunner.StartDialogue("Entry");
     }
@@ -176,5 +184,43 @@ public class StateMachineView : DialogueViewBase
     private void HandleOrOpen()
     {
         conditionBuilder.Push(new OrClause());
+    }
+
+    private void HandleFloatCheck(string attrName, string op, float refValue)
+    {
+        SimpleCondition newCondition;
+        float value = attributes.GetFloat(attrName);
+        switch (op)
+        {
+            case ">":
+                newCondition = new SimpleCondition(() => { return value > refValue; });
+                break;
+            case "<":
+                newCondition = new SimpleCondition(() => { return value < refValue; });
+                break;
+            case "==":
+                newCondition = new SimpleCondition(() => { return value == refValue; });
+                break;
+            case ">=":
+                newCondition = new SimpleCondition(() => { return value >= refValue; });
+                break;
+            case "<=":
+                newCondition = new SimpleCondition(() => { return value <= refValue; });
+                break;
+            default:
+                newCondition = new SimpleCondition(() => { return false; });
+                break;
+        }
+
+        conditionBuilder.Push(newCondition);
+    }
+
+    private void HandleHasTagCheck(string tagName, bool inclusive)
+    {
+        conditionBuilder.Push(new SimpleCondition(() =>
+        {
+            bool result = attributes.CheckTag(tagName);
+            return inclusive ? result : !result;
+        }));
     }
 }
