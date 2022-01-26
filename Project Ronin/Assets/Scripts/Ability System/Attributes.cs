@@ -77,7 +77,7 @@ public class Attributes : MonoBehaviour
         onAttributeChange.Invoke();
     }
 
-    public void AddTag(string newTag)
+    public void AddTag(string newTag, float duration = -1)
     {
         if (attributeTags.Contains(newTag))
         {
@@ -85,7 +85,34 @@ public class Attributes : MonoBehaviour
         }
         else
         {
+            if (duration > 0)
+            {
+                StartCoroutine(RemoveTimer(newTag, duration));
+            }
+
             attributeTags.Add(newTag);
         }
+    }
+
+    public void RemoveTag(string oldTag)
+    {
+        if (!attributeTags.Contains(oldTag))
+        {
+            Debug.Log("Warning: remove unknown tag: " + oldTag);
+        }
+        else
+        {
+            attributeTags.Remove(oldTag);
+        }
+    }
+
+    private IEnumerator RemoveTimer(string oldTag, float deadline)
+    {
+        while (Time.time < deadline)
+        {
+            yield return null;
+        }
+
+        RemoveTag(oldTag);
     }
 }
