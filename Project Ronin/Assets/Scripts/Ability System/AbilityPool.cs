@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class AbilityPool : MonoBehaviour
 {
+    // singleton interface
     public static AbilityPool instance { get; private set; } = null;
     
     public static Ability TakeAbility(GameObject prefab)
@@ -23,6 +24,9 @@ public class AbilityPool : MonoBehaviour
     public GameObject attack;
     public GameObject parry;
     public GameObject dodge;
+
+    // pooling
+    private Dictionary<GameObject, Queue<Ability>> freeQueue = new Dictionary<GameObject, Queue<Ability>>();
 
     private void Awake()
     {
@@ -67,7 +71,4 @@ public class AbilityPool : MonoBehaviour
         abilityObj.gameObject.SetActive(false);
         freeQueue[abilityObj.prefab].Enqueue(abilityObj);
     }
-
-    // pooling
-    private Dictionary<GameObject, Queue<Ability>> freeQueue = new Dictionary<GameObject, Queue<Ability>>();
 }

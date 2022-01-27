@@ -11,17 +11,28 @@ using System;
 /// </summary>
 public abstract class Ability : MonoBehaviour
 {
-    protected AttributeSet user;
     public GameObject prefab = null; // only set by ability pool
+    protected AttributeSet user;
 
-    public abstract void ResetAbility();
-
+    /// <summary>
+    /// Put any initialization here. Remember not to ignore the base implementation.
+    /// Should only be called by a character state machine.
+    /// </summary>
+    /// <param name="inUser"></param>
     public virtual void InitiateAbility(AttributeSet inUser)
     {
         user = inUser;
     }
 
+    /// <summary>
+    /// Update routine equivalent to update of Monobehaviour.
+    /// </summary>
     public abstract void UpdateAbility();
+
+    /// <summary>
+    /// Implement any reset logic here.
+    /// </summary>
+    public abstract void ResetAbility();
 
     /// <summary>
     /// Apply a function to all the Attributes objects.
@@ -40,5 +51,12 @@ public abstract class Ability : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Call this function in Update() when the ability is done -> don't Destroy()!
+    /// </summary>
+    protected void RecycleAbility()
+    {
+        gameObject.SetActive(false);
+        AbilityPool.PutAbility(this);
+    }
 }
