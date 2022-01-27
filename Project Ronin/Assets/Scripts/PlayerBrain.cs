@@ -5,16 +5,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerBrain : MonoBehaviour
 {
-    private CharacterCaptureController captureController;
+    [SerializeField] CharacterCaptureController captureController;
+    private Rigidbody rb;
+    void Start(){
+        rb = GetComponent<Rigidbody>();
+    }
     void OnMove(InputValue movementVal){
 
-        Vector3 movementVector = movementVal.Get<Vector3>();
-        captureController.MoveInDirection(movementVector);
-
+        Vector2 movementVector = movementVal.Get<Vector2>();
+        // captureController.MoveInDirection(movementVector);
+        // Debug.Log("Movement Vector:" + movementVector);
     }
 
     void OnDash(){
-        captureController.DashInDirection(transform.forward);
+        Vector2 dashDirection = new Vector2(transform.forward.x, transform.forward.y);
+        // captureController.DashInDirection(dashDirection);
+        // Debug.Log(dashDirection);
     }
 
     void OnPause(){
