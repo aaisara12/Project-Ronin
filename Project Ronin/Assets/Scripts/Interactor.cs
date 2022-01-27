@@ -38,6 +38,12 @@ public class Interactor : MonoBehaviour
         foreach(Collider col in potentialInteractables)
         {
             // Jank version -- don't use!
+            // Ideally, we want to have a dictionary of all interactable objects in the scene (key = GameObject, value = InteractableObject)
+            // and try to find their InteractableObject component that way
+
+            // Question: Is there any way around having to check for objects in the scene every physics frame? Is this an expensive
+            // enough problem for us to have to worry about it?
+            
             InteractableObject interactableObject = col.GetComponent<InteractableObject>();
 
             if(interactableObject != null)
