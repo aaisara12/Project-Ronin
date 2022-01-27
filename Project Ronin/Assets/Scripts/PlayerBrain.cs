@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerBrain : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    private CharacterCaptureController captureController;
+    void OnMove(InputValue movementVal){
+
+        Vector3 movementVector = movementVal.Get<Vector3>();
+        captureController.MoveInDirection(movementVector);
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnDash(){
+        captureController.DashInDirection(transform.forward);
+    }
+
+    void OnPause(){
+        // Enter pause menu
     }
 }
