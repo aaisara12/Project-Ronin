@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerBrain : MonoBehaviour
 {
     [SerializeField] CharacterCaptureController captureController;
+    [SerializeField] Interactor interactor;
     private Rigidbody rb;
     void Start(){
         rb = GetComponent<Rigidbody>();
@@ -28,6 +29,6 @@ public class PlayerBrain : MonoBehaviour
     }
 
     void OnInteract(){
-        // 
+        interactor.InteractWithNearestInRange();
     }
 }
