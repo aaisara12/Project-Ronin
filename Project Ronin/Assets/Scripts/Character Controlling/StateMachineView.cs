@@ -100,6 +100,9 @@ public class StateMachineView : DialogueViewBase
         dialogueRunner.AddCommandHandler("/", HandleClose);
         dialogueRunner.AddCommandHandler("and", HandleAndOpen);
         dialogueRunner.AddCommandHandler("or", HandleOrOpen);
+
+        dialogueRunner.AddCommandHandler<string, string, float>("float", HandleFloatCheck);
+        dialogueRunner.AddCommandHandler<string, bool>("has_tag", HandleHasTagCheck);
     }
 
     private void Start()
