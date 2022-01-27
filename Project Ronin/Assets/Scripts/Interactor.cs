@@ -15,4 +15,10 @@ public class Interactor : MonoBehaviour
     {
         
     }
+
+    /// <summary> Interact with the nearest InteractableObject in range </summary>
+    public void InteractWithNearestInRange()
+    {
+        // TODO
+    }
 }
