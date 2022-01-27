@@ -26,4 +26,8 @@ public class PlayerBrain : MonoBehaviour
     void OnPause(){
         // Enter pause menu
     }
+
+    void OnInteract(){
+        // 
+    }
 }
