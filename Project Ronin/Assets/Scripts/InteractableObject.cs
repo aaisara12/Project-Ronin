@@ -25,5 +25,12 @@ public abstract class InteractableObject : MonoBehaviour
     public void SetInteractable(bool state)
     {
         isInteractable = state;
+
+        GetComponent<MeshRenderer>().material.color = isInteractable? Color.red : Color.black;
+    }
+
+    void Awake()
+    {
+        SetInteractable(false);
     }
 }
