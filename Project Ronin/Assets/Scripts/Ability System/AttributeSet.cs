@@ -7,15 +7,18 @@ using UnityEngine.Events;
 /// This is the interface Ability talks to when ever they take effect.
 /// Use the default if you want, but should inherit it to customize to need - this is just an interface for abilities to use.
 /// </summary>
-public class Attributes : MonoBehaviour
+public class AttributeSet : MonoBehaviour
 {
     /// <summary>
     /// Attributes will register themselves here.
     /// </summary>
-    static public HashSet<Attributes> activeAttributes { get; protected set; } = new HashSet<Attributes>();
-    
+    static public HashSet<AttributeSet> activeAttributes { get; protected set; } = new HashSet<AttributeSet>();
+
+    static public Dictionary<GameObject, AttributeSet> objectToAttributes { get; protected set; } = new Dictionary<GameObject, AttributeSet>();
+
     /// <summary>
-    /// Only notifies "change", no specific location of change provided.
+    /// Listener to change. 
+    /// Doesn't give specifically what changed. Ideally functions here listen to a specific thing so they don't need extra information.
     /// </summary>
     [SerializeField]
     private UnityEvent onAttributeChange;
@@ -33,11 +36,13 @@ public class Attributes : MonoBehaviour
     private void Awake()
     {
         activeAttributes.Add(this);
+        objectToAttributes.Add(gameObject, this);
     }
 
     private void OnDestroy()
     {
         activeAttributes.Remove(this);
+        objectToAttributes.Remove(gameObject);
     }
 
     public float GetFloat(string name)

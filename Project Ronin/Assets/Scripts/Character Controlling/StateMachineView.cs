@@ -11,7 +11,7 @@ public class StateMachineView : DialogueViewBase
     [SerializeField]
     DialogueRunner dialogueRunner = null;
     [SerializeField]
-    Attributes attributes = null;
+    AttributeSet attributes = null;
 
     IStateTable characterStateTable = null;
 
@@ -109,7 +109,7 @@ public class StateMachineView : DialogueViewBase
     {
         characterStateTable = GetComponent<IStateTable>();
         if (!dialogueRunner) dialogueRunner = GetComponent<DialogueRunner>();
-        if (!attributes) attributes = GetComponent<Attributes>();
+        if (!attributes) attributes = GetComponent<AttributeSet>();
 
         dialogueRunner.StartDialogue("Entry");
     }
