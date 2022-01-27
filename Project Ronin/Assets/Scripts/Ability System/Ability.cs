@@ -12,6 +12,7 @@ using System;
 public abstract class Ability : MonoBehaviour
 {
     protected AttributeSet user;
+    public GameObject prefab = null; // only set by ability pool
 
     public abstract void ResetAbility();
 
