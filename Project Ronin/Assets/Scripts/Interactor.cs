@@ -17,8 +17,7 @@ public class Interactor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-            InteractWithNearestInRange();
+
     }
 
     void OnDrawGizmos()
