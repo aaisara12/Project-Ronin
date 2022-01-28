@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8431b18964dd0241ae1f747429eb7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInteractable: 1
+  isInteractable: 0
 --- !u!65 &655879900
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8431b18964dd0241ae1f747429eb7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInteractable: 1
+  isInteractable: 0
 --- !u!65 &1429227149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8431b18964dd0241ae1f747429eb7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInteractable: 1
+  isInteractable: 0
 --- !u!65 &1660265842
 BoxCollider:
   m_ObjectHideFlags: 0

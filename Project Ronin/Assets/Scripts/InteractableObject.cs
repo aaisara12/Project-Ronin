@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class InteractableObject : MonoBehaviour
 {
-    [SerializeField] private bool isInteractable = true;
+    [SerializeField] private bool isInteractable = false;
 
     // Use this function to define desired behavior on interaction
     protected abstract void DoInteraction();
