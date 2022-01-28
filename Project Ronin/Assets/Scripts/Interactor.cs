@@ -24,7 +24,13 @@ public class Interactor : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(gameObject.transform.position, interactionRange);
+
         Gizmos.color = Color.magenta;
+        if(lastClosestInteractable != null)
+        {
+            Gizmos.DrawLine(gameObject.transform.position, lastClosestInteractable.gameObject.transform.position);
+        }
+        
     }
 
     void FixedUpdate()
