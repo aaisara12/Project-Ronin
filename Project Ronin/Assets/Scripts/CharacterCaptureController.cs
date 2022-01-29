@@ -26,7 +26,8 @@ public class CharacterCaptureController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            DashForwards();
+            Vector3 nothing = new Vector3(0, 0, 0);
+            DashInDirection(nothing);
         }
         Vector3 dir;
         if (Input.GetKey("up"))
@@ -105,6 +106,7 @@ public class CharacterCaptureController : MonoBehaviour
             // do nothing
             return;
         }
+        directionVector = Vector3.Normalize(directionVector);
         Vector3 rightMovement = right * movementSpeed * Time.deltaTime * directionVector.x;
         Vector3 upMovement = forward * movementSpeed * Time.deltaTime * directionVector.z;
         rightMovement = Vector3.ClampMagnitude(rightMovement, 1);
@@ -118,7 +120,7 @@ public class CharacterCaptureController : MonoBehaviour
     }
 
     /// <summary>Make this character perform a dash in direction of <paramref name = "directionVector"/></summary>
-    public void DashForwards()
+    public void DashInDirection(Vector3 directionVector)
     {
         // test with shift key
         StartCoroutine(Dash());
