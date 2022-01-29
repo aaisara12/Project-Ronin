@@ -5,23 +5,25 @@ using UnityEngine.InputSystem;
 
 public class PlayerBrain : MonoBehaviour
 {
-    [SerializeField] CharacterCaptureController captureController;
+    private CharacterCaptureController captureController;
     [SerializeField] Interactor interactor;
     private Rigidbody rb;
-    void Start(){
+    void Awake(){
         rb = GetComponent<Rigidbody>();
+        captureController = GetComponent<CharacterCaptureController>();
     }
     void OnMove(InputValue movementVal){
 
-        Vector2 movementVector = movementVal.Get<Vector2>();
-        // captureController.MoveInDirection(movementVector);
-        // Debug.Log("Movement Vector:" + movementVector);
+        Vector2 inputVector = movementVal.Get<Vector2>();
+        Vector3 movementVector = new Vector3(inputVector.x, 0, inputVector.y);
+        captureController?.MoveInDirection(movementVector);
+        Debug.Log("Movement Vector:" + movementVector);
     }
 
     void OnDash(){
-        Vector2 dashDirection = new Vector2(transform.forward.x, transform.forward.y);
-        // captureController.DashInDirection(dashDirection);
-        // Debug.Log(dashDirection);
+        Vector3 dashDirection = new Vector3(transform.forward.x, 0, transform.forward.z);
+        captureController?.DashInDirection(dashDirection);
+        Debug.Log(dashDirection);
     }
 
     void OnPause(){
