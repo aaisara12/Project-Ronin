@@ -24,77 +24,7 @@ public class CharacterCaptureController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            Vector3 nothing = new Vector3(0, 0, 0);
-            DashInDirection(nothing);
-        }
-        Vector3 dir;
-        if (Input.GetKey("up"))
-        {
-            if (Input.GetKey("left"))
-            {
-                dir = new Vector3(-1, 0, 1);
-            }
-            else if (Input.GetKey("right"))
-            {
-                dir = new Vector3(1, 0, 1);
-            }
-            else
-            {
-                dir = new Vector3(0, 0, 1);
-            }
-        }
-        else if (Input.GetKey("down"))
-        {
-           if (Input.GetKey("left"))
-            {
-                dir = new Vector3(-1, 0, -1);
-            }
-            else if (Input.GetKey("right"))
-            {
-                dir = new Vector3(1, 0, -1);
-            }
-            else
-            {
-                dir = new Vector3(0, 0, -1);
-            }
-        }
-        else if (Input.GetKey("left"))
-        {
-            if (Input.GetKey("up"))
-            {
-                dir = new Vector3(-1, 0, 1);
-            }
-            else if (Input.GetKey("down"))
-            {
-                dir = new Vector3(-1, 0, -1);
-            }
-            else
-            {
-                dir = new Vector3(-1, 0, 0);
-            }
-        }
-        else if (Input.GetKey("right"))
-        {
-            if (Input.GetKey("up"))
-            {
-                dir = new Vector3(1, 0, 1);
-            }
-            else if (Input.GetKey("down"))
-            {
-                dir = new Vector3(1, 0, -1);
-            }
-            else
-            {
-                dir = new Vector3(1, 0, 0);
-            }
-        }
-        else
-        {
-            dir = new Vector3(0, 0, 0);
-        }
-        MoveInDirection(dir);
+        
     }
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
