@@ -17,13 +17,13 @@ public class PlayerBrain : MonoBehaviour
         Vector2 inputVector = movementVal.Get<Vector2>();
         Vector3 movementVector = new Vector3(inputVector.x, 0, inputVector.y);
         captureController?.MoveInDirection(movementVector);
-        Debug.Log("Movement Vector:" + movementVector);
+        // Debug.Log("Movement Vector:" + movementVector);
     }
 
     void OnDash(){
         Vector3 dashDirection = new Vector3(transform.forward.x, 0, transform.forward.z);
         captureController?.DashInDirection(dashDirection);
-        Debug.Log(dashDirection);
+        // Debug.Log(dashDirection);
     }
 
     void OnPause(){

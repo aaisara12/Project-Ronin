@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 1549283385}
   - component: {fileID: 1549283386}
   - component: {fileID: 1549283387}
+  - component: {fileID: 1549283388}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -494,6 +495,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c5fd5e483ab784d99ba313c6d39177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactor: {fileID: 0}
+--- !u!114 &1549283388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549283380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1a373c3760bd84397e69545b7febab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 4
+  dashForce: 0
+  dashDuration: 0
 --- !u!1 &2125346701
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125346701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0.43, y: 1.25, z: -1.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
