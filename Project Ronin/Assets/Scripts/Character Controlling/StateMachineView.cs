@@ -13,7 +13,12 @@ public class StateMachineView : DialogueViewBase
     [SerializeField]
     AttributeSet attributes = null;
 
-    IStateTable characterStateTable = null;
+    [SerializeField]
+    YarnProject yarnProject = null;
+
+    private Dictionary<string, ICharacterState> allStates = new Dictionary<string, ICharacterState>();
+
+    // IStateTable characterStateTable = null;
 
     // condition objects used for evaluation
     private abstract class Condition
@@ -96,6 +101,8 @@ public class StateMachineView : DialogueViewBase
 
     private void Awake()
     {
+        dialogueRunner.SetProject(yarnProject);
+
         dialogueRunner.AddCommandHandler("transition", HandleAddTransitionOpen);
         dialogueRunner.AddCommandHandler("/", HandleClose);
         dialogueRunner.AddCommandHandler("and", HandleAndOpen);
@@ -107,9 +114,21 @@ public class StateMachineView : DialogueViewBase
 
     private void Start()
     {
-        characterStateTable = GetComponent<IStateTable>();
+        // characterStateTable = GetComponent<IStateTable>();
         if (!dialogueRunner) dialogueRunner = GetComponent<DialogueRunner>();
         if (!attributes) attributes = GetComponent<AttributeSet>();
+
+        // build mapping from string names to states
+        var nodesList = yarnProject.GetProgram().Nodes;
+        foreach (var node in nodesList)
+        {
+            var nodeType = Type.GetType(node.Key);
+            if (nodeType != null && nodeType.BaseType == typeof(ICharacterState))
+            {
+                // this is potentially slow as hell
+                allStates.Add(node.Key, (ICharacterState) nodeType.GetConstructor(new Type[] {}).Invoke(new object[] {}));
+            }
+        }
 
         dialogueRunner.StartDialogue("Entry");
     }
@@ -117,6 +136,11 @@ public class StateMachineView : DialogueViewBase
     private void Update()
     {
         currentState?.Update();
+    }
+
+    private void LateUpdate()
+    {
+        currentState?.LateUpdate();
 
         for (int i = 0; i < activeTransitions.Count; i++)
         {
@@ -136,7 +160,10 @@ public class StateMachineView : DialogueViewBase
     {
         // load next state (node name is the key to states)
         currentState.OnExit();
-        currentState = characterStateTable.GetState(nextNode);
+
+        currentState = allStates[nextNode];
+        currentState.Reset();
+        
         currentState.OnEnter();
 
         base.NodeComplete(nextNode, onComplete);
@@ -225,5 +252,11 @@ public class StateMachineView : DialogueViewBase
             bool result = attributes.CheckTag(tagName);
             return inclusive ? result : !result;
         }));
+    }
+
+    // helper functions
+    private ICharacterState GetState(string stateName)
+    {
+        throw new NotImplementedException();
     }
 }
