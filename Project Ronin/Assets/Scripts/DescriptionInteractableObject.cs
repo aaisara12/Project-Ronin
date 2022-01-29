@@ -20,5 +20,6 @@ public class DescriptionInteractableObject : InteractableObject
     protected override void DoInteraction()
     {
         // TODO
+        Debug.LogFormat("I {0} have been interacted with!", gameObject.name);
     }
 }
