@@ -7,6 +7,13 @@ public class GameManager : MonoBehaviour
 
     public event System.Action OnPauseGame;
 
+    public static GameManager Instance {get; private set;}
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +24,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    /// <summary> Freezes all game objects in scene </summary>
+    public void PauseGame()
+    {
+        OnPauseGame?.Invoke();
+
+        // TODO
     }
 }
