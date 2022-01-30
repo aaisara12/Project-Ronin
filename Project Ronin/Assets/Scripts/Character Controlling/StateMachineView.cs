@@ -91,19 +91,27 @@ public class StateMachineView : DialogueViewBase
         }
     }
 
-    // active transitions
-    List<Condition> activeTransitions = new List<Condition>();
+    // transitions
+    //Dictionary<string, Condition> activeTransitions = new Dictionary<string, Condition>();
+    //string currentDestination = "";
+    //Stack<Condition> conditionBuilder = new Stack<Condition>();
+
+    //Dictionary<string, int> optionMapping = new Dictionary<string, int>();
     Action<int> currentCallback = null;
-    Stack<Condition> conditionBuilder = new Stack<Condition>();
 
     // state
+    string currentStateName = "";
     ICharacterState currentState;
+
+    // transition profiles
+    Dictionary<string, TransitionProfile> transitions = new Dictionary<string, TransitionProfile>();
+    Dictionary<string, TransitionProfile> unfinishedTransitions = new Dictionary<string, TransitionProfile>();
 
     private void Awake()
     {
         dialogueRunner.SetProject(yarnProject);
 
-        dialogueRunner.AddCommandHandler("transition", HandleAddTransitionOpen);
+        dialogueRunner.AddCommandHandler<string>("transition", HandleAddTransitionOpen);
         dialogueRunner.AddCommandHandler("/", HandleClose);
         dialogueRunner.AddCommandHandler("and", HandleAndOpen);
         dialogueRunner.AddCommandHandler("or", HandleOrOpen);
@@ -122,6 +130,7 @@ public class StateMachineView : DialogueViewBase
         var nodesList = yarnProject.GetProgram().Nodes;
         foreach (var node in nodesList)
         {
+            unfinishedTransitions.Add(node.Key, new TransitionProfile());
             var nodeType = Type.GetType(node.Key);
             if (nodeType != null && nodeType.BaseType == typeof(ICharacterState))
             {
@@ -130,7 +139,7 @@ public class StateMachineView : DialogueViewBase
             }
         }
 
-        dialogueRunner.StartDialogue("Entry");
+        dialogueRunner.StartDialogue("Entry"); // always start from the entry state
     }
 
     private void Update()
@@ -142,18 +151,37 @@ public class StateMachineView : DialogueViewBase
     {
         currentState?.LateUpdate();
 
-        for (int i = 0; i < activeTransitions.Count; i++)
+        //foreach (var transition in activeTransitions)
+        //{
+        //    if (transition.Value.Evaluate())
+        //    {
+        //        currentCallback.Invoke(optionMapping[transition.Key]);
+        //    }
+        //}
+
+        int transitionDest = transitions[currentStateName].CheckTransition();
+        if (transitionDest != -1)
         {
-            if (activeTransitions[i].Evaluate())
-            {
-                currentCallback(i); // TODO: test if this starts at 1 or 0
-            }
+            currentCallback(transitionDest);
         }
     }
 
     public override void RunOptions(DialogueOption[] dialogueOptions, Action<int> onOptionSelected)
     {
         currentCallback = onOptionSelected;
+
+        //foreach (var option in dialogueOptions)
+        //{
+        //    optionMapping.Add(option.Line.RawText, option.DialogueOptionID);
+        //}
+
+        if (!transitions.ContainsKey(currentStateName))
+        {
+            unfinishedTransitions[currentStateName].RegisterOptions(dialogueOptions);
+
+            transitions.Add(currentStateName, unfinishedTransitions[currentStateName]);
+            unfinishedTransitions.Remove(currentStateName);
+        }
     }
 
     public override void NodeComplete(string nextNode, Action onComplete)
@@ -162,6 +190,7 @@ public class StateMachineView : DialogueViewBase
         currentState.OnExit();
 
         currentState = allStates[nextNode];
+        currentStateName = nextNode;
         currentState.Reset();
         
         currentState.OnEnter();
@@ -169,94 +198,112 @@ public class StateMachineView : DialogueViewBase
         base.NodeComplete(nextNode, onComplete);
     }
 
-    // handlers
-    private void HandleAddTransitionOpen()
+    // transition building
+    private void HandleAddTransitionOpen(string destination)
     {
-        // seems there's nothing to do
-        // logically this line cleans up any state from the previous transition
-        conditionBuilder.Clear();
+        //currentDestination = destination;
+
+        //// logically this line cleans up any state from the previous transition
+        //conditionBuilder.Clear();
+
+        if (!transitions.ContainsKey(currentStateName))
+        {
+            unfinishedTransitions[currentStateName].HandleAddTransitionOpen(destination);
+        }
     }
 
     private void HandleClose()
     {
-        List<Condition> closedConditions = new List<Condition>();
+        //List<Condition> closedConditions = new List<Condition>();
 
-        while (conditionBuilder.Count > 0 && conditionBuilder.Peek().done)
-        {
-            closedConditions.Add(conditionBuilder.Pop());
-        }
+        //while (conditionBuilder.Count > 0 && conditionBuilder.Peek().done)
+        //{
+        //    closedConditions.Add(conditionBuilder.Pop());
+        //}
 
-        if (conditionBuilder.Count > 0) // closing a clause
+        //if (conditionBuilder.Count > 0) // closing a clause
+        //{
+        //    conditionBuilder.Peek().Include(closedConditions);
+        //    conditionBuilder.Peek().done = true;
+        //}
+        //else // closing a transition
+        //{
+        //    AndClause newTransition = new AndClause();
+        //    newTransition.Include(closedConditions);
+        //    activeTransitions.Add(currentDestination, newTransition);
+        //}
+
+        if (!transitions.ContainsKey(currentStateName))
         {
-            conditionBuilder.Peek().Include(closedConditions);
-            conditionBuilder.Peek().done = true;
-        }
-        else // closing a transition
-        {
-            if (closedConditions.Count > 1)
-            {
-                activeTransitions.AddRange(closedConditions);
-            }
-            else
-            {
-                AndClause newTransition = new AndClause();
-                newTransition.Include(closedConditions);
-                activeTransitions.Add(newTransition);
-            }
+            unfinishedTransitions[currentStateName].HandleClose();
         }
     }
 
     private void HandleAndOpen()
     {
-        conditionBuilder.Push(new AndClause());
+        // conditionBuilder.Push(new AndClause());
+
+        if (!transitions.ContainsKey(currentStateName))
+        {
+            unfinishedTransitions[currentStateName].HandleAndOpen();
+        }
     }
 
     private void HandleOrOpen()
     {
-        conditionBuilder.Push(new OrClause());
+        //conditionBuilder.Push(new OrClause());
+
+        if (!transitions.ContainsKey(currentStateName))
+        {
+            unfinishedTransitions[currentStateName].HandleOrOpen();
+        }
     }
 
     private void HandleFloatCheck(string attrName, string op, float refValue)
     {
-        SimpleCondition newCondition;
-        float value = attributes.GetFloat(attrName);
-        switch (op)
-        {
-            case ">":
-                newCondition = new SimpleCondition(() => { return value > refValue; });
-                break;
-            case "<":
-                newCondition = new SimpleCondition(() => { return value < refValue; });
-                break;
-            case "==":
-                newCondition = new SimpleCondition(() => { return value == refValue; });
-                break;
-            case ">=":
-                newCondition = new SimpleCondition(() => { return value >= refValue; });
-                break;
-            case "<=":
-                newCondition = new SimpleCondition(() => { return value <= refValue; });
-                break;
-            default:
-                newCondition = new SimpleCondition(() => { return false; });
-                break;
-        }
+        //SimpleCondition newCondition;
+        //float value = attributes.GetFloat(attrName);
+        //switch (op)
+        //{
+        //    case ">":
+        //        newCondition = new SimpleCondition(() => { return value > refValue; });
+        //        break;
+        //    case "<":
+        //        newCondition = new SimpleCondition(() => { return value < refValue; });
+        //        break;
+        //    case "==":
+        //        newCondition = new SimpleCondition(() => { return value == refValue; });
+        //        break;
+        //    case ">=":
+        //        newCondition = new SimpleCondition(() => { return value >= refValue; });
+        //        break;
+        //    case "<=":
+        //        newCondition = new SimpleCondition(() => { return value <= refValue; });
+        //        break;
+        //    default:
+        //        newCondition = new SimpleCondition(() => { return false; });
+        //        break;
+        //}
 
-        conditionBuilder.Push(newCondition);
+        //conditionBuilder.Push(newCondition);
+
+        if (!transitions.ContainsKey(currentStateName))
+        {
+            unfinishedTransitions[currentStateName].HandleFloatCheck(attrName, op, refValue);
+        }
     }
 
     private void HandleHasTagCheck(string tagName, bool inclusive)
     {
-        conditionBuilder.Push(new SimpleCondition(() =>
-        {
-            bool result = attributes.CheckTag(tagName);
-            return inclusive ? result : !result;
-        }));
-    }
+        //conditionBuilder.Push(new SimpleCondition(() =>
+        //{
+        //    bool result = attributes.CheckTag(tagName);
+        //    return inclusive ? result : !result;
+        //}));
 
-    // helper functions
-    private ICharacterState GetState(string stateName)
-    {
-        throw new NotImplementedException();
+        if (!transitions.ContainsKey(currentStateName))
+        {
+            unfinishedTransitions[currentStateName].HandleHasTagCheck(tagName, inclusive);
+        }
     }
 }
