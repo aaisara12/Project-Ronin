@@ -19,78 +19,6 @@ public class StateMachineView : DialogueViewBase
     private Dictionary<string, ICharacterState> allStates = new Dictionary<string, ICharacterState>();
 
     // IStateTable characterStateTable = null;
-
-    // condition objects used for evaluation
-    private abstract class Condition
-    {
-        public bool done = false;
-        public abstract bool Evaluate();
-        public virtual void Include(List<Condition> includee)
-        {
-            throw new NotImplementedException("Include called upon simple condition!");
-        }
-    }
-
-    private class SimpleCondition : Condition
-    {
-        Func<bool> condition;
-
-        public SimpleCondition(Func<bool> newCondition)
-        {
-            done = true;
-            condition = newCondition;
-        }
-
-        public override bool Evaluate()
-        {
-            return condition();
-        }
-    }
-
-    private class AndClause : Condition
-    {
-        public List<Condition> conditions = new List<Condition>();
-
-        public override bool Evaluate()
-        {
-            bool result = true;
-
-            foreach (Condition condition in conditions)
-            {
-                result &= condition.Evaluate();
-            }
-
-            return result;
-        }
-
-        public override void Include(List<Condition> includee)
-        {
-            conditions.AddRange(includee);
-        }
-    }
-
-    private class OrClause : Condition
-    {
-        public List<Condition> conditions = new List<Condition>();
-
-        public override bool Evaluate()
-        {
-            bool result = true;
-
-            foreach (Condition condition in conditions)
-            {
-                result |= condition.Evaluate();
-            }
-
-            return result;
-        }
-
-        public override void Include(List<Condition> includee)
-        {
-            conditions.AddRange(includee);
-        }
-    }
-
     // transitions
     //Dictionary<string, Condition> activeTransitions = new Dictionary<string, Condition>();
     //string currentDestination = "";
@@ -158,7 +86,10 @@ public class StateMachineView : DialogueViewBase
         //        currentCallback.Invoke(optionMapping[transition.Key]);
         //    }
         //}
+    }
 
+    public void OnAttributeChange()
+    {
         int transitionDest = transitions[currentStateName].CheckTransition();
         if (transitionDest != -1)
         {
