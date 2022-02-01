@@ -23,6 +23,9 @@ public class AttributeSet : MonoBehaviour
     [SerializeField]
     private UnityEvent onAttributeChange;
 
+    [SerializeField]
+    private AttributeInitializer initializer;
+
     /// <summary>
     /// All attributes associated with attribute should be just float - add in child if necessary.
     /// </summary>
@@ -37,6 +40,22 @@ public class AttributeSet : MonoBehaviour
     {
         activeAttributes.Add(this);
         objectToAttributes.Add(gameObject, this);
+    }
+
+    private void Start()
+    {
+        if (initializer != null)
+        {
+            foreach (var ini in initializer.floatInitials)
+            {
+                floatAttributes.Add(ini.name, ini.value);
+            }
+
+            foreach (string tag in initializer.tagInitials)
+            {
+                attributeTags.Add(tag);
+            }
+        }
     }
 
     private void OnDestroy()
@@ -102,6 +121,7 @@ public class AttributeSet : MonoBehaviour
 
             attributeTags.Add(newTag);
         }
+        onAttributeChange.Invoke();
     }
 
     public void RemoveTag(string oldTag)
@@ -114,6 +134,7 @@ public class AttributeSet : MonoBehaviour
         {
             attributeTags.Remove(oldTag);
         }
+        onAttributeChange.Invoke();
     }
 
     private IEnumerator RemoveTimer(string oldTag, float deadline)

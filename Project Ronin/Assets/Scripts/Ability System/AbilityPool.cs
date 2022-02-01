@@ -21,6 +21,8 @@ public class AbilityPool : MonoBehaviour
     }
 
     // TODO: put stuff in there
+    public GameObject dummyAttack;
+
     public GameObject attack;
     public GameObject parry;
     public GameObject dodge;
@@ -46,8 +48,6 @@ public class AbilityPool : MonoBehaviour
     {
         if (instance == this)
             instance = null;
-
-        Instantiate(gameObject);
     }
 
     private Ability AllocateAbility(GameObject prefab)
@@ -61,8 +61,10 @@ public class AbilityPool : MonoBehaviour
         {
             freeQueue[prefab].Enqueue(Instantiate(prefab).GetComponent<Ability>());
             freeQueue[prefab].Peek().gameObject.SetActive(false);
+            freeQueue[prefab].Peek().prefab = prefab;
         }
 
+        freeQueue[prefab].Peek().gameObject.SetActive(true);
         return freeQueue[prefab].Dequeue();
     }
 

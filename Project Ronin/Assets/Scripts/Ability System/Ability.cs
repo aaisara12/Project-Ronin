@@ -12,7 +12,7 @@ using System;
 public abstract class Ability : MonoBehaviour
 {
     public GameObject prefab = null; // only set by ability pool
-    protected AttributeSet user;
+    public AttributeSet user { set; protected get; }
 
     /// <summary>
     /// Put any initialization here. Remember not to ignore the base implementation.
@@ -23,11 +23,6 @@ public abstract class Ability : MonoBehaviour
     {
         user = inUser;
     }
-
-    /// <summary>
-    /// Update routine equivalent to update of Monobehaviour.
-    /// </summary>
-    public abstract void UpdateAbility();
 
     /// <summary>
     /// Implement any reset logic here.
