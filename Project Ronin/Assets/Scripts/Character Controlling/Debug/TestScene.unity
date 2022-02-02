@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 528400660}
   - component: {fileID: 528400664}
   - component: {fileID: 528400665}
+  - component: {fileID: 528400666}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -367,6 +368,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 528400666}
+        m_TargetAssemblyTypeName: DummyHitIndicator, Assembly-CSharp
+        m_MethodName: OnAttributeChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initializer: {fileID: 11400000, guid: 8f51e4c5b54dde5429c226f22a6c6b4d, type: 2}
 --- !u!114 &528400665
 MonoBehaviour:
@@ -380,6 +393,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e80787e990d9744a409fd26dd62bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &528400666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528400659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987cb6a860b8bff4f8976f218228d789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMat: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  blinkDuration: 0.05
 --- !u!1 &640766776
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +585,7 @@ GameObject:
   - component: {fileID: 1300455289}
   - component: {fileID: 1300455293}
   - component: {fileID: 1300455294}
+  - component: {fileID: 1300455295}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -670,6 +698,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1300455295}
+        m_TargetAssemblyTypeName: DummyHitIndicator, Assembly-CSharp
+        m_MethodName: OnAttributeChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initializer: {fileID: 11400000, guid: 8f51e4c5b54dde5429c226f22a6c6b4d, type: 2}
 --- !u!114 &1300455294
 MonoBehaviour:
@@ -683,6 +723,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e80787e990d9744a409fd26dd62bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1300455295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300455288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987cb6a860b8bff4f8976f218228d789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMat: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  blinkDuration: 0.05
 --- !u!1 &1520964270
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +751,7 @@ GameObject:
   - component: {fileID: 1520964271}
   - component: {fileID: 1520964275}
   - component: {fileID: 1520964276}
+  - component: {fileID: 1520964277}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -809,6 +864,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1520964277}
+        m_TargetAssemblyTypeName: DummyHitIndicator, Assembly-CSharp
+        m_MethodName: OnAttributeChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initializer: {fileID: 11400000, guid: 8f51e4c5b54dde5429c226f22a6c6b4d, type: 2}
 --- !u!114 &1520964276
 MonoBehaviour:
@@ -822,6 +889,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e80787e990d9744a409fd26dd62bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1520964277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520964270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987cb6a860b8bff4f8976f218228d789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMat: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  blinkDuration: 0.05
 --- !u!1 &1709850770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d2697bcf93c71841992478e764d4dee,
@@ -908,6 +989,7 @@ GameObject:
   - component: {fileID: 1803382636}
   - component: {fileID: 1803382640}
   - component: {fileID: 1803382641}
+  - component: {fileID: 1803382642}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1020,6 +1102,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1803382642}
+        m_TargetAssemblyTypeName: DummyHitIndicator, Assembly-CSharp
+        m_MethodName: OnAttributeChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   initializer: {fileID: 11400000, guid: 8f51e4c5b54dde5429c226f22a6c6b4d, type: 2}
 --- !u!114 &1803382641
 MonoBehaviour:
@@ -1033,6 +1127,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e80787e990d9744a409fd26dd62bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1803382642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803382635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987cb6a860b8bff4f8976f218228d789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitMat: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  blinkDuration: 0.05
 --- !u!1001 &2075601858
 PrefabInstance:
   m_ObjectHideFlags: 0

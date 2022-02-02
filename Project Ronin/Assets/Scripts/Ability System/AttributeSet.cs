@@ -40,10 +40,7 @@ public class AttributeSet : MonoBehaviour
     {
         activeAttributes.Add(this);
         objectToAttributes.Add(gameObject, this);
-    }
 
-    private void Start()
-    {
         if (initializer != null)
         {
             foreach (var ini in initializer.floatInitials)
@@ -57,6 +54,22 @@ public class AttributeSet : MonoBehaviour
             }
         }
     }
+
+    //private void Start()
+    //{
+    //    if (initializer != null)
+    //    {
+    //        foreach (var ini in initializer.floatInitials)
+    //        {
+    //            floatAttributes.Add(ini.name, ini.value);
+    //        }
+
+    //        foreach (string tag in initializer.tagInitials)
+    //        {
+    //            attributeTags.Add(tag);
+    //        }
+    //    }
+    //}
 
     private void OnDestroy()
     {

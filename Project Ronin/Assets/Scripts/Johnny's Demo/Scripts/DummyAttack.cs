@@ -25,7 +25,7 @@ public class DummyAttack : Ability
         },
         (AttributeSet attr) =>
         {
-            attr.ModifyFloat("hp", -50);
+            attr.ModifyFloat("hp", -40);
         });
 
         RecycleAbility();
