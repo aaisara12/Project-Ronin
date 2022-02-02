@@ -15,6 +15,20 @@ public class AbilityPool : MonoBehaviour
         return instance.AllocateAbility(prefab);
     }
 
+    public static Ability TakeAbility(GameObject prefab, AttributeSet inUser)
+    {
+        var newAbility = instance.AllocateAbility(prefab);
+        newAbility.user = inUser;
+        return newAbility;
+    }
+
+    public static Ability TakeAbility(GameObject prefab, GameObject inUser)
+    {
+        var newAbility = instance.AllocateAbility(prefab);
+        newAbility.user = AttributeSet.objectToAttributes[inUser]; // if this line throws, we know there's something wrong with registration
+        return newAbility;
+    }
+
     public static void PutAbility(Ability abilityObj)
     {
         instance.FreeAbility(abilityObj);
@@ -50,6 +64,19 @@ public class AbilityPool : MonoBehaviour
             instance = null;
     }
 
+    private void ResetAbility(Ability ability)
+    {
+        ability.gameObject.SetActive(false);
+        ability.transform.SetParent(transform);
+    }
+
+    private void ResetAbility(Ability ability, GameObject prefab)
+    {
+        ability.gameObject.SetActive(false);
+        ability.prefab = prefab;
+        ability.transform.SetParent(transform);
+    }
+
     private Ability AllocateAbility(GameObject prefab)
     {
         if (!freeQueue.ContainsKey(prefab))
@@ -59,18 +86,19 @@ public class AbilityPool : MonoBehaviour
 
         if (freeQueue[prefab].Count <= 0)
         {
-            freeQueue[prefab].Enqueue(Instantiate(prefab).GetComponent<Ability>());
-            freeQueue[prefab].Peek().gameObject.SetActive(false);
-            freeQueue[prefab].Peek().prefab = prefab;
+            var newBility = Instantiate(prefab).GetComponent<Ability>();
+            ResetAbility(newBility, prefab);
+            freeQueue[prefab].Enqueue(newBility);
         }
 
         freeQueue[prefab].Peek().gameObject.SetActive(true);
+        freeQueue[prefab].Peek().transform.SetParent(null);
         return freeQueue[prefab].Dequeue();
     }
 
-    private void FreeAbility(Ability abilityObj)
+    private void FreeAbility(Ability returner)
     {
-        abilityObj.gameObject.SetActive(false);
-        freeQueue[abilityObj.prefab].Enqueue(abilityObj);
+        ResetAbility(returner);
+        freeQueue[returner.prefab].Enqueue(returner);
     }
 }

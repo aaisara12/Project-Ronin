@@ -848,19 +848,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1709850773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709850770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f84fd91ad19204a9a8a53620c94915, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1709850772}
 --- !u!114 &1709850774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,21 +862,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onAttributeChange:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1709850773}
-        m_TargetAssemblyTypeName: CharacterStateMachine, Assembly-CSharp
-        m_MethodName: OnAttributeChange
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   initializer: {fileID: 0}
---- !u!114 &1709850775
+--- !u!4 &1709850776 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d2697bcf93c71841992478e764d4dee,
+    type: 3}
+  m_PrefabInstance: {fileID: 2075601858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1709850777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -898,15 +879,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709850770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7773762e3afc27438f1299be370c4ae, type: 3}
+  m_Script: {fileID: 11500000, guid: fcad8f0cb0cd75840a20e230e2fb998e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1709850776 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d2697bcf93c71841992478e764d4dee,
-    type: 3}
-  m_PrefabInstance: {fileID: 2075601858}
+--- !u!114 &1709850778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709850770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b648fee95b297204fa518ea86165601e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1803382635
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class DummyAttack : Ability
 {
+    bool initialized = false;
+
     public override void ResetAbility()
     {
-        throw new System.NotImplementedException();
+        initialized = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        initialized = true;
+
         ForEachAttr((AttributeSet attr) =>
         {
             var diffPos = attr.transform.position - user.transform.position;
