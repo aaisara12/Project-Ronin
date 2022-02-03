@@ -36,6 +36,7 @@ public class AbilityPool : MonoBehaviour
 
     // TODO: put stuff in there
     public GameObject dummyAttack;
+    public GameObject dummyShoot;
 
     public GameObject attack;
     public GameObject parry;
@@ -64,13 +65,13 @@ public class AbilityPool : MonoBehaviour
             instance = null;
     }
 
-    private void ResetAbility(Ability ability)
+    private void ResetAbilityObject(Ability ability)
     {
         ability.gameObject.SetActive(false);
         ability.transform.SetParent(transform);
     }
 
-    private void ResetAbility(Ability ability, GameObject prefab)
+    private void ResetAbilityObject(Ability ability, GameObject prefab)
     {
         ability.gameObject.SetActive(false);
         ability.prefab = prefab;
@@ -87,18 +88,20 @@ public class AbilityPool : MonoBehaviour
         if (freeQueue[prefab].Count <= 0)
         {
             var newBility = Instantiate(prefab).GetComponent<Ability>();
-            ResetAbility(newBility, prefab);
+            ResetAbilityObject(newBility, prefab);
             freeQueue[prefab].Enqueue(newBility);
         }
 
         freeQueue[prefab].Peek().gameObject.SetActive(true);
         freeQueue[prefab].Peek().transform.SetParent(null);
+        freeQueue[prefab].Peek().InitiateAbility();
         return freeQueue[prefab].Dequeue();
     }
 
     private void FreeAbility(Ability returner)
     {
-        ResetAbility(returner);
+        ResetAbilityObject(returner);
+        returner.ResetAbility();
         freeQueue[returner.prefab].Enqueue(returner);
     }
 }

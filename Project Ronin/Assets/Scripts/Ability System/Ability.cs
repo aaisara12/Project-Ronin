@@ -19,15 +19,14 @@ public abstract class Ability : MonoBehaviour
     /// Should only be called by a character state machine.
     /// </summary>
     /// <param name="inUser"></param>
-    public virtual void InitiateAbility(AttributeSet inUser)
+    public virtual void InitiateAbility()
     {
-        user = inUser;
     }
 
     /// <summary>
     /// Implement any reset logic here.
     /// </summary>
-    public abstract void ResetAbility();
+    public virtual void ResetAbility() { }
 
     /// <summary>
     /// Apply a function to all the Attributes objects.
@@ -44,6 +43,16 @@ public abstract class Ability : MonoBehaviour
                 action(attr);
             }
         }
+    }
+
+    /// <summary>
+    /// Helper function, lookup a gameobject's attribute (cuz we don't want to grab it by GetComponent)
+    /// </summary>
+    /// <param name="owner">the object that owns the attribute you are looking for</param>
+    /// <returns></returns>
+    protected AttributeSet AttributeLookup(GameObject owner)
+    {
+        return AttributeSet.objectToAttributes[owner];
     }
 
     /// <summary>

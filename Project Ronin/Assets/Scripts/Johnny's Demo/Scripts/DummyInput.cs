@@ -59,5 +59,9 @@ public class DummyInput : MonoBehaviour
         {
             animator.SetTrigger("attack");
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetTrigger("shoot");
+        }
     }
 }
