@@ -9,7 +9,8 @@ public class AbilityPool : MonoBehaviour
 {
     // singleton interface
     public static AbilityPool instance { get; private set; } = null;
-    
+
+    [System.Obsolete("Use methods that take in user attribute.")]
     public static Ability TakeAbility(GameObject prefab)
     {
         return instance.AllocateAbility(prefab);
@@ -18,14 +19,14 @@ public class AbilityPool : MonoBehaviour
     public static Ability TakeAbility(GameObject prefab, AttributeSet inUser)
     {
         var newAbility = instance.AllocateAbility(prefab);
-        newAbility.user = inUser;
+        newAbility.InitiateAbility(inUser);
         return newAbility;
     }
 
     public static Ability TakeAbility(GameObject prefab, GameObject inUser)
     {
         var newAbility = instance.AllocateAbility(prefab);
-        newAbility.user = AttributeSet.objectToAttributes[inUser]; // if this line throws, we know there's something wrong with registration
+        newAbility.InitiateAbility(AttributeSet.objectToAttributes[inUser]);
         return newAbility;
     }
 
@@ -94,7 +95,6 @@ public class AbilityPool : MonoBehaviour
 
         freeQueue[prefab].Peek().gameObject.SetActive(true);
         freeQueue[prefab].Peek().transform.SetParent(null);
-        freeQueue[prefab].Peek().InitiateAbility();
         return freeQueue[prefab].Dequeue();
     }
 

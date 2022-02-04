@@ -20,9 +20,13 @@ public class DummyShootAbility : Ability
         happened = false;
     }
 
-    public override void InitiateAbility()
+    public override void InitiateAbility(AttributeSet inUser)
     {
-        rb.velocity = new Vector3(0, 0, speed);
+        base.InitiateAbility(inUser);
+
+        rb.MovePosition(user.transform.position);
+        //rb.MoveRotation(user.transform.rotation);
+        rb.velocity = user.transform.forward * speed;
     }
 
     void Update()
@@ -45,6 +49,4 @@ public class DummyShootAbility : Ability
             happened = true;
         } 
     }
-
-    
 }

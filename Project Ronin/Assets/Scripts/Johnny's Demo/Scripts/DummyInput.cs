@@ -63,5 +63,13 @@ public class DummyInput : MonoBehaviour
         {
             animator.SetTrigger("shoot");
         }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            animator.SetBool("aim", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            animator.SetBool("aim", false);
+        }
     }
 }

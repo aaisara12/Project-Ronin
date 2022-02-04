@@ -13,7 +13,6 @@ public class DummyCharacterActions : MonoBehaviour
     public void Shoot()
     {
         Ability newShoot = AbilityPool.TakeAbility(AbilityPool.instance.dummyShoot, gameObject);
-        newShoot.transform.position = transform.position;
-        newShoot.transform.position += new Vector3(0, 0.5f, 0);
+        newShoot.transform.position = transform.position + new Vector3(0, 0.5f, 0);
     }
 }

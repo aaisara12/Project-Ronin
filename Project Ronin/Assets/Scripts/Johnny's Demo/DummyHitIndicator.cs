@@ -10,7 +10,7 @@ public class DummyHitIndicator : MonoBehaviour
     float blinkDuration = 0.1f;
     Material normalMat;
     AttributeSet attributes;
-    MeshRenderer renderer;
+    MeshRenderer myMesh;
 
     float oldHP = -1;
 
@@ -18,8 +18,8 @@ public class DummyHitIndicator : MonoBehaviour
     {
         attributes = GetComponent<AttributeSet>();
         oldHP = attributes.GetFloat("hp");
-        renderer = GetComponent<MeshRenderer>();
-        normalMat = renderer.material;
+        myMesh = GetComponent<MeshRenderer>();
+        normalMat = myMesh.material;
     }
 
     public void OnAttributeChange()
@@ -34,7 +34,7 @@ public class DummyHitIndicator : MonoBehaviour
 
     private IEnumerator ResetTimer()
     {
-        renderer.material = hitMat;
+        myMesh.material = hitMat;
 
         float time = 0;
         while (time < blinkDuration)
@@ -43,6 +43,6 @@ public class DummyHitIndicator : MonoBehaviour
             yield return null;
         }
 
-        renderer.material = normalMat;
+        myMesh.material = normalMat;
     }
 }

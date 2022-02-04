@@ -4,45 +4,26 @@ using UnityEngine;
 
 public class DummyMoveState : StateMachineBehaviour
 {
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    [SerializeField]
+    float maxAngularVelocity = 360;
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Vector3 movement = Vector3.zero;
 
-        movement += animator.GetBool("up") ? animator.transform.forward.normalized : Vector3.zero;
-        movement -= animator.GetBool("down") ? animator.transform.forward.normalized : Vector3.zero;
-        movement -= animator.GetBool("left") ? animator.transform.right.normalized : Vector3.zero;
-        movement += animator.GetBool("right") ? animator.transform.right.normalized : Vector3.zero;
+        movement += animator.GetBool("up") ? new Vector3(0, 0, 1) : Vector3.zero;
+        movement -= animator.GetBool("down") ? new Vector3(0, 0, 1) : Vector3.zero;
+        movement -= animator.GetBool("left") ? new Vector3(1, 0, 0) : Vector3.zero;
+        movement += animator.GetBool("right") ? new Vector3(1, 0, 0) : Vector3.zero;
 
         if (movement.magnitude > 0)
         {
             movement.Normalize();
+
+            animator.transform.rotation = Quaternion.RotateTowards(animator.transform.rotation, Quaternion.AngleAxis(Vector3.SignedAngle(Vector3.forward, movement, Vector3.up), Vector3.up), maxAngularVelocity * Time.deltaTime);
         }
 
         animator.transform.position += movement * 3 * Time.deltaTime;
     }
-
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
-
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }

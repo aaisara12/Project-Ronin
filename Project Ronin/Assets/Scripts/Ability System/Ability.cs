@@ -19,8 +19,9 @@ public abstract class Ability : MonoBehaviour
     /// Should only be called by a character state machine.
     /// </summary>
     /// <param name="inUser"></param>
-    public virtual void InitiateAbility()
+    public virtual void InitiateAbility(AttributeSet inUser)
     {
+        user = inUser;
     }
 
     /// <summary>
