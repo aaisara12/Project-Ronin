@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 28c8da53c9c691146875fafe3e684b62
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Apple SD Gothic Neo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7798007951dbff84498a52bc250e8403, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
