@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PauseGameUI : MonoBehaviour
 {
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +20,11 @@ public class PauseGameUI : MonoBehaviour
     public void DisplayUI()
     {
         Debug.Log("button was pressed");
+    }
+
+    // Tween animations for buttons
+    public void AnimPressButton()
+    {
+        
     }
 }
