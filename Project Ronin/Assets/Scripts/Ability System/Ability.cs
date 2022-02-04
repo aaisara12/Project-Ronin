@@ -16,12 +16,14 @@ public abstract class Ability : MonoBehaviour
 
     /// <summary>
     /// Put any initialization here. Remember not to ignore the base implementation.
-    /// Should only be called by a character state machine.
+    /// By default, ability is synced with the user in position and rotation.
     /// </summary>
     /// <param name="inUser"></param>
     public virtual void InitiateAbility(AttributeSet inUser)
     {
         user = inUser;
+        transform.position = user.transform.position;
+        transform.rotation = user.transform.rotation;
     }
 
     /// <summary>
