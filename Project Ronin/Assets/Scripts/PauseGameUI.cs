@@ -2,29 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GameObject))]
 public class PauseGameUI : MonoBehaviour
 {
-
-
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject frame;
+    public void TogglePauseMenu()
     {
-        GameManager.Instance.OnPauseGame += DisplayUI;
-    }
-
-    void OnDisable()
-    {
-        GameManager.Instance.OnPauseGame -= DisplayUI;
+        GameManager.Instance.TogglePause();
+        if (frame.activeSelf)
+            frame.SetActive(false);
+        else
+            frame.SetActive(true);
     }
 
     public void DisplayUI()
     {
         Debug.Log("button was pressed");
-    }
-
-    // Tween animations for buttons
-    public void AnimPressButton()
-    {
-        
     }
 }
