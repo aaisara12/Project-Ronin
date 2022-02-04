@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     /// <summary> Freezes all game objects in scene </summary>
@@ -44,5 +46,11 @@ public class GameManager : MonoBehaviour
             isPaused = false;
             OnNewPauseState?.Invoke(isPaused);
         }
+    }
+
+    // Potentially useful function if the pause state is not known and thus cannot call SetPauseState properly
+    public void TogglePause()
+    {
+        SetPauseState(!isPaused);
     }
 }
