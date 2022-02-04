@@ -13,6 +13,11 @@ public class PausingMover : MonoBehaviour
         GameManager.Instance.OnNewPauseState += HandleNewPauseState;
     }
 
+    void OnDisable()
+    {
+        GameManager.Instance.OnNewPauseState -= HandleNewPauseState;
+    }
+
     // Update is called once per frame
     void Update()
     {
