@@ -18,7 +18,7 @@ public class CombatState : StateMachineBehaviour
     /// Time stamp to unlock the character for player inputs. Normalized (0 - 100).
     /// </summary>
     [SerializeField]
-    private float normalizedUnlockTime = 50;
+    private float normalizedUnlockTime = 0.5f;
 
     private bool locked = true;
 
@@ -33,10 +33,11 @@ public class CombatState : StateMachineBehaviour
         {
             locked = false;
             
-            // clean up any input
+            // clean up any one-time input
             foreach (var param in animator.parameters)
             {
-                animator.ResetTrigger(param.name);
+                if (param.type == AnimatorControllerParameterType.Trigger)
+                    animator.ResetTrigger(param.name);
             }
 
             animator.SetBool("combat", false);
