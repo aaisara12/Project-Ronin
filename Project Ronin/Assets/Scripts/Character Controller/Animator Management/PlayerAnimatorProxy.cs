@@ -19,12 +19,18 @@ public class PlayerAnimatorProxy : AnimatorProxy
 
     public override void SetTrigger(string triggerName)
     {
-        base.SetTrigger(triggerName);
-
         if (combatTriggers.Contains(triggerName))
         {
             animator.SetBool("combat", true);
+
+            // only keep the latest input
+            foreach (var trigger in combatTriggers)
+            {
+                animator.ResetTrigger(trigger);
+            }
         }
+
+        base.SetTrigger(triggerName);
     }
 
     public override void SetFloat(string floatName, float value)
