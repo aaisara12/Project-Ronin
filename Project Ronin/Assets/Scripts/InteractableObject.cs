@@ -84,7 +84,7 @@ public class InteractableObject : MonoBehaviour
     /// <summary>Event function to highlight an interactable object in scene</summary>
     private void OnDrawGizmos()
     {
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(gameObject.transform.position, interactionRange);
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawWireSphere(gameObject.transform.position, interactionRange);
     }
 }
