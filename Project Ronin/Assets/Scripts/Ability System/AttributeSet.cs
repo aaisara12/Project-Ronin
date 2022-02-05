@@ -55,22 +55,6 @@ public class AttributeSet : MonoBehaviour
         }
     }
 
-    //private void Start()
-    //{
-    //    if (initializer != null)
-    //    {
-    //        foreach (var ini in initializer.floatInitials)
-    //        {
-    //            floatAttributes.Add(ini.name, ini.value);
-    //        }
-
-    //        foreach (string tag in initializer.tagInitials)
-    //        {
-    //            attributeTags.Add(tag);
-    //        }
-    //    }
-    //}
-
     private void OnDestroy()
     {
         activeAttributes.Remove(this);
