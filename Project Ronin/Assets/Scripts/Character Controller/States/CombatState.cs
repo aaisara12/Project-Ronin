@@ -7,15 +7,18 @@ using UnityEditor.Animations;
 /// <summary>
 /// Out of box it helps the state machine ignore input for a certain portion of the current state 
 /// (usually to stop player interrupt the animation).
-/// "Frozen" == ignore inputs, achieved by wiping out triggers right before exit time hits.
+/// "lock" == ignore inputs, achieved by wiping out triggers right before exit time hits.
+/// 
+/// 
+/// No coroutine in state machine behaviour hello???
 /// </summary>
-public class FrozenStateBase : StateMachineBehaviour
+public class CombatState : StateMachineBehaviour
 {
     /// <summary>
     /// Time stamp to unlock the character for player inputs. Normalized (0 - 100).
     /// </summary>
     [SerializeField]
-    private float normalizedUnlockTime = 70;
+    private float normalizedUnlockTime = 50;
 
     private bool locked = true;
 
@@ -29,10 +32,14 @@ public class FrozenStateBase : StateMachineBehaviour
         if (stateInfo.normalizedTime >= normalizedUnlockTime && locked)
         {
             locked = false;
+            
+            // clean up any input
             foreach (var param in animator.parameters)
             {
                 animator.ResetTrigger(param.name);
             }
+
+            animator.SetBool("combat", false);
         }
     }
 }
