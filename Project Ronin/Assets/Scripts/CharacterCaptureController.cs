@@ -24,7 +24,30 @@ public class CharacterCaptureController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // if (Input.GetKey("up"))
+        // {
+        //     MoveInDirection(new Vector2(0,2));
+        // }
+
+        // if (Input.GetKey("down"))
+        // {
+        //     MoveInDirection(new Vector2(0,-2));
+        // }
+
+        // if (Input.GetKey("left"))
+        // {
+        //     MoveInDirection(new Vector2(-2,0));
+        // }
+
+        // if (Input.GetKey("right"))
+        // {
+        //     MoveInDirection(new Vector2(2,0));
+        // }
+
+        // if (Input.GetKeyDown(KeyCode.LeftShift))
+        // {
+        //     DashForwards(new Vector2(0,0));
+        // }
     }
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
@@ -63,5 +86,31 @@ public class CharacterCaptureController : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
 
         rb.velocity = Vector3.zero;
+    }
+
+    public void MoveInDirection(Vector2 directionVector) 
+    {
+        // test with arrow keys
+        if (directionVector == Vector2.zero)
+        {
+            // do nothing
+            return;
+        }
+        directionVector = (Vector2)Vector3.Normalize(directionVector);
+        Vector3 rightMovement = right * movementSpeed * Time.deltaTime * directionVector.x;
+        Vector3 upMovement = forward * movementSpeed * Time.deltaTime * directionVector.y;
+        rightMovement = Vector3.ClampMagnitude(rightMovement, 1);
+        upMovement = Vector3.ClampMagnitude(upMovement, 1);
+
+        Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+
+        transform.forward = heading;
+        transform.position += rightMovement;
+        transform.position += upMovement;
+    }
+
+    public void DashForwards(Vector2 directionVector)
+    {
+        StartCoroutine(Dash());
     }
 }
