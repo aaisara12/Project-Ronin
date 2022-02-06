@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using UnityEngine;
 
 /// <summary>
@@ -11,7 +12,7 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     [SerializeField] private string objectName = "";
-    [SerializeField] private bool isSelected = false;
+    [SerializeField] private bool isSelected;
     [SerializeField] private bool isInteractable = true;
     [SerializeField] private float interactionRange = 3.0f;
 
@@ -54,13 +55,14 @@ public class InteractableObject : MonoBehaviour
 
     /// <summary>Display interaction text to screen</summary>
     /// <remarks>objectName must == filename</remarks>
-    protected void DisplayMessage()
+    private void DisplayMessage()
     {
         // Stream in the associated file for display text if it exists
         string interactionText;
         try
         {
-            interactionText = Application.streamingAssetsPath + "/InteractableObjects/" + objectName + ".txt";
+            string filePath = Application.streamingAssetsPath + "/InteractableObjects/" + objectName + ".txt";
+            interactionText = File.ReadAllText(filePath);
         }
 
         // Unable to find a text file matching the objectName variable
