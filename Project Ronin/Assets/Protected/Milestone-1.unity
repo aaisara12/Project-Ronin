@@ -2252,7 +2252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a637ed13bc724d4294b68e99df4570c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: test
+  objectName: page
   isSelected: 0
   isInteractable: 1
   interactionRange: 6
