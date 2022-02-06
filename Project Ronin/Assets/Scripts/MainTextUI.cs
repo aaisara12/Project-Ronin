@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class MainTextUI : MonoBehaviour
 {
-    [Header("GameObjects Dependencies")]
-    [SerializeField] private TextMeshProUGUI mainText;
+    [Header("GameObjects Dependencies")] [SerializeField]
+    private TextMeshProUGUI mainText;
+
     [SerializeField] private CanvasGroup background;
     [SerializeField] private RectTransform box;
 
-    [Header("Main Text Settings")]
-    public float yPos = -200f;
+    [Header("Main Text Settings")] public float yPos = -200f;
     public float fadeTime = 0.5f;
 
     private const int FULL_ALPHA = 1;
     private const int TRANSPARENT_ALPHA = 0;
-   
+
     /// <summary> Displays <paramref name = "text"/> on the screen's main UI field </summary>
     public void DisplayText(string text)
     {
@@ -25,10 +23,10 @@ public class MainTextUI : MonoBehaviour
 
         // Fade in background
         background.alpha = TRANSPARENT_ALPHA;
-        background.LeanAlpha(FULL_ALPHA,fadeTime);
+        background.LeanAlpha(FULL_ALPHA, fadeTime);
 
         // Animate box to the screen
-        box.localPosition = new Vector2(0, -Screen.height- box.rect.height);
+        box.localPosition = new Vector2(0, -Screen.height - box.rect.height);
         box.LeanMoveLocalY(yPos, fadeTime).setEaseOutExpo().delay = 0.1f;
     }
 
@@ -41,7 +39,7 @@ public class MainTextUI : MonoBehaviour
     /// <summary> Clears main text <paramref name = "text"/> on the screen's main UI field </summary>
     private void CloseText()
     {
-        box.LeanMoveLocalY(-Screen.height-box.rect.height, fadeTime).setEaseInExpo();
+        box.LeanMoveLocalY(-Screen.height - box.rect.height, fadeTime).setEaseInExpo();
         background.LeanAlpha(TRANSPARENT_ALPHA, fadeTime).delay = 0.1f;
     }
 }
