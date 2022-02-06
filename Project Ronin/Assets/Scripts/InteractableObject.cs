@@ -60,7 +60,7 @@ public class InteractableObject : MonoBehaviour
         string interactionText;
         try
         {
-            interactionText = Application.streamingAssetsPath + "/InteractableObject/" + objectName + ".txt";
+            interactionText = Application.streamingAssetsPath + "/InteractableObjects/" + objectName + ".txt";
         }
 
         // Unable to find a text file matching the objectName variable
