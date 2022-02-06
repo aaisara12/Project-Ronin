@@ -18,10 +18,6 @@ public class Interactor : MonoBehaviour
     }
 
 
-    /* TODO: Message flarros on discord:
-     * I don't think this is going to link up correctly with how the InteractableObject class is being set up.
-     * HMU when you get the chance! :)
-    */
     void FixedUpdate()
     {
         InteractableObject closestInteractable = null;
@@ -56,8 +52,8 @@ public class Interactor : MonoBehaviour
 
         if (closestInteractable != lastClosestInteractable)
         {
-            closestInteractable?.SetInteractable(true); // Highlight closest interactable
-            lastClosestInteractable?.SetInteractable(false);
+            closestInteractable?.SetSelected(true); // Highlight closest interactable
+            lastClosestInteractable?.SetSelected(false);
         }
 
         lastClosestInteractable = closestInteractable;

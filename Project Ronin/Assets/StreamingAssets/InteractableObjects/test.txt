@@ -1,1 +1,1 @@
-This is a test interactable object!
+This is a test interactable object message from the file test.txt!

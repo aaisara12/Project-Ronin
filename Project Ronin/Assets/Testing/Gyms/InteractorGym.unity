@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 2056c27849d3f4bbbb40e93da1c9d702,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -233,6 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a637ed13bc724d4294b68e99df4570c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectName: None
+  isSelected: 0
   isInteractable: 1
   interactionRange: 3
 --- !u!1 &741981159
@@ -366,6 +369,7 @@ GameObject:
   - component: {fileID: 1389687612}
   - component: {fileID: 1389687611}
   - component: {fileID: 1389687609}
+  - component: {fileID: 1389687615}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -465,6 +469,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389687615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389687608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e7a7c1b48b4054f81e4c00b4d33a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 5
 --- !u!1 &1429227147
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a637ed13bc724d4294b68e99df4570c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectName: None
+  isSelected: 0
   isInteractable: 1
   interactionRange: 3
 --- !u!65 &1429227149
@@ -577,6 +596,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1591228146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1591228147}
+  m_Layer: 0
+  m_Name: TextUI Holder -- TESTING ONLY
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1591228147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591228146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.9060118, y: -0.79421043, z: -0.6877084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1660265840
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,6 +659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a637ed13bc724d4294b68e99df4570c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectName: None
+  isSelected: 0
   isInteractable: 1
   interactionRange: 3
 --- !u!65 &1660265842
