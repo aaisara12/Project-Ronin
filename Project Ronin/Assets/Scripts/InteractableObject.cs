@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.IO;
 using UnityEngine;
 
@@ -15,17 +16,48 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private bool isSelected;
     [SerializeField] private bool isInteractable = true;
     [SerializeField] private float interactionRange = 3.0f;
+    [SerializeField] private Color glowColor;
+    [SerializeField] [Range(0f, 1f)] private float colorLerpTime = 0.1f;
+    [SerializeField] [Range(0f, 1f)] private float yieldTime = 0.1f;
 
     private MainTextUI textUI;
+    private Color spriteColor;
+    private Color originalColor;
+    private bool isCoroutineActive;
 
     /// <summary>Event function to ensure the object has a name</summary>
     /// <remarks>Uses the gameObject name if objectName is empty</remarks>
     private void Awake()
     {
+        // Save the original color pallet of the sprite and a reference for updating
+        spriteColor = gameObject.GetComponent<SpriteRenderer>().color;
+        originalColor = new Color(spriteColor.r, spriteColor.g, spriteColor.b, spriteColor.a);
+
         textUI = FindObjectOfType<MainTextUI>();
         if (objectName == "")
         {
             objectName = gameObject.name;
+        }
+    }
+
+
+    /// <summary>Update used to begin and end coroutine for sprite glow effect</summary>
+    private void Update()
+    {
+        // Starts glow effect when selected
+        if (!isCoroutineActive && isInteractable && isSelected)
+        {
+            isCoroutineActive = true;
+            StartCoroutine(glowOnSelection());
+            Debug.Log("Coroutine started!");
+        }
+        // Terminate glow effect
+        else if (isCoroutineActive && !(isInteractable && isSelected))
+        {
+            isCoroutineActive = false;
+            StopCoroutine(glowOnSelection());
+            spriteColor = originalColor;
+            Debug.Log("Coroutine Complete!");
         }
     }
 
@@ -104,5 +136,37 @@ public class InteractableObject : MonoBehaviour
     {
         Gizmos.color = Color.magenta;
         Gizmos.DrawWireSphere(gameObject.transform.position, interactionRange);
+    }
+
+
+    IEnumerator glowOnSelection()
+    {
+        bool isGlowingForward = true;
+        while (isInteractable && isSelected)
+        {
+            yield return new WaitForSeconds(yieldTime);
+            if (isGlowingForward)
+            {
+                Debug.Log("Glowing Forward!");
+                gameObject.GetComponent<SpriteRenderer>().color =
+                    Color.Lerp(gameObject.GetComponent<SpriteRenderer>().color, glowColor, colorLerpTime);
+                
+                if (gameObject.GetComponent<SpriteRenderer>().color == glowColor)
+                {
+                    isGlowingForward = false;
+                }
+            }
+            else
+            {
+                Debug.Log("Glowing Back!");
+                gameObject.GetComponent<SpriteRenderer>().color =
+                    Color.Lerp(gameObject.GetComponent<SpriteRenderer>().color, originalColor, colorLerpTime);
+                
+                if (gameObject.GetComponent<SpriteRenderer>().color == originalColor)
+                {
+                    isGlowingForward = true;
+                }
+            }
+        }
     }
 }
