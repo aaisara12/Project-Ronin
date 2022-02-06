@@ -16,7 +16,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private bool isSelected;
     [SerializeField] private bool isInteractable = true;
     [SerializeField] private float interactionRange = 3.0f;
-    [SerializeField] private Color glowColor;
+    [SerializeField] private Color glowColor = Color.magenta;
     [SerializeField] [Range(0f, 1f)] private float colorLerpTime = 0.1f;
     [SerializeField] [Range(0f, 1f)] private float yieldTime = 0.1f;
 
@@ -31,7 +31,7 @@ public class InteractableObject : MonoBehaviour
     {
         // Save the original color pallet of the sprite and a reference for updating
         spriteColor = gameObject.GetComponent<SpriteRenderer>().color;
-        originalColor = new Color(spriteColor.r, spriteColor.g, spriteColor.b, spriteColor.a);
+        originalColor = new Color(spriteColor.r, spriteColor.g, spriteColor.b);
 
         textUI = FindObjectOfType<MainTextUI>();
         if (objectName == "")
@@ -56,7 +56,7 @@ public class InteractableObject : MonoBehaviour
         {
             isCoroutineActive = false;
             StopCoroutine(glowOnSelection());
-            spriteColor = originalColor;
+            gameObject.GetComponent<SpriteRenderer>().color = originalColor;
             Debug.Log("Coroutine Complete!");
         }
     }
@@ -144,7 +144,6 @@ public class InteractableObject : MonoBehaviour
         bool isGlowingForward = true;
         while (isInteractable && isSelected)
         {
-            yield return new WaitForSeconds(yieldTime);
             if (isGlowingForward)
             {
                 Debug.Log("Glowing Forward!");
@@ -167,6 +166,7 @@ public class InteractableObject : MonoBehaviour
                     isGlowingForward = true;
                 }
             }
+            yield return null;
         }
     }
 }
