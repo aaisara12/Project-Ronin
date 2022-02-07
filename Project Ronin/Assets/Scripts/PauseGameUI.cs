@@ -15,6 +15,11 @@ public class PauseGameUI : MonoBehaviour
             frame.SetActive(true);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    
     public void DisplayUI()
     {
         Debug.Log("button was pressed");
