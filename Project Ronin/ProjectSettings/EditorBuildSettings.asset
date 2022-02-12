@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Protected/Main.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+    path: Assets/Protected/Milestone-1.unity
+    guid: 6003470805a75fe4589ba285ab6ae11b
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: e099a800bba5c974e9038d9735614974,
+      type: 2}
