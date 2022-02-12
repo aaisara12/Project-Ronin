@@ -20,7 +20,7 @@ public class MoveState : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector3 movement = new Vector3(animator.GetFloat("xInput"), 0, animator.GetFloat("yInput"));
+        Vector2 movement = new Vector2(animator.GetFloat("xInput"), animator.GetFloat("yInput"));
 
         movementController.MoveInDirection(movement);
     }
