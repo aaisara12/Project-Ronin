@@ -56,12 +56,12 @@ public class TestInput : MonoBehaviour
 
         else 
         {
-            character.MoveInDirection(new Vector2(0,0));
+            // do nothing
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            character.DashForwards(new Vector2(0,0));
+            character.DashForwards();
         }
     }
 }

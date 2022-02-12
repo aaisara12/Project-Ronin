@@ -64,7 +64,7 @@ public class CharacterCaptureController : MonoBehaviour
         transform.position += upMovement;
     }
 
-    public void DashForwards(Vector2 directionVector)
+    public void DashForwards()
     {
         StartCoroutine(Dash());
     }
