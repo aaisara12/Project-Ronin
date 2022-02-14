@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEditor.Animations;
 
 /// <summary>
 /// Out of box it helps the state machine ignore input for a certain portion of the current state 
