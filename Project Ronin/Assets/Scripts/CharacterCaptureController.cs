@@ -7,14 +7,15 @@ public class CharacterCaptureController : MonoBehaviour
     public float movementSpeed = 4f;
     Vector3 forward;
     Vector3 right;
-    [SerializeField] private float dashForce;
+    [SerializeField] private float dashDistance;
     [SerializeField] private float dashDuration;
-    private Rigidbody rb;
+
+    CharacterController characterController;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
@@ -34,15 +35,6 @@ public class CharacterCaptureController : MonoBehaviour
         StartCoroutine(Dash());
     }
 
-    IEnumerator Dash()
-    {
-        rb.AddForce(transform.forward * dashForce, ForceMode.VelocityChange);
-
-        yield return new WaitForSeconds(dashDuration);
-
-        rb.velocity = Vector3.zero;
-    }
-
     public void MoveInDirection(Vector2 directionVector) 
     {
         // test with arrow keys
@@ -60,12 +52,17 @@ public class CharacterCaptureController : MonoBehaviour
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
         transform.forward = heading;
-        transform.position += rightMovement;
-        transform.position += upMovement;
+        characterController.Move(transform.forward * movementSpeed * Time.deltaTime);
     }
 
     public void DashForwards()
     {
         StartCoroutine(Dash());
+    }
+
+    IEnumerator Dash()
+    {
+        characterController.Move(transform.forward * dashDistance);
+        yield return new WaitForSeconds(dashDuration);
     }
 }
