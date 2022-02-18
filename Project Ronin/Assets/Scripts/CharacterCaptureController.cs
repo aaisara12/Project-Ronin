@@ -9,6 +9,8 @@ public class CharacterCaptureController : MonoBehaviour
     Vector3 right;
     [SerializeField] private float dashDistance;
     [SerializeField] private float dashDuration;
+    private Vector3 angleRight;
+    private Vector3 angleLeft;
 
     CharacterController characterController;
 
@@ -20,6 +22,8 @@ public class CharacterCaptureController : MonoBehaviour
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
+        angleRight = Quaternion.Euler(0, -45, 0) * transform.forward;
+        angleLeft = Quaternion.Euler(0, 135, 0) * transform.forward;
     }
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
@@ -51,8 +55,16 @@ public class CharacterCaptureController : MonoBehaviour
 
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
-        transform.forward = heading;
-        characterController.Move(transform.forward * movementSpeed * Time.deltaTime);
+        if (directionVector.x > 0)
+        {
+            transform.forward = Vector3.Lerp(transform.forward, angleRight, 0.1f);
+            characterController.Move(angleRight * movementSpeed * Time.deltaTime);
+        }
+        else if (directionVector.x < 0)
+        {
+            transform.forward = Vector3.Lerp(transform.forward, angleLeft, 0.1f);
+            characterController.Move(angleLeft * movementSpeed * Time.deltaTime);
+        }
     }
 
     public void DashForwards()
