@@ -10,7 +10,7 @@ public class Damager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            targetAttributeSet.ModifyFloat("hp", -5);
+            targetAttributeSet.ModifyFloat("hp", -20);
         }
 
     }
