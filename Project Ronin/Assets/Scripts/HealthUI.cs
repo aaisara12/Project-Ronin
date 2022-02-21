@@ -15,7 +15,8 @@ public class HealthUI : MonoBehaviour
 
     void OnDisable()
     {
-        this.attributeSet.DeregisterOnAttributeChange(this.handleHealthChange);
+        if(this.attributeSet != null)
+            this.attributeSet.DeregisterOnAttributeChange(this.handleHealthChange);
     }
 
     public void Initialize(AttributeSet attributeSet)
