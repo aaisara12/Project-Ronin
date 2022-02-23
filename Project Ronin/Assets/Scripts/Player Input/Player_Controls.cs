@@ -393,7 +393,7 @@ public partial class @Player_Controls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""bcec8cf8-be4a-46c9-a449-dc13dc3f3cdb"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Mouse>/middleButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -404,7 +404,7 @@ public partial class @Player_Controls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cd14a4ef-890f-4771-9f45-c4d5ea5bcb00"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
