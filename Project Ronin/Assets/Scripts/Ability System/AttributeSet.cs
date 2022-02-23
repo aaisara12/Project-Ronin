@@ -113,7 +113,7 @@ public class AttributeSet : MonoBehaviour
         {
             if (duration > 0)
             {
-                StartCoroutine(RemoveTimer(newTag, duration));
+                StartCoroutine(RemoveTimer(newTag, Time.time + duration));
             }
 
             attributeTags.Add(newTag);
