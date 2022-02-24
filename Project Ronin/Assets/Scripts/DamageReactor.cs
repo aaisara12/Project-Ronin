@@ -33,8 +33,10 @@ public class DamageReactor : MonoBehaviour
         {
             if(damagedParticleEffectPrefab != null)
             {
-                var prefab = Instantiate(damagedParticleEffectPrefab);
+                var prefab = Instantiate(damagedParticleEffectPrefab, transform.position, Quaternion.identity);
                 Destroy(prefab, 2); // Later on we may want some particle manager that pools these
+
+                AudioManager.instance?.PlaySound("bloody-impact");
             }
             previousHealth = newHealth;
         }

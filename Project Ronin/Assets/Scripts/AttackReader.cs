@@ -8,5 +8,6 @@ public class AttackReader : MonoBehaviour
     public void StartAttack()
     {
         attackAbilityInstance = AbilityPool.TakeAbility(AbilityPool.instance.attack, gameObject);
+        AudioManager.instance?.PlaySound("swish-light");
     }
 }

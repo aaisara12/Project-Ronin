@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 3550282052228902010}
   - component: {fileID: 3550282052228902008}
   - component: {fileID: 3550282052228902009}
+  - component: {fileID: 6046808320621470968}
   m_Layer: 5
   m_Name: Default Health Bar
   m_TagString: Untagged
@@ -427,6 +428,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6046808320621470968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3550282052228902011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67fcdace41df99943bbf0ed624c60833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 3550282052055617223}
 --- !u!1 &3550282052709403739
 GameObject:
   m_ObjectHideFlags: 0
