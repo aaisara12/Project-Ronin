@@ -7,18 +7,25 @@ public class CharacterCaptureController : MonoBehaviour
     public float movementSpeed = 4f;
     Vector3 forward;
     Vector3 right;
-    [SerializeField] private float dashForce;
+    [SerializeField] private float dashDistance;
     [SerializeField] private float dashDuration;
-    private Rigidbody rb;
+    private float dashStartTime;
+    private bool isDashing;
+    private float dashSpeed;
+
+    CharacterController characterController;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
         forward = Camera.main.transform.forward;
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
+        dashStartTime = 0;
+        isDashing = false;
+        dashSpeed = dashDistance / dashDuration;
     }
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
@@ -34,19 +41,10 @@ public class CharacterCaptureController : MonoBehaviour
         StartCoroutine(Dash());
     }
 
-    IEnumerator Dash()
-    {
-        rb.AddForce(transform.forward * dashForce, ForceMode.VelocityChange);
-
-        yield return new WaitForSeconds(dashDuration);
-
-        rb.velocity = Vector3.zero;
-    }
-
     public void MoveInDirection(Vector2 directionVector) 
     {
         // test with arrow keys
-        if (directionVector == Vector2.zero)
+        if (directionVector == Vector2.zero || isDashing)
         {
             // do nothing
             return;
@@ -60,13 +58,30 @@ public class CharacterCaptureController : MonoBehaviour
         Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
 
         transform.forward = heading;
-        transform.position += rightMovement;
-        transform.position += upMovement;
+        characterController.Move(transform.forward * movementSpeed * Time.deltaTime);
     }
 
     public void DashForwards()
     {
+        if (isDashing)
+        {
+            return;
+        }
         StartCoroutine(Dash());
     }
 
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        Vector3 startPosition = transform.position;
+        dashStartTime = 0;
+        while (dashStartTime <= dashDuration && Vector3.Distance(startPosition, transform.position) <= dashDistance)
+        {
+            characterController.Move(transform.forward * dashSpeed * Time.deltaTime);
+            dashStartTime += Time.deltaTime;
+            // Debug.Log(dashStartTime + "-" + Vector3.Distance(startPosition, transform.position)); // test moving set distance over set amt of time
+            yield return null;
+        }
+        isDashing = false;
+    }
 }
