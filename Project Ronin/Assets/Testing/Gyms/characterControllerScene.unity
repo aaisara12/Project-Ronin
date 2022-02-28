@@ -1797,15 +1797,7 @@ MonoBehaviour:
   movementSpeed: 4
   dashDistance: 0
   dashDuration: 0.1
-  angles:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  rotateSpeed: 0.1
 --- !u!114 &864082623
 MonoBehaviour:
   m_ObjectHideFlags: 0
