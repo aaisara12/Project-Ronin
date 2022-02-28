@@ -9,6 +9,9 @@ public class CharacterCaptureController : MonoBehaviour
 
     [SerializeField] private float dashDistance;
     [SerializeField] private float dashDuration;
+    private float dashStartTime;
+    private bool isDashing;
+    private float dashSpeed;
 
     private Vector3[] angles = new Vector3[8];
     private Quaternion targetRotation;
@@ -35,6 +38,9 @@ public class CharacterCaptureController : MonoBehaviour
     {
         // speed must be between 0-1
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotateSpeed);
+        dashStartTime = 0;
+        isDashing = false;
+        dashSpeed = dashDistance / dashDuration;
     }
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
@@ -53,7 +59,7 @@ public class CharacterCaptureController : MonoBehaviour
     public void MoveInDirection(Vector2 directionVector) 
     {
         // test with arrow keys
-        if (directionVector == Vector2.zero)
+        if (directionVector == Vector2.zero || isDashing)
         {
             // do nothing
             return;
@@ -105,12 +111,25 @@ public class CharacterCaptureController : MonoBehaviour
 
     public void DashForwards()
     {
+        if (isDashing)
+        {
+            return;
+        }
         StartCoroutine(Dash());
     }
 
     IEnumerator Dash()
     {
-        characterController.Move(transform.forward * dashDistance);
-        yield return new WaitForSeconds(dashDuration);
+        isDashing = true;
+        Vector3 startPosition = transform.position;
+        dashStartTime = 0;
+        while (dashStartTime <= dashDuration && Vector3.Distance(startPosition, transform.position) <= dashDistance)
+        {
+            characterController.Move(transform.forward * dashSpeed * Time.deltaTime);
+            dashStartTime += Time.deltaTime;
+            // Debug.Log(dashStartTime + "-" + Vector3.Distance(startPosition, transform.position)); // test moving set distance over set amt of time
+            yield return null;
+        }
+        isDashing = false;
     }
 }
