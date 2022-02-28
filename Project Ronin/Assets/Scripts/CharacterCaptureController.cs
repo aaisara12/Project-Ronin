@@ -11,8 +11,6 @@ public class CharacterCaptureController : MonoBehaviour
     [SerializeField] private float dashDuration;
     private Rigidbody rb;
 
-    [SerializeField] private AttributeSet attributeSet;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +19,6 @@ public class CharacterCaptureController : MonoBehaviour
         forward.y = 0;
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
-        attributeSet = AttributeSet.objectToAttributes[gameObject];
     }
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
@@ -72,16 +69,4 @@ public class CharacterCaptureController : MonoBehaviour
         StartCoroutine(Dash());
     }
 
-
-    public void toggleParryOn()
-    {
-        attributeSet.AddTag("isParrying");
-        Debug.Log(attributeSet.CheckTag("isParrying"));
-    }
-
-    public void toggleParryOff()
-    {
-        attributeSet.RemoveTag("isParrying");
-        Debug.Log(attributeSet.CheckTag("isParrying"));
-    }
 }

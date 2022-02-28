@@ -233,7 +233,6 @@ MonoBehaviour:
   movementSpeed: 4
   dashForce: 0
   dashDuration: 0
-  attributeSet: {fileID: 0}
 --- !u!136 &204386289
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -280,6 +279,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   initializer: {fileID: 0}
+--- !u!114 &204386293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204386286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308a0eb4b515d904a880f3f0db7b30cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &858727105
 GameObject:
   m_ObjectHideFlags: 0
