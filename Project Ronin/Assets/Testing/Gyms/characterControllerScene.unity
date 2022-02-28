@@ -448,8 +448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
-  dashDistance: 2
-  dashDuration: 0.2
+  dashDistance: 3
+  dashDuration: 0.5
 --- !u!143 &1380413277
 CharacterController:
   m_ObjectHideFlags: 0
