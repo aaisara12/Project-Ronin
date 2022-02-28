@@ -113,7 +113,7 @@ public class AttributeSet : MonoBehaviour
         {
             if (duration > 0)
             {
-                StartCoroutine(RemoveTimer(newTag, Time.time + duration));
+                StartCoroutine(RemoveTimer(newTag, duration));
             }
 
             attributeTags.Add(newTag);
@@ -143,10 +143,4 @@ public class AttributeSet : MonoBehaviour
 
         RemoveTag(oldTag);
     }
-
-
-    // onAttributeChange modifiers
-    // Necessary for dynamically assigned attribute UI that can't be assigned in editor
-    public void RegisterOnAttributeChange(UnityAction handler) => onAttributeChange.AddListener(handler);
-    public void DeregisterOnAttributeChange(UnityAction handler) => onAttributeChange.RemoveListener(handler);
 }
