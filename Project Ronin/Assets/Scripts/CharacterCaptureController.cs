@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class CharacterCaptureController : MonoBehaviour
 {
-    public float movementSpeed = 4f;
+    [SerializeField] private float movementSpeed = 4f;
     Vector3 movementDirection;
 
     [SerializeField] private float dashDistance;
     [SerializeField] private float dashDuration;
 
-    public Vector3[] angles = new Vector3[8];
-    Quaternion targetRotation;
+    private Vector3[] angles = new Vector3[8];
+    private Quaternion targetRotation;
+    [SerializeField] private float rotateSpeed;
 
     CharacterController characterController;
 
@@ -32,7 +33,8 @@ public class CharacterCaptureController : MonoBehaviour
 
     void Update()
     {
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.1f);
+        // speed must be between 0-1
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotateSpeed);
     }
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
