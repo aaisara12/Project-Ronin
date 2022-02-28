@@ -5,12 +5,13 @@ using UnityEngine;
 public class CharacterCaptureController : MonoBehaviour
 {
     public float movementSpeed = 4f;
-    Vector3 forward;
-    Vector3 right;
+    Vector3 movementDirection;
+
     [SerializeField] private float dashDistance;
     [SerializeField] private float dashDuration;
-    private Vector3 angleRight;
-    private Vector3 angleLeft;
+
+    public Vector3[] angles = new Vector3[8];
+    Quaternion targetRotation;
 
     CharacterController characterController;
 
@@ -18,12 +19,20 @@ public class CharacterCaptureController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        forward = Camera.main.transform.forward;
-        forward.y = 0;
-        forward = Vector3.Normalize(forward);
-        right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
-        angleRight = Quaternion.Euler(0, -45, 0) * transform.forward;
-        angleLeft = Quaternion.Euler(0, 135, 0) * transform.forward;
+        // D, U, R, L, DR, DL, UR, UL
+        angles[0] = Quaternion.Euler(0, 45, 0) * transform.forward;
+        angles[1] = Quaternion.Euler(0, 225, 0) * transform.forward;
+        angles[2] = Quaternion.Euler(0, 135, 0) * transform.forward;
+        angles[3] = Quaternion.Euler(0, -45, 0) * transform.forward;
+        angles[4] = Quaternion.Euler(0, 0, 0) * transform.forward;
+        angles[5] = Quaternion.Euler(0, 90, 0) * transform.forward;
+        angles[6] = Quaternion.Euler(0, 270, 0) * transform.forward;
+        angles[7] = Quaternion.Euler(0, 180, 0) * transform.forward;
+    }
+
+    void Update()
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.1f);
     }
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
@@ -47,24 +56,49 @@ public class CharacterCaptureController : MonoBehaviour
             // do nothing
             return;
         }
-        directionVector = directionVector.normalized;
-        Vector3 rightMovement = right * movementSpeed * Time.deltaTime * directionVector.x;
-        Vector3 upMovement = forward * movementSpeed * Time.deltaTime * directionVector.y;
-        rightMovement = Vector3.ClampMagnitude(rightMovement, 1);
-        upMovement = Vector3.ClampMagnitude(upMovement, 1);
 
-        Vector3 heading = Vector3.Normalize(rightMovement + upMovement);
+        if (directionVector.x == 0 && directionVector.y < 0)
+        {
+            targetRotation = Quaternion.LookRotation(angles[0]);
+            movementDirection = angles[0];
+        }
+        else if (directionVector.x == 0 && directionVector.y > 0)
+        {
+            targetRotation = Quaternion.LookRotation(angles[1]);
+            movementDirection = angles[1];
+        }
+        else if (directionVector.x < 0 && directionVector.y == 0)
+        {
+            targetRotation = Quaternion.LookRotation(angles[2]);
+            movementDirection = angles[2];
+        }
+        else if (directionVector.x > 0 && directionVector.y == 0)
+        {
+            targetRotation = Quaternion.LookRotation(angles[3]);
+            movementDirection = angles[3];
+        }
+        else if (directionVector.x > 0 && directionVector.y < 0)
+        {
+            targetRotation = Quaternion.LookRotation(angles[4]);
+            movementDirection = angles[4];
+        }
+        else if (directionVector.x < 0 && directionVector.y < 0)
+        {
+            targetRotation = Quaternion.LookRotation(angles[5]);
+            movementDirection = angles[5];
+        }
+        else if (directionVector.x > 0 && directionVector.y > 0)
+        {
+            targetRotation = Quaternion.LookRotation(angles[6]);
+            movementDirection = angles[6];
+        }
+        else if (directionVector.x < 0 && directionVector.y > 0)
+        {
+            targetRotation = Quaternion.LookRotation(angles[7]);
+            movementDirection = angles[7];
+        }
 
-        if (directionVector.x > 0)
-        {
-            transform.forward = Vector3.Lerp(transform.forward, angleRight, 0.1f);
-            characterController.Move(angleRight * movementSpeed * Time.deltaTime);
-        }
-        else if (directionVector.x < 0)
-        {
-            transform.forward = Vector3.Lerp(transform.forward, angleLeft, 0.1f);
-            characterController.Move(angleLeft * movementSpeed * Time.deltaTime);
-        }
+        characterController.Move(movementDirection * movementSpeed * Time.deltaTime);
     }
 
     public void DashForwards()
