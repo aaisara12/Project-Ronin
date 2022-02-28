@@ -15,12 +15,12 @@ public class ParryReader : MonoBehaviour
     public void toggleParryOn()
     {
         attributeSet.AddTag("isParrying");
-        Debug.Log(attributeSet.CheckTag("isParrying"));
+        //Debug.Log(attributeSet.CheckTag("isParrying"));
     }
 
     public void toggleParryOff()
     {
         attributeSet.RemoveTag("isParrying");
-        Debug.Log(attributeSet.CheckTag("isParrying"));
+        //Debug.Log(attributeSet.CheckTag("isParrying"));
     }
 }
