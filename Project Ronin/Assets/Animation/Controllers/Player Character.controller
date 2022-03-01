@@ -196,7 +196,7 @@ AnimatorStateMachine:
     m_Position: {x: -950, y: 420, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5455944005858922463}
-    m_Position: {x: -410, y: 480, z: 0}
+    m_Position: {x: -420, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -681178551749866100}
     m_Position: {x: -410, y: 560, z: 0}
@@ -215,6 +215,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -9038638360739132477}
     m_Position: {x: 480, y: 540, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 6853337573950197787}
+    m_Position: {x: 515, y: 605, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 1878545908838401398}
@@ -1066,6 +1069,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a872d9f5308a08140837afc67090699a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1102 &6853337573950197787
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Parry 0
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 6bf36c06def1aa649a48996487351bef, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &7412670130046743043
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
