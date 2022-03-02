@@ -1,52 +1,83 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A POD class that carries pending changes from user to target.
+/// 
+/// Let's abuse reflection one more time!
+/// </summary>
 public class Effector
 {
-    Dictionary<string, float> floatModifications = new Dictionary<string, float>();
-    Dictionary<string, float> floatOverrides = new Dictionary<string, float>();
-    Dictionary<string, bool> tagChanges = new Dictionary<string, bool>();
+    public AttributeSet user = null;
+    public List<AttributeSet> targets = null;
 
-    public void Apply(AttributeSet target)
+    public Dictionary<string, float> floatModifications = new Dictionary<string, float>();
+    public Dictionary<string, float> floatOverrides = new Dictionary<string, float>();
+    public Dictionary<string, bool> tagChanges = new Dictionary<string, bool>();
+
+    /// <summary>
+    /// Signiture of systems (usually their type names, mechanisms can override this default behavior).
+    /// </summary>
+    public HashSet<string> signitures = new HashSet<string>();
+
+    /// <summary>
+    /// Submit this effector to mechenism queue.
+    /// </summary>
+    public void Submit()
     {
-        foreach (var mod in floatModifications)
-        {
-            target.QuietModifyFloat(mod.Key, mod.Value);
-        }
+        MechanismIterateContext context = new MechanismIterateContext();
 
-        foreach (var mod in floatOverrides)
+        foreach (var mechanism in CombatMechanismBase.mechanismQueue)
         {
-            target.QuietSetFloat(mod.Key, mod.Value);
-        }
-
-        foreach (var mod in tagChanges)
-        {
-            if (mod.Value)
+            if (!context.shouldContinue)
             {
-                target.QuietAddTag(mod.Key);
+                break;
             }
-            else
+
+            if (mechanism.Filter(this))
             {
-                target.QuietRemoveTag(mod.Key);
+                mechanism.Process(ref context, this);
             }
         }
 
-        target.SignalChange();
+        if (context.shouldApply)
+        {
+            Apply();
+        }
     }
 
-    public void AddFloatOverride(string name, float overrider)
+    /// <summary>
+    /// In case you want to extend the system without changing the core, this method allows u to apply special logic by override.
+    /// </summary>
+    protected void Apply()
     {
-        floatOverrides[name] = overrider;
-    }
+        foreach (AttributeSet target in targets)
+        {
+            foreach (var mod in floatModifications)
+            {
+                target.QuietModifyFloat(mod.Key, mod.Value);
+            }
 
-    public void AddTagChange(string tag, bool isAdding)
-    {
-        tagChanges[tag] = isAdding;
-    }
+            foreach (var mod in floatOverrides)
+            {
+                target.QuietSetFloat(mod.Key, mod.Value);
+            }
 
-    public void AddFloatModification(string name, float delta)
-    {
-        floatModifications[name] = delta;
+            foreach (var mod in tagChanges)
+            {
+                if (mod.Value)
+                {
+                    target.QuietAddTag(mod.Key);
+                }
+                else
+                {
+                    target.QuietRemoveTag(mod.Key);
+                }
+            }
+
+            target.SignalChange();
+        }
     }
 }

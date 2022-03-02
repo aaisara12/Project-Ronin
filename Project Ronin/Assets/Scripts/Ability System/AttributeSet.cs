@@ -15,6 +15,9 @@ public class AttributeSet : MonoBehaviour
     /// </summary>
     static public HashSet<AttributeSet> activeAttributes { get; protected set; } = new HashSet<AttributeSet>();
 
+    /// <summary>
+    /// Attributes will register themselves here.
+    /// </summary>
     static public Dictionary<GameObject, AttributeSet> objectToAttributes { get; protected set; } = new Dictionary<GameObject, AttributeSet>();
 
     /// <summary>
