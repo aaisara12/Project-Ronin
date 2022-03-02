@@ -103,7 +103,13 @@ public class AttributeSet : MonoBehaviour
         return attributeTags.Contains(tagName);
     }
 
-    public void AddTag(string newTag, float duration = -1)
+    public void AddTag(string newTag)
+    {
+        attributeTags.Add(newTag);
+        onAttributeChange.Invoke();
+    }
+
+    public void AddTag(string newTag, float duration)
     {
         if (attributeTags.Contains(newTag))
         {
