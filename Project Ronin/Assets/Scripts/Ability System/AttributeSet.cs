@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -72,6 +73,7 @@ public class AttributeSet : MonoBehaviour
         return floatAttributes[name];
     }
 
+    [Obsolete("Use effectors instead!")]
     public void ModifyFloat(string name, float delta)
     {
         if (!floatAttributes.ContainsKey(name))
@@ -84,6 +86,7 @@ public class AttributeSet : MonoBehaviour
         onAttributeChange.Invoke();
     }
 
+    [Obsolete("Use effectors instead!")]
     public void SetFloat(string name, float newValue)
     {
         if (!floatAttributes.ContainsKey(name))
@@ -103,12 +106,14 @@ public class AttributeSet : MonoBehaviour
         return attributeTags.Contains(tagName);
     }
 
+    [Obsolete("Use effectors instead!")]
     public void AddTag(string newTag)
     {
         attributeTags.Add(newTag);
         onAttributeChange.Invoke();
     }
 
+    [Obsolete("Use effectors instead!")]
     public void AddTag(string newTag, float duration)
     {
         if (attributeTags.Contains(newTag))
@@ -127,6 +132,7 @@ public class AttributeSet : MonoBehaviour
         onAttributeChange.Invoke();
     }
 
+    [Obsolete("Use effectors instead!")]
     public void RemoveTag(string oldTag)
     {
         if (!attributeTags.Contains(oldTag))
@@ -155,4 +161,51 @@ public class AttributeSet : MonoBehaviour
     // Necessary for dynamically assigned attribute UI that can't be assigned in editor
     public void RegisterOnAttributeChange(UnityAction handler) => onAttributeChange.AddListener(handler);
     public void DeregisterOnAttributeChange(UnityAction handler) => onAttributeChange.RemoveListener(handler);
+
+    public void QuietModifyFloat(string name, float delta)
+    {
+        if (!floatAttributes.ContainsKey(name))
+        {
+            Debug.Log(gameObject);
+            throw new System.Exception("Modifying unknown attribute \"" + name + "\"");
+        }
+
+        floatAttributes[name] += delta;
+        onAttributeChange.Invoke();
+    }
+
+    public void QuietSetFloat(string name, float newValue)
+    {
+        if (!floatAttributes.ContainsKey(name))
+        {
+            Debug.Log("Warning: setting unknown attribute:");
+            Debug.Log(gameObject);
+            Debug.Log(name);
+            Debug.Log("-----------------------------------");
+        }
+
+        floatAttributes[name] = newValue;
+    }
+
+    public void QuietAddTag(string newTag)
+    {
+        attributeTags.Add(newTag);
+    }
+
+    public void QuietRemoveTag(string oldTag)
+    {
+        if (!attributeTags.Contains(oldTag))
+        {
+            Debug.Log("Warning: remove unknown tag: " + oldTag);
+        }
+        else
+        {
+            attributeTags.Remove(oldTag);
+        }
+    }
+
+    public void SignalChange()
+    {
+        onAttributeChange.Invoke();
+    }
 }

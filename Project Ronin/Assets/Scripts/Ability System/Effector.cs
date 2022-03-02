@@ -12,25 +12,27 @@ public class Effector
     {
         foreach (var mod in floatModifications)
         {
-            target.ModifyFloat(mod.Key, mod.Value);
+            target.QuietModifyFloat(mod.Key, mod.Value);
         }
 
         foreach (var mod in floatOverrides)
         {
-            target.ModifyFloat(mod.Key, mod.Value);
+            target.QuietSetFloat(mod.Key, mod.Value);
         }
 
         foreach (var mod in tagChanges)
         {
             if (mod.Value)
             {
-                target.AddTag(mod.Key);
+                target.QuietAddTag(mod.Key);
             }
             else
             {
-                target.RemoveTag(mod.Key);
+                target.QuietRemoveTag(mod.Key);
             }
         }
+
+        target.SignalChange();
     }
 
     public void AddFloatOverride(string name, float overrider)
