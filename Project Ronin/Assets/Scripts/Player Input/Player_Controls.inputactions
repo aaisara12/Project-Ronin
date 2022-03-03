@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
-                    "type": "Button",
-                    "id": "18a254a0-7ebe-4682-9ca8-a22c64bb540e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "1d2a33a7-e4a6-4417-864f-7cc290e06d6f",
@@ -337,17 +328,6 @@
                 },
                 {
                     "name": "",
-                    "id": "6093f9ff-1e99-45f2-a89c-e9e973139cf9",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "a011a152-66b6-48f8-8ce6-9c777ce960b1",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -426,7 +406,7 @@
                 {
                     "name": "",
                     "id": "95fce664-5fb8-46e6-acfe-5e6dcf54362f",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

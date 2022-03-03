@@ -42,7 +42,7 @@ public class PlayerAnimatorProxy : AnimatorProxy
 
         foreach (string name in movementFloats)
         {
-            if (animator.GetFloat(name) > 0)
+            if (Mathf.Abs(animator.GetFloat(name)) > 0)
             {
                 isMoving = true;
                 break;
