@@ -10,10 +10,9 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField]
     float attackRange = 0f;
+
     [SerializeField]
-    AttributeSet self = null;
-    [SerializeField]
-    CharacterCaptureController controller = null;
+    Animator animator = null;
 
     GameObject playerObj = null;
 
@@ -21,8 +20,7 @@ public class EnemyAI : MonoBehaviour
     {
         // grab the player
         playerObj = GameObject.FindWithTag("Player");
-        if (!self) self = gameObject.GetComponent<AttributeSet>();
-        if (!controller) controller = gameObject.GetComponent<CharacterCaptureController>();
+        if (!animator) animator = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -38,10 +36,9 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            Vector3 movement = playerPos - transform.position;
-            movement.y = 0;
-            movement = movement.normalized * self.GetFloat("speed");
-            controller.MoveInDirection(movement);
+            Vector3 movement = (playerPos - transform.position).normalized;
+            animator.SetFloat("xInput", movement.x);
+            animator.SetFloat("yInput", movement.y);
         }
     }
 }
