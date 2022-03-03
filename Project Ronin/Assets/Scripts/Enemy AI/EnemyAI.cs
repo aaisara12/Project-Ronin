@@ -33,12 +33,16 @@ public class EnemyAI : MonoBehaviour
         {
             // TODO: use ability
             Debug.Log("enemy attack");
+
+            animator.SetFloat("xInput", 0);
+            animator.SetFloat("yInput", 0);
         }
         else
         {
-            Vector3 movement = (playerPos - transform.position).normalized;
+            Vector3 movement = - playerPos + transform.position;
+            Debug.Log(movement);
             animator.SetFloat("xInput", movement.x);
-            animator.SetFloat("yInput", movement.y);
+            animator.SetFloat("yInput", movement.z);
         }
     }
 }
