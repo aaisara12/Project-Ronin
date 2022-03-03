@@ -5362,8 +5362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
-  dashDistance: 3
-  dashDuration: 0.2
+  dashDistance: 7
+  dashDuration: 0.4
   rotateSpeed: 0.5
 --- !u!95 &2069273684
 Animator:
@@ -5374,14 +5374,21 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069273674}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1fe88a78d34ca7f429b4aebee4fc60a3, type: 3}
-  m_Controller: {fileID: 9100000, guid: 2447098185a7f344b89759f848fced72, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 3e3f5f10648dd984ea0c48ee6dd5170e, type: 3}
+  m_Controller: {fileID: 9100000, guid: 127e4f523ee4dc44b990e051ce50e414, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+    'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+    'mixamorig:LeftHandPinky2'\n\tTransform 'mixamorig:RightHandRing2'\n\tTransform
+    'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:LeftHandThumb3'\n\tTransform
+    'mixamorig:RightArm'\n\tand more ...\n\tFrom animation clip 'Stun'\n\tFrom animation
+    clip 'Aim'\n\tFrom animation clip 'Shoot'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
