@@ -284,17 +284,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c0c3e444b39200b4ebfd06dcc0670d17,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6067
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0c3e444b39200b4ebfd06dcc0670d17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0c3e444b39200b4ebfd06dcc0670d17,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3244
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0c3e444b39200b4ebfd06dcc0670d17,
         type: 3}
@@ -1764,7 +1764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492471816}
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -189.81467, y: -1268.815, z: 244.37836}
+  m_LocalPosition: {x: -188.20796, y: -1268.9349, z: 245.70276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1946,7 +1946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 584561569}
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -189.81467, y: -1268.815, z: 244.37836}
+  m_LocalPosition: {x: -188.20796, y: -1268.9349, z: 245.70276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2866,7 +2866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - soundName: swish-light
-    volume: 1
+    volume: 0.2
     pitch: 1
     clip: {fileID: 8300000, guid: 744f2085e3671eb488c5b006a2e24370, type: 3}
   - soundName: swish-heavy
@@ -2874,7 +2874,7 @@ MonoBehaviour:
     pitch: 1
     clip: {fileID: 8300000, guid: c2fa68f43b78f7046b41d27b70565130, type: 3}
   - soundName: bloody-impact
-    volume: 1
+    volume: 0.1
     pitch: 1
     clip: {fileID: 8300000, guid: 14587265d58da8f41bc6f790de2c7817, type: 3}
 --- !u!1 &1031057325
@@ -4456,7 +4456,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fc8382ac916970d4ebcc0442eb05f693, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5304,19 +5304,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46541722b88ce0043bed40afaa9801c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 2069273684}
---- !u!114 &2069273679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069273674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b43e56cf7e5dd42948f163a3291d32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2069273684}
