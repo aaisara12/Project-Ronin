@@ -766,7 +766,7 @@ PrefabInstance:
     - target: {fileID: 4419426544662564545, guid: fa71e2a85ededf745a4327832309f64a,
         type: 3}
       propertyPath: m_Name
-      value: Ronin Clean
+      value: Ronin
       objectReference: {fileID: 0}
     - target: {fileID: 6989315587336228353, guid: fa71e2a85ededf745a4327832309f64a,
         type: 3}
