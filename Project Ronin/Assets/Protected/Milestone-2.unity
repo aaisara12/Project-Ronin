@@ -3844,8 +3844,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383348930}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 3e3f5f10648dd984ea0c48ee6dd5170e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 127e4f523ee4dc44b990e051ce50e414, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 3aa4546ce42906f42914c8cdb6e4e244, type: 3}
+  m_Controller: {fileID: 9100000, guid: c68e4a3113a96ac46a74e8a728ed09d5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3854,10 +3854,10 @@ Animator:
   m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
     are already bound by a Humanoid avatar. These transforms can only be changed
     by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
-    'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:RightArm'\n\tTransform
-    'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform 'mixamorig:RightHandRing1'\n\tTransform
-    'mixamorig:RightHandIndex3'\n\tTransform 'mixamorig:RightFoot'\n\tand more ...\n\tFrom
-    animation clip 'Aim'\n\tFrom animation clip 'Shoot'"
+    'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:RightArm'\n\tTransform
+    'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform 'mixamorig:RightFoot'\n\tTransform
+    'mixamorig:Head'\n\tTransform 'mixamorig:LeftUpLeg'\n\tand more ...\n\tFrom animation
+    clip 'Parry'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -5763,5 +5763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ronin
       objectReference: {fileID: 0}
+    - target: {fileID: 6989315587336228353, guid: 0ffe10ea7585b154ab4260a0f177fb7b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c68e4a3113a96ac46a74e8a728ed09d5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ffe10ea7585b154ab4260a0f177fb7b, type: 3}
