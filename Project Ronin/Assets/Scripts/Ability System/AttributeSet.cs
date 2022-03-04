@@ -36,6 +36,11 @@ public class AttributeSet : MonoBehaviour
     /// </summary>
     protected HashSet<string> attributeTags = new HashSet<string>();
 
+    /// <summary>
+    /// Used to manage auto-remove coroutines.
+    /// </summary>
+    private Dictionary<string, Coroutine> timerActivityMap = new Dictionary<string, Coroutine>();
+
     private void Awake()
     {
         activeAttributes.Add(this);
@@ -103,21 +108,31 @@ public class AttributeSet : MonoBehaviour
         return attributeTags.Contains(tagName);
     }
 
+    /// <summary>
+    /// Add a new tag to attribute set. Pass in duration greater than 0 so 
+    /// </summary>
+    /// <param name="newTag"></param>
+    /// <param name="duration"></param>
     public void AddTag(string newTag, float duration = -1)
     {
         if (attributeTags.Contains(newTag))
         {
             Debug.Log("Warning: adding duplicate tag: " + newTag);
-        }
-        else
-        {
-            if (duration > 0)
-            {
-                StartCoroutine(RemoveTimer(newTag, Time.time + duration));
-            }
 
-            attributeTags.Add(newTag);
+            if (timerActivityMap.ContainsKey(newTag))
+            {
+                StopCoroutine(timerActivityMap[newTag]);
+                timerActivityMap.Remove(newTag);
+            }
         }
+
+        if (duration > 0)
+        {
+            timerActivityMap.Add(newTag, StartCoroutine(RemoveTimer(newTag, duration)));
+        }
+
+        attributeTags.Add(newTag);
+        
         onAttributeChange.Invoke();
     }
 
@@ -134,8 +149,10 @@ public class AttributeSet : MonoBehaviour
         onAttributeChange.Invoke();
     }
 
-    private IEnumerator RemoveTimer(string oldTag, float deadline)
+    private IEnumerator RemoveTimer(string oldTag, float duration)
     {
+        float deadline = Time.time + duration;
+
         while (Time.time < deadline)
         {
             yield return null;
