@@ -31,8 +31,7 @@ public class EnemyAI : MonoBehaviour
         
         if (distance < attackRange)
         {
-            // TODO: use ability
-            Debug.Log("enemy attack");
+            animator.SetTrigger("attack");
 
             animator.SetFloat("xInput", 0);
             animator.SetFloat("yInput", 0);
