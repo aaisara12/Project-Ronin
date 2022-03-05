@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatInitials:
   - name: hp
-    value: 50
+    value: 200
   tagInitials: []
