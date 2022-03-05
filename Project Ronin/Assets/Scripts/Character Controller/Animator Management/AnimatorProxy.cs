@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
+[Obsolete("Use animator parameters directly!")]
 public class AnimatorProxy : MonoBehaviour
 {
     [SerializeField]
