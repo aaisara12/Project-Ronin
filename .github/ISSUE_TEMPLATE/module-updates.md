@@ -8,13 +8,14 @@ assignees: ''
 ---
 
 ### Description
-Player needs to be able to be moved without changing direction to implement things like backoff.
+Implement new function and remove depricated function
 
 ### Public Interface
 _From module_ `ModuleName`
 
 ```
 ADD: void Foo(Type param1, Type param2)
+DEL: void Bar(Type param1, Type param2, Type param3)
 ```
 
 ### Tests
