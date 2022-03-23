@@ -10,7 +10,7 @@ assignees: ''
 ### Description
 Implement new function and remove depricated function
 
-### Public Interface
+### Modification Details
 _From module_ `ModuleName`
 
 ```
