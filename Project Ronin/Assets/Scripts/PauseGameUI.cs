@@ -7,12 +7,13 @@ public class PauseGameUI : MonoBehaviour
 {
     [SerializeField] private GameObject frame;
     public void TogglePauseMenu()
-    {
+    {   
         GameManager.Instance.TogglePause();
         if (frame.activeSelf)
             frame.SetActive(false);
         else
             frame.SetActive(true);
+            AudioManager.instance?.PlaySound("menu-open");
     }
 
     public void QuitGame()

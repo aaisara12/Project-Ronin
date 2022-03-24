@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Obsolete("Use animator parameters directly!")]
 public class PlayerAnimatorProxy : AnimatorProxy
 {
     // set the parameters here
