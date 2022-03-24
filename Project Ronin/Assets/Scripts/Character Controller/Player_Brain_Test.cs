@@ -9,7 +9,7 @@ public class Player_Brain_Test : MonoBehaviour
     // [SerializeField] Interactor interactor;
     private Rigidbody rb;
     private Player_Controls playerControls;
-    public PlayerAnimatorProxy animator;
+    public Animator animator;
     private void Awake(){
         rb = GetComponent<Rigidbody>();
         captureController = GetComponent<CharacterCaptureController>();

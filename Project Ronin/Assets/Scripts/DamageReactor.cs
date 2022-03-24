@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class DamageReactor : MonoBehaviour
 {
     AttributeSet attributeSet;
-    PlayerAnimatorProxy animator;
+    Animator animator;
     UnityAction handleHealthChange;
     float previousHealth;
 
@@ -14,7 +14,7 @@ public class DamageReactor : MonoBehaviour
 
     void Awake()
     {
-        animator = GetComponent<PlayerAnimatorProxy>();
+        animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update

@@ -506,7 +506,6 @@ GameObject:
   - component: {fileID: 1680685759440954285}
   - component: {fileID: 1680685759440954284}
   - component: {fileID: 1680685759440954278}
-  - component: {fileID: 1680685759440954277}
   - component: {fileID: 1680685759440954276}
   m_Layer: 0
   m_Name: Enemy
@@ -693,19 +692,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthUI: {fileID: 4951825344021320388}
   targetAttributeSet: {fileID: 1680685759440954287}
---- !u!114 &1680685759440954277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987098001485033941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46541722b88ce0043bed40afaa9801c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1680685759440954275}
 --- !u!114 &1680685759440954276
 MonoBehaviour:
   m_ObjectHideFlags: 0
