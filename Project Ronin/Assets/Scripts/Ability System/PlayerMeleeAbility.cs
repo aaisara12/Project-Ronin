@@ -29,7 +29,7 @@ public class PlayerMeleeAbility : Ability
         {
             //Debug.LogFormat("Hit {0}", other.name);
             attSet.ModifyFloat("hp", -damage);
-            attSet.AddTag("backoff", 1);
+            attSet.AddTag("backoff");
             enemiesHit.Add(attSet);
         }
         

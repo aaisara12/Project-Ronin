@@ -39,7 +39,6 @@ public class EnemyAI : MonoBehaviour
         else
         {
             Vector3 movement = - playerPos + transform.position;
-            Debug.Log(movement);
             animator.SetFloat("xInput", movement.x);
             animator.SetFloat("yInput", movement.z);
         }
