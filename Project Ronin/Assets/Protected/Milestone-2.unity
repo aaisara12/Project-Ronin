@@ -376,7 +376,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh70568
+  m_Name: pb_Mesh87540
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -767,6 +767,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: c68e4a3113a96ac46a74e8a728ed09d5, type: 2}
     m_RemovedComponents:
     - {fileID: 3572934327578028550, guid: fa71e2a85ededf745a4327832309f64a, type: 3}
+    - {fileID: 3572934327578028544, guid: fa71e2a85ededf745a4327832309f64a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa71e2a85ededf745a4327832309f64a, type: 3}
 --- !u!4 &333513913 stripped
 Transform:

@@ -6,9 +6,10 @@ using UnityEngine.InputSystem;
 public class PlayerBrain : MonoBehaviour
 {
     private CharacterCaptureController captureController;
-    [SerializeField] Interactor interactor;
+    // [SerializeField] Interactor interactor;
     private Rigidbody rb;
     private Player_Controls playerControls;
+    public Animator animator;
     private void Awake(){
         rb = GetComponent<Rigidbody>();
         captureController = GetComponent<CharacterCaptureController>();
@@ -17,41 +18,61 @@ public class PlayerBrain : MonoBehaviour
 
     private void OnEnable(){
         playerControls.Enable();
+
+        playerControls.Player.Aim.performed += Aim;
+        playerControls.Player.Aim.canceled += cancelAim;
+        playerControls.Player.Move.performed += movePlayer;
+        playerControls.Player.Move.canceled += stopPlayer;
     }
 
     private void OnDisable(){
         playerControls.Disable();
+
+        playerControls.Player.Aim.performed -= Aim;
+        playerControls.Player.Aim.canceled -= cancelAim;
+        playerControls.Player.Move.performed -= movePlayer;
+        playerControls.Player.Move.canceled -= stopPlayer;
     }
-    
-    // private void OnMove(InputValue movementVal){
 
-    //     Vector2 inputVector = movementVal.Get<Vector2>();
-    //     Vector3 movementVector = new Vector3(inputVector.x, 0, inputVector.y);
-    //     captureController?.MoveInDirection(movementVector);
-    //     // Debug.Log("Movement Vector:" + movementVector);
-    // }
+    private void Aim(InputAction.CallbackContext context){
+        animator.SetBool("aim", true);
+    }
 
-    private void OnDash(){
-        Vector3 dashDirection = new Vector3(transform.forward.x, 0, transform.forward.z);
-        //captureController?.DashInDirection(dashDirection);
-        Debug.Log(dashDirection);
+    private void cancelAim(InputAction.CallbackContext context){
+        animator.SetBool("aim", false);
     }
 
     private void OnPause(){
         // Enter pause menu
     }
 
-    private void OnInteract(){
-        interactor.InteractWithNearestInRange();
+    private void OnAttack(){
+        animator.SetTrigger("attack");
     }
-    
 
-    private void movePlayer(){
-        Vector2 move = playerControls.Player.Move.ReadValue<Vector2>();
-        Vector3 movementVector = new Vector3(move.x, 0, move.y);
-        captureController?.MoveInDirection(movementVector);
+    private void OnParry(){
+        animator.SetTrigger("parry");
     }
-    private void Update(){
-        movePlayer();
+
+    private void OnCharge(){
+        animator.SetTrigger("charge");
+    }
+
+    private void OnShock(){
+        animator.SetTrigger("shock");
+    }
+
+    private void OnDodge(){
+        animator.SetTrigger("dodge");
+    }
+
+    private void movePlayer(InputAction.CallbackContext context){
+        Vector2 move = context.ReadValue<Vector2>();
+        animator.SetFloat("xInput", move.x);
+        animator.SetFloat("yInput", move.y);
+    }
+    private void stopPlayer(InputAction.CallbackContext context){
+        animator.SetFloat("xInput", 0);
+        animator.SetFloat("yInput", 0);
     }
 }
