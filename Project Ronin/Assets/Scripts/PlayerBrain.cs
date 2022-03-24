@@ -33,7 +33,7 @@ public class PlayerBrain : MonoBehaviour
 
     private void OnDash(){
         Vector3 dashDirection = new Vector3(transform.forward.x, 0, transform.forward.z);
-        captureController?.DashInDirection(dashDirection);
+        //captureController?.DashInDirection(dashDirection);
         Debug.Log(dashDirection);
     }
 
