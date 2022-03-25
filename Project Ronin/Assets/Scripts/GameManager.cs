@@ -35,17 +35,20 @@ public class GameManager : MonoBehaviour
     // that will be transitioned to in a future sprint
     public void SetPauseState(bool shouldPause)
     {
-        if(!isPaused && shouldPause)
-        {
-            isPaused = true;
-            OnPauseGame?.Invoke();
-            OnNewPauseState?.Invoke(isPaused);
-        }
-        else if(isPaused && !shouldPause)
-        {
-            isPaused = false;
-            OnNewPauseState?.Invoke(isPaused);
-        }
+        // if(!isPaused && shouldPause)
+        // {
+        //     isPaused = true;
+        //     OnPauseGame?.Invoke();
+        //     OnNewPauseState?.Invoke(isPaused);
+        // }
+        // else if(isPaused && !shouldPause)
+        // {
+        //     isPaused = false;
+        //     OnNewPauseState?.Invoke(isPaused);
+        // }
+
+        Time.timeScale = shouldPause? 0 : 1;
+        isPaused = shouldPause;
     }
 
     // Potentially useful function if the pause state is not known and thus cannot call SetPauseState properly
