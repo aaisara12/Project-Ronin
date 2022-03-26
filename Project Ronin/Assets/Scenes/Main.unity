@@ -690,11 +690,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3572934327578028544, guid: fa71e2a85ededf745a4327832309f64a,
-        type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 805363910}
     - target: {fileID: 3899877216065623163, guid: fa71e2a85ededf745a4327832309f64a,
         type: 3}
       propertyPath: m_RootOrder
@@ -755,19 +750,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ronin
       objectReference: {fileID: 0}
-    - target: {fileID: 4419426544662564545, guid: fa71e2a85ededf745a4327832309f64a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6989315587336228353, guid: fa71e2a85ededf745a4327832309f64a,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c68e4a3113a96ac46a74e8a728ed09d5, type: 2}
-    m_RemovedComponents:
-    - {fileID: 3572934327578028550, guid: fa71e2a85ededf745a4327832309f64a, type: 3}
-    - {fileID: 3572934327578028544, guid: fa71e2a85ededf745a4327832309f64a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa71e2a85ededf745a4327832309f64a, type: 3}
 --- !u!4 &333513913 stripped
 Transform:
@@ -1880,12 +1863,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &805363910 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6989315587336228353, guid: fa71e2a85ededf745a4327832309f64a,
-    type: 3}
-  m_PrefabInstance: {fileID: 333513912}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &813829697
 GameObject:
   m_ObjectHideFlags: 0

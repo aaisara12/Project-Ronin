@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,29 @@ public class PlayerBrain : MonoBehaviour
     private Rigidbody rb;
     private Player_Controls playerControls;
     public Animator animator;
+
+
+
     private void Awake(){
         rb = GetComponent<Rigidbody>();
         captureController = GetComponent<CharacterCaptureController>();
         playerControls = new Player_Controls();
+    }
+
+    void Start()
+    {
+        // In start since GameManager instance created in Awake at some arbitrary point in time
+        GameManager.Instance.OnNewPauseState += HandleNewPauseState;
+    }
+
+
+    // Prevent the player from doing any actions while the game is paused
+    private void HandleNewPauseState(PauseState pauseState)
+    {
+        if(pauseState == PauseState.PAUSED)
+            playerControls.Disable();
+        else
+            playerControls.Enable();
     }
 
     private void OnEnable(){
@@ -23,6 +43,12 @@ public class PlayerBrain : MonoBehaviour
         playerControls.Player.Aim.canceled += cancelAim;
         playerControls.Player.Move.performed += movePlayer;
         playerControls.Player.Move.canceled += stopPlayer;
+
+        playerControls.Player.Attack.performed += OnAttack;
+        playerControls.Player.Parry.performed += OnParry;
+        playerControls.Player.Shock.performed += OnShock;
+        playerControls.Player.Dodge.performed += OnDodge;
+        playerControls.Player.Charge.performed += OnCharge;
     }
 
     private void OnDisable(){
@@ -32,6 +58,14 @@ public class PlayerBrain : MonoBehaviour
         playerControls.Player.Aim.canceled -= cancelAim;
         playerControls.Player.Move.performed -= movePlayer;
         playerControls.Player.Move.canceled -= stopPlayer;
+
+        playerControls.Player.Attack.performed -= OnAttack;
+        playerControls.Player.Parry.performed -= OnParry;
+        playerControls.Player.Shock.performed -= OnShock;
+        playerControls.Player.Dodge.performed -= OnDodge;
+        playerControls.Player.Charge.performed -= OnCharge;
+
+        GameManager.Instance.OnNewPauseState -= HandleNewPauseState;
     }
 
     private void Aim(InputAction.CallbackContext context){
@@ -46,23 +80,23 @@ public class PlayerBrain : MonoBehaviour
         // Enter pause menu
     }
 
-    private void OnAttack(){
+    private void OnAttack(InputAction.CallbackContext context){
         animator.SetTrigger("attack");
     }
 
-    private void OnParry(){
+    private void OnParry(InputAction.CallbackContext context){
         animator.SetTrigger("parry");
     }
 
-    private void OnCharge(){
+    private void OnCharge(InputAction.CallbackContext context){
         animator.SetTrigger("charge");
     }
 
-    private void OnShock(){
+    private void OnShock(InputAction.CallbackContext context){
         animator.SetTrigger("shock");
     }
 
-    private void OnDodge(){
+    private void OnDodge(InputAction.CallbackContext context){
         animator.SetTrigger("dodge");
     }
 
