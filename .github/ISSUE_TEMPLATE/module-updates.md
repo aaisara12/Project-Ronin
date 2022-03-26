@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 ### Description
-Implement new function and remove depricated function
+Implement new function and remove deprecated function
 
 ### Modification Details
 _From module_ `ModuleName`
