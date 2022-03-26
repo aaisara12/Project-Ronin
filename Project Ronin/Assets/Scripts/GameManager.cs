@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance {get; private set;}
 
-
     void Awake()
     {
         if(Instance == null)
@@ -21,22 +20,18 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        UITracker.OnNewPauseQueueState += HandleNewPauseQueueState;
         
         DontDestroyOnLoad(gameObject);
     }
 
-    void OnDestroy()
+    void OnEnable()
     {
-        UITracker.OnNewPauseQueueState -= HandleNewPauseQueueState;
+        PausableUI.OnNewHasPausables += SetPauseState;
     }
 
-    private void HandleNewPauseQueueState(QueueState queueState)
+    void OnDisable()
     {
-        // Have a wrapper around SetPauseState instead of making SetPauseState directly take a QueueState parameter in case
-        // we want to use SetPauseState in a different situation (keeping it decoupled from queue state)
-        SetPauseState(queueState == QueueState.NON_EMPTY);
+        PausableUI.OnNewHasPausables -= SetPauseState;
     }
 
     // We only want designated signals from the game to be able to trigger pauses to reduce the number of locations that
@@ -47,6 +42,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = (pauseState == PauseState.PAUSED)? 0 : 1;
         OnNewPauseState?.Invoke(pauseState);
     }
+
+    
 }
 
 // State representing how "paused" the game is (in the future we may want certain aspects of the game to pause but not others)

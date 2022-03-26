@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(GameObject))]
-public class PauseGameUI : MonoBehaviour
+public class PauseGameUI : PausableUI
 {
     [SerializeField] private GameObject frame;
     public void TogglePauseMenu()
@@ -11,13 +11,13 @@ public class PauseGameUI : MonoBehaviour
         if (frame.activeSelf)
         {
             frame.SetActive(false);
-            UITracker.RemoveFromPauseQueue(this);
+            RequestUnpause();
         }
         else
         {
             frame.SetActive(true);
             AudioManager.instance?.PlaySound("menu-open");
-            UITracker.AddToPauseQueue(this);
+            RequestPause();
         }
             
             
@@ -26,7 +26,7 @@ public class PauseGameUI : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        UITracker.RemoveFromPauseQueue(this);
+        RequestUnpause();
     }
     
     public void DisplayUI()
