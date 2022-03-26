@@ -1,16 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private PauseState pauseState;
 
-    public event System.Action OnPauseGame;
-    public event System.Action<bool> OnNewPauseState;   // More compact pause event (use in future sprints)
+    public event System.Action<PauseState> OnNewPauseState;   // More compact pause event (use in future sprints)
 
     public static GameManager Instance {get; private set;}
-
-    bool isPaused = false;
 
     void Awake()
     {
@@ -21,36 +20,35 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        
         DontDestroyOnLoad(gameObject);
     }
 
-    /// <summary> Freezes all game objects in scene </summary>
-    public void PauseGame()
+    void OnEnable()
     {
-        SetPauseState(true);
+        PausableUI.OnNewHasPausables += SetPauseState;
     }
 
-    // This is a more flexible public method for setting pause state
-    // that will be transitioned to in a future sprint
-    public void SetPauseState(bool shouldPause)
+    void OnDisable()
     {
-        if(!isPaused && shouldPause)
-        {
-            isPaused = true;
-            OnPauseGame?.Invoke();
-            OnNewPauseState?.Invoke(isPaused);
-        }
-        else if(isPaused && !shouldPause)
-        {
-            isPaused = false;
-            OnNewPauseState?.Invoke(isPaused);
-        }
+        PausableUI.OnNewHasPausables -= SetPauseState;
     }
 
-    // Potentially useful function if the pause state is not known and thus cannot call SetPauseState properly
-    public void TogglePause()
+    // We only want designated signals from the game to be able to trigger pauses to reduce the number of locations that
+    // the pause state of the game can be changed (since it is globally readable)
+    private void SetPauseState(bool shouldPause)
     {
-        SetPauseState(!isPaused);
+        pauseState = shouldPause? PauseState.PAUSED : PauseState.UNPAUSED;
+        Time.timeScale = (pauseState == PauseState.PAUSED)? 0 : 1;
+        OnNewPauseState?.Invoke(pauseState);
     }
+
+    
+}
+
+// State representing how "paused" the game is (in the future we may want certain aspects of the game to pause but not others)
+public enum PauseState
+{
+    UNPAUSED,
+    PAUSED
 }

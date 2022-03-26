@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class MainTextUI : MonoBehaviour
+public class MainTextUI : PausableUI
 {
     [Header("GameObjects Dependencies")] [SerializeField]
     private TextMeshProUGUI mainText;
@@ -28,6 +28,8 @@ public class MainTextUI : MonoBehaviour
         // Animate box to the screen
         box.localPosition = new Vector2(0, -Screen.height - box.rect.height);
         box.LeanMoveLocalY(yPos, fadeTime).setEaseOutExpo().delay = 0.1f;
+
+        RequestPause();
     }
 
     /// <summary> Proceed to next step in this dialogue's box state machine </summary>
@@ -41,5 +43,7 @@ public class MainTextUI : MonoBehaviour
     {
         box.LeanMoveLocalY(-Screen.height - box.rect.height, fadeTime).setEaseInExpo();
         background.LeanAlpha(TRANSPARENT_ALPHA, fadeTime).delay = 0.1f;
+
+        RequestUnpause();
     }
 }

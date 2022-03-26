@@ -12577,7 +12577,6 @@ GameObject:
   - component: {fileID: 3572934327578028603}
   - component: {fileID: 3572934327578028605}
   - component: {fileID: 3572934327578028602}
-  - component: {fileID: 3572934327578028551}
   - component: {fileID: 3572934327578028548}
   - component: {fileID: 3572934327578028549}
   - component: {fileID: 3572934327578028546}
@@ -12586,7 +12585,7 @@ GameObject:
   - component: {fileID: 1173316946842677073}
   m_Layer: 0
   m_Name: Ronin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12629,7 +12628,7 @@ Animator:
   m_GameObject: {fileID: 4419426544662564545}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ba7f1d92beb7ea949a83b4e411950184, type: 3}
-  m_Controller: {fileID: 9100000, guid: 127e4f523ee4dc44b990e051ce50e414, type: 2}
+  m_Controller: {fileID: 9100000, guid: c68e4a3113a96ac46a74e8a728ed09d5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -12687,37 +12686,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 4.91, z: 0}
---- !u!114 &3572934327578028551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4419426544662564545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: b46b683e650430f44bdce7a4d68e05b6,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &3572934327578028548
 MonoBehaviour:
   m_ObjectHideFlags: 0
