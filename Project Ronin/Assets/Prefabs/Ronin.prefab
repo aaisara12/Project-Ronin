@@ -12624,7 +12624,6 @@ GameObject:
   - component: {fileID: 3572934327578028602}
   - component: {fileID: 3572934327578028548}
   - component: {fileID: 3572934327578028549}
-  - component: {fileID: 3572934327578028546}
   - component: {fileID: 3572934327578028547}
   - component: {fileID: 3572934327578028545}
   - component: {fileID: 1173316946842677073}
@@ -12750,18 +12749,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   initializer: {fileID: 11400000, guid: 9fe98c890dfa80f498319fea7c046d8d, type: 2}
---- !u!114 &3572934327578028546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4419426544662564545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d33a00f83a3aeaf478512fd1d5d13ad1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3572934327578028547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12815,6 +12802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remoteCollisionObject: {fileID: 32336718}
+  damage: 10
 --- !u!1 &4420996408995061901
 GameObject:
   m_ObjectHideFlags: 0
