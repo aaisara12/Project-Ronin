@@ -498,7 +498,6 @@ GameObject:
   - component: {fileID: 1213798947304713071}
   - component: {fileID: 1680685759440954272}
   - component: {fileID: 1680685759440954274}
-  - component: {fileID: 1680685759440954273}
   - component: {fileID: 1680685759440954275}
   - component: {fileID: 1680685759440954280}
   - component: {fileID: 1680685759440954287}
@@ -509,7 +508,7 @@ GameObject:
   - component: {fileID: 1680685759440954276}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -521,7 +520,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987098001485033941}
-  m_LocalRotation: {x: -0, y: 0.7250516, z: -0, w: -0.6886946}
+  m_LocalRotation: {x: 0, y: 0.72505, z: -0, w: -0.6886963}
   m_LocalPosition: {x: 7.66, y: 0.1, z: -3.27}
   m_LocalScale: {x: 1.5922, y: 1.5922, z: 1.5922}
   m_ConstrainProportionsScale: 0
@@ -567,20 +566,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
---- !u!136 &1680685759440954273
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987098001485033941}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.26375896
-  m_Height: 1.66319
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8496365, z: 0.03589493}
 --- !u!95 &1680685759440954275
 Animator:
   serializedVersion: 4
