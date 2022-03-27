@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack-hitboxed
+  m_Name: attack-hitboxed-enemy-dummy
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -27997,7 +27997,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.46666667
+        time: 0.53333336
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -28006,7 +28006,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.8
+        time: 0.76666665
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -28018,7 +28018,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Armature/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/Sword/hitbox-basic-melee
+    path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/hitbox-basic-melee
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -28051,7 +28051,7 @@ AnimationClip:
       customType: 8
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 21386984
+      path: 2057730410
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -56948,7 +56948,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.46666667
+        time: 0.53333336
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -56957,7 +56957,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.8
+        time: 0.76666665
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -56969,7 +56969,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Armature/root/DEF-spine/DEF-spine.001/DEF-spine.002/DEF-spine.003/DEF-shoulder.R/DEF-upper_arm.R/DEF-upper_arm.R.001/DEF-forearm.R/DEF-forearm.R.001/DEF-hand.R/Sword/hitbox-basic-melee
+    path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:RightShoulder/mixamorig:RightArm/mixamorig:RightForeArm/mixamorig:RightHand/hitbox-basic-melee
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []

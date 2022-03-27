@@ -1003,7 +1003,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ronin Controller
+  m_Name: controller-enemy-dummy
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: xInput
@@ -1460,7 +1460,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1bbb862c3daa3264abca835cb9ebbe62, type: 2}
+  m_Motion: {fileID: 7400000, guid: 6947c9c81ee52f345aa06907629d15aa, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

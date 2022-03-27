@@ -376,7 +376,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh87540
+  m_Name: pb_Mesh29144
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4528,15 +4528,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1680685759440954276, guid: 31fbf3194a4245f45a2f3183a7e70db2,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy-Dummy
       objectReference: {fileID: 0}
     - target: {fileID: 2744904923972794982, guid: 31fbf3194a4245f45a2f3183a7e70db2,
         type: 3}
@@ -4558,6 +4553,5 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1680685759440954286, guid: 31fbf3194a4245f45a2f3183a7e70db2, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fbf3194a4245f45a2f3183a7e70db2, type: 3}
