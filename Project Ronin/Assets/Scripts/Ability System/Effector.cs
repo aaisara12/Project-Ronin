@@ -18,9 +18,9 @@ public class Effector
     public Dictionary<string, bool> tagChanges = new Dictionary<string, bool>();
 
     /// <summary>
-    /// Signiture of systems (usually their type names, mechanisms can override this default behavior).
+    /// signature of systems (usually their type names, mechanisms can override this default behavior).
     /// </summary>
-    public HashSet<string> signitures = new HashSet<string>();
+    public HashSet<string> signatures = new HashSet<string>();
 
     /// <summary>
     /// Submit this effector to mechenism queue.
@@ -79,5 +79,43 @@ public class Effector
 
             target.SignalChange();
         }
+    }
+
+    /// <summary>
+    /// Get string name of a mechanism class.
+    /// </summary>
+    /// <typeparam name="MechanismType">the mechanism class</typeparam>
+    /// <returns>string name of the given nechanism class</returns>
+    public string SerializeMechanismType<MechanismType>() where MechanismType : CombatMechanism<MechanismType>
+    {
+        return typeof(MechanismType).Name;
+    }
+
+    /// <summary>
+    /// Add a signature.
+    /// </summary>
+    /// <typeparam name="MechanismType">the mechanism class</typeparam>
+    /// <returns>string name of the given nechanism class</returns>
+    public string Addsignature<MechanismType>() where MechanismType : CombatMechanism<MechanismType>
+    {
+        string newsignature = SerializeMechanismType<MechanismType>();
+
+        signatures.Add(newsignature);
+
+        return newsignature;
+    }
+
+    /// <summary>
+    /// Remove a signature.
+    /// </summary>
+    /// <typeparam name="MechanismType"></typeparam>
+    /// <returns></returns>
+    public string Removesignature<MechanismType>() where MechanismType : CombatMechanism<MechanismType>
+    {
+        string newsignature = SerializeMechanismType<MechanismType>();
+
+        signatures.Remove(newsignature);
+
+        return newsignature;
     }
 }

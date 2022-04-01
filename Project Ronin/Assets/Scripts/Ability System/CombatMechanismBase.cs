@@ -14,7 +14,8 @@ public abstract class CombatMechanismBase
 
     static CombatMechanismBase()
     {
-        // put default mechanism list here
+        // TODO: put default mechanism list here
+        // TODO: quick note to self, implement this list when we get a defined list of mechanisms to iterate
     }
 
     static public void SwapQueue(List<CombatMechanismBase> newQueue)
