@@ -6,10 +6,16 @@ using UnityEngine.Events;
 public class DamageReactor : MonoBehaviour
 {
     AttributeSet attributeSet;
+    Animator animator;
     UnityAction handleHealthChange;
     float previousHealth;
 
     [SerializeField] GameObject damagedParticleEffectPrefab;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +43,7 @@ public class DamageReactor : MonoBehaviour
                 Destroy(prefab, 2); // Later on we may want some particle manager that pools these
 
                 AudioManager.instance?.PlaySound("bloody-impact");
+                animator.SetTrigger("backoff");
             }
             previousHealth = newHealth;
         }

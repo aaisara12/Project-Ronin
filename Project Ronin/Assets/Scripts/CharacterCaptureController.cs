@@ -44,18 +44,6 @@ public class CharacterCaptureController : MonoBehaviour
     }
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
-    public void MoveInDirection(Vector3 directionVector)
-    {
-        MoveInDirection(new Vector2(directionVector.x, directionVector.z));
-    }
-
-    /// <summary>Make this character perform a dash in direction of <paramref name = "directionVector"/></summary>
-    public void DashInDirection(Vector3 directionVector)
-    {
-        // test with shift key
-        StartCoroutine(Dash());
-    }
-
     public void MoveInDirection(Vector2 directionVector) 
     {
         // test with arrow keys
@@ -109,6 +97,7 @@ public class CharacterCaptureController : MonoBehaviour
         characterController.Move(movementDirection * movementSpeed * Time.deltaTime);
     }
 
+    /// <summary>Make this character perform a dash forwards</summary>
     public void DashForwards()
     {
         if (isDashing)
