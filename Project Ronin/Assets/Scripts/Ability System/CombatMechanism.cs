@@ -15,6 +15,6 @@ public abstract class CombatMechanism<ChildType> : CombatMechanismBase
 
     public override bool Filter(Effector effector)
     {
-        return effector.signitures.Contains(GetSigniture());
+        return effector.signatures.Contains(GetSigniture());
     }
 }
