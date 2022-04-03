@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicMelee : RemoteCollisionListener
+public class BasicMeleeMove : RemoteCollisionListener
 {
 
     [SerializeField] float damage = 10;
