@@ -21,3 +21,5 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: a7658708af9d64b459a383384fcaf77f, type: 3}
   - eventName: Step
     audioClip: {fileID: 8300000, guid: 727c2f0ba1eae724fb1961723a8681d7, type: 3}
+  - eventName: Attack
+    audioClip: {fileID: 8300000, guid: 744f2085e3671eb488c5b006a2e24370, type: 3}
