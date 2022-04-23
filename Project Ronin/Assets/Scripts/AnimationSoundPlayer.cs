@@ -25,6 +25,7 @@ public class AnimationSoundPlayer : MonoBehaviour
                 newSourceObject.transform.parent = sourcesParent.transform;
                 AudioSource newSource = newSourceObject.AddComponent<AudioSource>();
                 newSource.clip = pair.audioClip;
+                newSource.spatialBlend = 1.0f;      // Want sound effect to come from character position
 
                 animationEvent2audioClips[pair.eventName].Add(newSource);
             }

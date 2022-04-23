@@ -15,3 +15,9 @@ MonoBehaviour:
   EventToAudioMap:
   - eventName: Step
     audioClip: {fileID: 8300000, guid: 8445f94b757573e4897a339a84591eb4, type: 3}
+  - eventName: Step
+    audioClip: {fileID: 8300000, guid: b42e0f862d0d0a649a1e8ee7aa1b0c16, type: 3}
+  - eventName: Step
+    audioClip: {fileID: 8300000, guid: a7658708af9d64b459a383384fcaf77f, type: 3}
+  - eventName: Step
+    audioClip: {fileID: 8300000, guid: 727c2f0ba1eae724fb1961723a8681d7, type: 3}

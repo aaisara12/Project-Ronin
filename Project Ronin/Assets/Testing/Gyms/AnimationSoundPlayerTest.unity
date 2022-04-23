@@ -788,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6906c6c457bbf468ea1d5ea0f77fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterAudioSet: {fileID: 0}
+  characterAudioSet: {fileID: 11400000, guid: 5d8dff570a3f26a4b89fca8ccc601083, type: 2}
 --- !u!1 &469698398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1082,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.288162, y: 1}
+    m_SensorSize: {x: 1.278297, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
