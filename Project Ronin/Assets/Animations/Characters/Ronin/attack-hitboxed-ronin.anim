@@ -56977,8 +56977,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.46666667
-    functionName: InvokeSoundEvent
-    data: Attack
+    functionName: PlaySound
+    data: swish-light
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

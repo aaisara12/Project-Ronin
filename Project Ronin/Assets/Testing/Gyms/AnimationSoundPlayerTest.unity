@@ -376,7 +376,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh67522
+  m_Name: pb_Mesh29160
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -776,7 +776,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 333513912}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &333513916
+--- !u!114 &333513925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -785,10 +785,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 333513915}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6906c6c457bbf468ea1d5ea0f77fa9, type: 3}
+  m_Script: {fileID: 11500000, guid: 03adbcd2854827a478a73cffdb66e5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterAudioSet: {fileID: 11400000, guid: 5d8dff570a3f26a4b89fca8ccc601083, type: 2}
 --- !u!1 &469698398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1081,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.278297, y: 1}
+    m_SensorSize: {x: 1.4722079, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1932,10 +1931,14 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     clip: {fileID: 8300000, guid: c2fa68f43b78f7046b41d27b70565130, type: 3}
-  - soundName: bloody-impact
+  - soundName: hit-flesh
     volume: 0.1
     pitch: 1
     clip: {fileID: 8300000, guid: 14587265d58da8f41bc6f790de2c7817, type: 3}
+  - soundName: step
+    volume: 0.5
+    pitch: 1
+    clip: {fileID: 8300000, guid: 8445f94b757573e4897a339a84591eb4, type: 3}
   - soundName: menu-open
     volume: 0.3
     pitch: 1
@@ -3814,6 +3817,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1823908744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1680685760757176683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1823908756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823908744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03adbcd2854827a478a73cffdb66e5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1870412439
 GameObject:
   m_ObjectHideFlags: 0
