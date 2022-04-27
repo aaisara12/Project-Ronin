@@ -23,3 +23,5 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 727c2f0ba1eae724fb1961723a8681d7, type: 3}
   - eventName: Attack
     audioClip: {fileID: 8300000, guid: 744f2085e3671eb488c5b006a2e24370, type: 3}
+  - eventName: Damaged
+    audioClip: {fileID: 8300000, guid: 14587265d58da8f41bc6f790de2c7817, type: 3}
