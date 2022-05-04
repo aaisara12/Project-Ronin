@@ -51,6 +51,13 @@ public class AudioManager : MonoBehaviour
         name2source[soundName].Play();
     }
 
+    public void PlaySoundAtLocation(string soundName, Vector3 location)
+    {
+        // If we have time, we should make this into a pooling system so that we don't have to keep creating and
+        // destroying audio source objects
+        AudioSource.PlayClipAtPoint(name2source[soundName].clip, location);
+    }
+
     // Play a sound and have it loop
     public void LoopSound(string soundName)
     {
