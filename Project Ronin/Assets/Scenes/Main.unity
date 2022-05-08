@@ -1395,6 +1395,10 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     clip: {fileID: 8300000, guid: 727c2f0ba1eae724fb1961723a8681d7, type: 3}
+  - soundName: swish-final
+    volume: 0.5
+    pitch: 1
+    clip: {fileID: 8300000, guid: bb5f87726a563da45bbd5f6894ffa0f1, type: 3}
 --- !u!1 &469698398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2055,7 +2059,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.2968421, y: 1}
+    m_SensorSize: {x: 1.147775, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
