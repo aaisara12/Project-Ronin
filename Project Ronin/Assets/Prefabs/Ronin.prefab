@@ -12628,7 +12628,7 @@ GameObject:
   - component: {fileID: 3572934327578028545}
   - component: {fileID: 1173316946842677073}
   - component: {fileID: 455878291}
-  - component: {fileID: 333513925}
+  - component: {fileID: 2513926860655348306}
   m_Layer: 0
   m_Name: Ronin
   m_TagString: Player
@@ -12804,7 +12804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remoteCollisionObject: {fileID: 32336718}
   damage: 10
---- !u!114 &333513925
+--- !u!114 &2513926860655348306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
