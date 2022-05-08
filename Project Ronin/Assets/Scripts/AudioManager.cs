@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] List<SoundSettings> sounds;
 
-    Dictionary<string, AudioSource> name2source = new Dictionary<string, AudioSource>();
+    Dictionary<string, List<AudioSource>> name2source = new Dictionary<string, List<AudioSource>>();
 
 
     void Awake()
@@ -40,27 +40,32 @@ public class AudioManager : MonoBehaviour
             newSource.pitch = settings.pitch;
             newSource.loop = false;
 
-            name2source[settings.soundName] = newSource;
+            if(!name2source.ContainsKey(settings.soundName))
+                name2source[settings.soundName] = new List<AudioSource>();
+                
+            name2source[settings.soundName].Add(newSource);
         }
 
         
     }
 
+    // Wrapper around dictionary access to get randomized sound if multiple
+    AudioSource GetSoundSource(string soundName)
+    {
+        int randInd = Random.Range(0, name2source[soundName].Count);
+        return name2source[soundName][randInd];
+    }
+
     public void PlaySound(string soundName)
     {
-        name2source[soundName].Play();
+        GetSoundSource(soundName).Play();
     }
 
-    // Play a sound and have it loop
-    public void LoopSound(string soundName)
+    public void PlaySoundAtLocation(string soundName, Vector3 location)
     {
-        name2source[soundName].loop = true;
-        PlaySound(soundName);
-    }
-
-    public void StopSound(string soundName)
-    {
-        name2source[soundName].Stop();
+        // If we have time, we should make this into a pooling system so that we don't have to keep creating and
+        // destroying audio source objects
+        AudioSource.PlayClipAtPoint(GetSoundSource(soundName).clip, location);
     }
 
 }

@@ -9,6 +9,6 @@ public class AnimationEventProxy : MonoBehaviour
     // If we can avoid the need for a proxy for all animation events that would be great!
     public void PlaySound(string name)
     {
-        AudioManager.instance?.PlaySound(name);
+        AudioManager.instance?.PlaySoundAtLocation(name, transform.position);
     }
 }

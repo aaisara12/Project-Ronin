@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: 1680685759440954278}
   - component: {fileID: 1680685759440954276}
   - component: {fileID: 1217026382}
+  - component: {fileID: 1823908756}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -621,7 +622,7 @@ Animator:
   m_GameObject: {fileID: 1987098001485033941}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3aa4546ce42906f42914c8cdb6e4e244, type: 3}
-  m_Controller: {fileID: 9100000, guid: e4af557b24a82724c8131fe6d8cba9cf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6c0aee8705c9a314fa9c506eea6de85e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -738,6 +739,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remoteCollisionObject: {fileID: 1543813977}
   damage: 10
+--- !u!114 &1823908756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987098001485033941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03adbcd2854827a478a73cffdb66e5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2338623652578244504
 GameObject:
   m_ObjectHideFlags: 0
