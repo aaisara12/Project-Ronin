@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0279514d6b4545c45945e05aaf5340be, type: 3}
+  m_Name: RoninAudioSet
+  m_EditorClassIdentifier: 
+  EventToAudioMap:
+  - eventName: Step
+    audioClip: {fileID: 8300000, guid: 8445f94b757573e4897a339a84591eb4, type: 3}
+  - eventName: Step
+    audioClip: {fileID: 8300000, guid: b42e0f862d0d0a649a1e8ee7aa1b0c16, type: 3}
+  - eventName: Step
+    audioClip: {fileID: 8300000, guid: a7658708af9d64b459a383384fcaf77f, type: 3}
+  - eventName: Step
+    audioClip: {fileID: 8300000, guid: 727c2f0ba1eae724fb1961723a8681d7, type: 3}
+  - eventName: Attack
+    audioClip: {fileID: 8300000, guid: 744f2085e3671eb488c5b006a2e24370, type: 3}
+  - eventName: Damaged
+    audioClip: {fileID: 8300000, guid: 14587265d58da8f41bc6f790de2c7817, type: 3}
