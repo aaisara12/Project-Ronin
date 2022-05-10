@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1063,7 +1063,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.1132438, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4533,30 +4533,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy-Dummy
       objectReference: {fileID: 0}
-    - target: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
+    - target: {fileID: 2744904923972794982, guid: 31fbf3194a4245f45a2f3183a7e70db2,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2744904923972794982, guid: 31fbf3194a4245f45a2f3183a7e70db2,
         type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2744904923972794982, guid: 31fbf3194a4245f45a2f3183a7e70db2,
-        type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2744904924342429500, guid: 31fbf3194a4245f45a2f3183a7e70db2,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.607
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2744904924342429500, guid: 31fbf3194a4245f45a2f3183a7e70db2,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31fbf3194a4245f45a2f3183a7e70db2, type: 3}

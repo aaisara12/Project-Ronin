@@ -80,14 +80,7 @@ public class PlayerBrain : MonoBehaviour
         // Enter pause menu
     }
 
-    public void OnAttack(InputAction.CallbackContext context){
-        // var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10);
-        // Debug.Log(transform.position);
-        // Debug.Log(Camera.main.ScreenToWorldPoint(pos));
-        var playerLocation = Camera.main.WorldToScreenPoint(transform.position);
-        var attackDirection = new Vector2(Input.mousePosition.x - playerLocation.x, Input.mousePosition.y - playerLocation.y);
-        Debug.Log(attackDirection);
-        MoveInDirection(attackDirection);
+    private void OnAttack(InputAction.CallbackContext context){
         animator.SetTrigger("attack");
     }
 
@@ -115,12 +108,5 @@ public class PlayerBrain : MonoBehaviour
     private void stopPlayer(InputAction.CallbackContext context){
         animator.SetFloat("xInput", 0);
         animator.SetFloat("yInput", 0);
-    }
-    void OnDrawGizmos(){
-        Gizmos.color = Color.green;
-        var playerLocation = Camera.main.WorldToScreenPoint(transform.position);
-        Vector2 v2 = new Vector2(playerLocation.x, playerLocation.y);
-        var ray = new Vector2(Input.mousePosition.x - playerLocation.x, Input.mousePosition.y - playerLocation.y);
-        // Gizmos.DrawRay(playerLocation, ray);
     }
 }
