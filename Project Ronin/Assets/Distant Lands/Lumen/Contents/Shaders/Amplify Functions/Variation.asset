@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: Variation
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity
+    Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=18934\n0;1085.714;2194;600;2130.99;187.7847;1;True;False\nNode;AmplifyShaderEditor.CommentaryNode;21;-1888,480;Inherit;False;1427.794;500.5388;;12;22;23;24;25;26;28;27;29;30;31;34;35;Calculate
+    UV Position;1,1,1,1;0;0\nNode;AmplifyShaderEditor.CommentaryNode;1;-1891.398,-203.3239;Inherit;False;1986.911;607.749;;15;20;0;3;11;6;13;14;15;16;17;18;19;32;33;36;Variation;1,1,1,1;0;0\nNode;AmplifyShaderEditor.ToggleSwitchNode;30;-1248,672;Inherit;False;Property;_UseUniformVariation;Use
+    Uniform Variation;2;0;Create;True;0;0;0;False;1;perRendererData;False;0;True;2;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.WireNode;35;-1056,768;Inherit;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionSwitch;34;-1008,672;Inherit;False;Force
+    Uniform Variation;False;0;2;-1;True;False;Object;-1;9;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT;0;False;7;FLOAT;0;False;8;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SimpleMinOpNode;20;-464,96;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleDivideOpNode;16;-947.3981,-27.32391;Inherit;False;2;0;FLOAT;2;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleDivideOpNode;17;-947.3981,212.6761;Inherit;False;2;0;FLOAT;1;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.NoiseGeneratorNode;18;-803.3985,-107.3239;Inherit;True;Simplex2D;True;False;2;0;FLOAT2;0,0;False;1;FLOAT;0.1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.NoiseGeneratorNode;19;-803.3985,132.6761;Inherit;True;Simplex2D;True;False;2;0;FLOAT2;0,0;False;1;FLOAT;0.1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.WorldPosInputsNode;23;-1808,576;Inherit;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3\nNode;AmplifyShaderEditor.WireNode;25;-1536,656;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.ObjectToWorldTransfNode;26;-1808,736;Inherit;False;1;0;FLOAT4;0,0,0,1;False;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.DynamicAppendNode;22;-1472,576;Inherit;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SimpleAddOpNode;27;-1616,736;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.DynamicAppendNode;28;-1472,736;Inherit;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.WireNode;29;-1520,816;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.GetLocalVarNode;33;-1440,-96;Inherit;False;31;UVPos;1;0;OBJECT;;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.ScaleAndOffsetNode;14;-1248,-96;Inherit;False;3;0;FLOAT2;0,0;False;1;FLOAT;1;False;2;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.GetLocalVarNode;32;-1456,176;Inherit;False;31;UVPos;1;0;OBJECT;;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.ScaleAndOffsetNode;15;-1248,176;Inherit;False;3;0;FLOAT2;0,0;False;1;FLOAT;1;False;2;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;13;-1392,48;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;-0.5;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleTimeNode;6;-1568,48;Inherit;False;1;0;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleAddOpNode;24;-1632,576;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.RegisterLocalVarNode;31;-704,688;Inherit;False;UVPos;-1;True;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.RangedFloatNode;3;-1840,48;Inherit;False;Property;_VariationSpeed;Variation
+    Speed;0;1;[PerRendererData];Create;True;0;0;0;False;0;False;1;0;0;10;0;1;FLOAT;0\nNode;AmplifyShaderEditor.RangedFloatNode;11;-1184,48;Inherit;False;Property;_VariationScale;Variation
+    Scale;1;1;[PerRendererData];Create;True;0;0;0;False;0;False;1;10;0;0;0;1;FLOAT;0\nNode;AmplifyShaderEditor.SaturateNode;36;-336.9895,96.21533;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;-193,96;Inherit;False;True;-1;Output;0;False;1;0;FLOAT;0;False;1;FLOAT;0\nWireConnection;30;0;22;0\nWireConnection;30;1;28;0\nWireConnection;35;0;28;0\nWireConnection;34;0;35;0\nWireConnection;34;1;30;0\nWireConnection;20;0;18;0\nWireConnection;20;1;19;0\nWireConnection;16;1;11;0\nWireConnection;17;1;11;0\nWireConnection;18;0;14;0\nWireConnection;18;1;16;0\nWireConnection;19;0;15;0\nWireConnection;19;1;17;0\nWireConnection;25;0;23;3\nWireConnection;22;0;24;0\nWireConnection;22;1;25;0\nWireConnection;27;0;26;1\nWireConnection;27;1;26;2\nWireConnection;28;0;27;0\nWireConnection;28;1;29;0\nWireConnection;29;0;26;3\nWireConnection;14;0;33;0\nWireConnection;14;2;13;0\nWireConnection;15;0;32;0\nWireConnection;15;2;6;0\nWireConnection;13;0;6;0\nWireConnection;6;0;3;0\nWireConnection;24;0;23;1\nWireConnection;24;1;23;2\nWireConnection;31;0;34;0\nWireConnection;36;0;20;0\nWireConnection;0;0;36;0\nASEEND*/\n//CHKSM=19AEB4B991895DBBAB46935E9850B3A2378376FA"
+  m_functionName: 
+  m_description: Creates subtle variation in the light rays.
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_customEdited: 0
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesIndex: -1
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 0
+  m_customNodeCategory: Luminescence
+  m_previewPosition: 0
+  m_hidden: 0
+  m_url: 

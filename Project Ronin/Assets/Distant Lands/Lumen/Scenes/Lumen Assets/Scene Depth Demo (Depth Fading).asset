@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7f6b0fa95d90d4ca158ba1ade569e7, type: 3}
+  m_Name: Scene Depth Demo (Depth Fading)
+  m_EditorClassIdentifier: 
+  flare:
+  - flareShape: 0
+    flareMesh: {fileID: 0}
+    scale: 0.88
+    brightness: 0.015
+    colorMultiplier: {r: 2.6701572, g: 1.8173845, b: 1.048491, a: 1}
+    open: 0
+  - flareShape: 24
+    flareMesh: {fileID: 0}
+    scale: 0.54
+    brightness: 0.015
+    colorMultiplier: {r: 2.6701572, g: 1.8173845, b: 1.048491, a: 1}
+    open: 0
+  - flareShape: 9
+    flareMesh: {fileID: 0}
+    scale: 0.43
+    brightness: 1
+    colorMultiplier: {r: 0.990566, g: 0.73366785, b: 0.4625756, a: 1}
+    open: 0
+  flareMaterial: {fileID: 2100000, guid: 7724528df85009d4dadb42eb105e754e, type: 2}
+  globalScale: 1
+  globalBrightness: 0.461
+  variationSpeed: 2.45
+  variationScale: 10
+  variationColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 0.003921569}
+  showLayerSettings: 0
+  showMainSettings: 0
+  showVariationSettings: 0
+  showFadingSettings: 1
+  cameraDepthFadeStart: 1
+  cameraDepthFadeEnd: 3
+  cameraDistanceFadeStart: 45
+  cameraDistanceFadeEnd: 65
+  sceneDepthFadeStart: -1
+  sceneDepthFadeEnd: 2
+  useCameraDepthFade: 1
+  useCameraDistanceFade: 1
+  useSceneDepthFade: 1
+  useVariation: 0
+  needsToBeUpdated: 0
