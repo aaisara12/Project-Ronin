@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f04e7171dac5544a065e9adca1c07b, type: 3}
+  m_Name: Dynamic Ray 4
+  m_EditorClassIdentifier: 
+  useCameraDepthFade: 1
+  cameraDepthFadeStart: 1
+  cameraDepthFadeEnd: 3
+  useCameraDistanceFade: 1
+  cameraDistanceFadeStart: 50
+  cameraDistanceFadeEnd: 60
+  useSceneDepthFade: 1
+  sceneDepthFadeStart: 1
+  sceneDepthFadeEnd: 3
+  useAngleFade: 0
+  angleFadeStart: 0
+  angleFadeEnd: 0
+  angleOpacityEffect: 1
+  useRaylengthFade: 0
+  angleRaylengthEffect: 1
+  useVariation: 1
+  useLightColor: 0
+  rayLayers:
+  - rayShape: 6
+    rayMesh: {fileID: 0}
+    brightness: 0.227
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    position: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    raylength: 15
+    open: 0
+  - rayShape: 6
+    rayMesh: {fileID: 0}
+    brightness: 0.159
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    position: {x: -0.25, y: 0, z: 0}
+    scale: {x: 1, y: 0.6, z: 1}
+    raylength: 9.98
+    open: 0
+  - rayShape: 6
+    rayMesh: {fileID: 0}
+    brightness: 0.159
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    position: {x: -0.08, y: 0.27, z: 0}
+    scale: {x: 1, y: 0.6, z: 1}
+    raylength: 9.98
+    open: 0
+  - rayShape: 6
+    rayMesh: {fileID: 0}
+    brightness: 0.159
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    position: {x: 0.25, y: -0.04, z: 0}
+    scale: {x: 1, y: 0.75, z: 1}
+    raylength: 16.2
+    open: 0
+  globalScale: 1
+  rayMaterial: {fileID: 2100000, guid: e349799befeba9948a28f3e1a260fa29, type: 2}
+  globalBrightness: 1
+  variationSpeed: 1
+  variationScale: 10
+  variationColor: {r: 1, g: 1, b: 1, a: 0.5529412}
+  autoAssignSun: 1
+  sunDirection: {x: 1, y: 0, z: 0}
+  bidirectional: 1
+  showLayerSettings: 0
+  showMainSettings: 0
+  showVariationSettings: 0
+  showFadingSettings: 0
+  showDynamicSettings: 0
+  needsToBeUpdated: 0
