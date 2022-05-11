@@ -12677,7 +12677,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: c68e4a3113a96ac46a74e8a728ed09d5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -12730,8 +12730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1a373c3760bd84397e69545b7febab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  dashDistance: 7
+  movementSpeed: 0
+  dashDistance: 0
   dashDuration: 0.75
   rotateSpeed: 0.5
 --- !u!114 &3572934327578028549

@@ -36,20 +36,30 @@ public class CharacterCaptureController : MonoBehaviour
 
     void Update()
     {
+        // if(Time.time > resetAttackSlowTime)
+        //     attackSlowMultiplier = 1;
+
         // speed must be between 0-1
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotateSpeed);
         dashStartTime = 0;
         isDashing = false;
         dashSpeed = dashDistance / dashDuration;
+
+        characterController.Move(movementDirection * movementSpeed * attackSlowMultiplier * Time.deltaTime);   
+        
     }
+
 
     /// <summary>Request this character to move in direction of <paramref name = "directionVector"/></summary>
     public void MoveInDirection(Vector2 directionVector) 
     {
+        if(isAttacking) {return;}
+        //resetAttackSlowTime = 0;    // Instantly disrupt slow so player can move again as soon as they transition to move state
+
         // test with arrow keys
         if (directionVector == Vector2.zero || isDashing)
         {
-            // do nothing
+            movementDirection = Vector3.zero;
             return;
         }
 
@@ -93,8 +103,6 @@ public class CharacterCaptureController : MonoBehaviour
             targetRotation = Quaternion.LookRotation(angles[7]);
             movementDirection = angles[7];
         }
-
-        characterController.Move(movementDirection * movementSpeed * Time.deltaTime);
     }
 
     /// <summary>Make this character perform a dash forwards</summary>
@@ -122,9 +130,23 @@ public class CharacterCaptureController : MonoBehaviour
         isDashing = false;
     }
 
-    public void AttackRotate(Vector2 attackDirection, float duration)
+    float attackSlowMultiplier = 1;
+    bool isAttacking = false;
+    public void AttackRotate(Vector2 attackDirection, MeleeState meleeState, bool shouldSlow = false)
     {
+        isAttacking = true;
         // TODO: Smoothly rotate to the direction specified by attackDirection 
         // (interpret as directions with respect to World Space) for duration seconds (or until canceled by input command)
+
+        targetRotation = Quaternion.LookRotation(new Vector3(attackDirection.x, 0, attackDirection.y), Vector3.up);
+        attackSlowMultiplier = shouldSlow? 0.25f : 0f;
+        meleeState.OnLeaveMelee += HandleLeaveMeleeState;   // Need to unsubscribe somewhere!!
+        //resetAttackSlowTime = Time.time + duration;
+    }
+
+    void HandleLeaveMeleeState()
+    {
+        isAttacking = false;
+        attackSlowMultiplier = 1;
     }
 }
