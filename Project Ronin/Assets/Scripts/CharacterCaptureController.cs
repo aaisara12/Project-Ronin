@@ -132,14 +132,14 @@ public class CharacterCaptureController : MonoBehaviour
 
     float attackSlowMultiplier = 1;
     bool isAttacking = false;
-    public void AttackRotate(Vector2 attackDirection, MeleeState meleeState)
+    public void AttackRotate(Vector2 attackDirection, MeleeState meleeState, bool shouldSlow = false)
     {
         isAttacking = true;
         // TODO: Smoothly rotate to the direction specified by attackDirection 
         // (interpret as directions with respect to World Space) for duration seconds (or until canceled by input command)
 
         targetRotation = Quaternion.LookRotation(new Vector3(attackDirection.x, 0, attackDirection.y), Vector3.up);
-        attackSlowMultiplier = 0.25f;
+        attackSlowMultiplier = shouldSlow? 0.25f : 0f;
         meleeState.OnLeaveMelee += HandleLeaveMeleeState;   // Need to unsubscribe somewhere!!
         //resetAttackSlowTime = Time.time + duration;
     }

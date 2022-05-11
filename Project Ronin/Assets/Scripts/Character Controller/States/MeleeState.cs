@@ -11,7 +11,7 @@ public class MeleeState : StateMachineBehaviour
     {
        CharacterCaptureController cc = animator.GetComponent<CharacterCaptureController>();
        Vector2 attackVector = new Vector2(animator.GetFloat("xAttack"), animator.GetFloat("yAttack"));
-       cc.AttackRotate(attackVector, this);
+       cc.AttackRotate(attackVector, this, (numActive == 0));
 
        numActive++;
     }
