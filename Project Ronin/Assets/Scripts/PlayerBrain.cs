@@ -81,6 +81,16 @@ public class PlayerBrain : MonoBehaviour
     }
 
     private void OnAttack(InputAction.CallbackContext context){
+
+        Vector2 playerLocation = Camera.main.WorldToScreenPoint(transform.position);
+        Vector2 attackDirection = new Vector2(Input.mousePosition.x - playerLocation.x, Input.mousePosition.y - playerLocation.y);
+        double sqrt2 = Math.Sqrt(2);
+        double newX = ((attackDirection.x * sqrt2) + (attackDirection.y * sqrt2)) / 2;
+        double newY = (-1 * (attackDirection.x * sqrt2) + (attackDirection.y * sqrt2)) / 2;
+        Vector2 rotatedAttackDirection = new Vector2((float) newX, (float) newY);
+
+        animator.SetFloat("xAttack", rotatedAttackDirection.x);
+        animator.SetFloat("yAttack", rotatedAttackDirection.y);
         animator.SetTrigger("attack");
     }
 
