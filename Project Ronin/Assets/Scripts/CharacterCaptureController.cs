@@ -139,7 +139,7 @@ public class CharacterCaptureController : MonoBehaviour
         // (interpret as directions with respect to World Space) for duration seconds (or until canceled by input command)
 
         targetRotation = Quaternion.LookRotation(new Vector3(attackDirection.x, 0, attackDirection.y), Vector3.up);
-        attackSlowMultiplier = 0.5f;
+        attackSlowMultiplier = 0.25f;
         meleeState.OnLeaveMelee += HandleLeaveMeleeState;   // Need to unsubscribe somewhere!!
         //resetAttackSlowTime = Time.time + duration;
     }
