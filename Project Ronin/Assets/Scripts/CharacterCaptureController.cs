@@ -121,4 +121,10 @@ public class CharacterCaptureController : MonoBehaviour
         }
         isDashing = false;
     }
+
+    public void AttackRotate(Vector2 attackDirection, float duration)
+    {
+        // TODO: Smoothly rotate to the direction specified by attackDirection 
+        // (interpret as directions with respect to World Space) for duration seconds (or until canceled by input command)
+    }
 }
