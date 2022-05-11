@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f04e7171dac5544a065e9adca1c07b, type: 3}
+  m_Name: Sun Direction (Set 4)
+  m_EditorClassIdentifier: 
+  useCameraDepthFade: 1
+  cameraDepthFadeStart: 1
+  cameraDepthFadeEnd: 3
+  useCameraDistanceFade: 1
+  cameraDistanceFadeStart: 40
+  cameraDistanceFadeEnd: 60
+  useSceneDepthFade: 1
+  sceneDepthFadeStart: 1
+  sceneDepthFadeEnd: 8
+  useAngleFade: 0
+  angleFadeStart: 0
+  angleFadeEnd: 0
+  angleOpacityEffect: 1
+  useRaylengthFade: 0
+  angleRaylengthEffect: 2
+  useVariation: 0
+  useLightColor: 0
+  rayLayers:
+  - rayShape: 2
+    rayMesh: {fileID: 0}
+    brightness: 1
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    position: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+    raylength: 20
+    open: 0
+  globalScale: 1
+  rayMaterial: {fileID: 2100000, guid: e349799befeba9948a28f3e1a260fa29, type: 2}
+  globalBrightness: 0.45
+  variationSpeed: 2.37
+  variationScale: 10
+  variationColor: {r: 1, g: 1, b: 1, a: 0.5254902}
+  autoAssignSun: 0
+  sunDirection: {x: -0.0026508507, y: 0.4762271, z: 0.87931836}
+  bidirectional: 0
+  showLayerSettings: 0
+  showMainSettings: 1
+  showVariationSettings: 0
+  showFadingSettings: 0
+  showDynamicSettings: 0
+  needsToBeUpdated: 0

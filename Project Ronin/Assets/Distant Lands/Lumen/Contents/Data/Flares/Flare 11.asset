@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7f6b0fa95d90d4ca158ba1ade569e7, type: 3}
+  m_Name: Flare 11
+  m_EditorClassIdentifier: 
+  flare:
+  - flareShape: 18
+    flareMesh: {fileID: 0}
+    scale: 1
+    brightness: 0.153
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 7
+    flareMesh: {fileID: 0}
+    scale: 1.36
+    brightness: 0.153
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 11
+    flareMesh: {fileID: 0}
+    scale: 0.85
+    brightness: 0.167
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 16
+    flareMesh: {fileID: 0}
+    scale: 1.47
+    brightness: 0.167
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 16
+    flareMesh: {fileID: 0}
+    scale: 1.01
+    brightness: 0.182
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 14
+    flareMesh: {fileID: 0}
+    scale: 1.36
+    brightness: 1
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 16
+    flareMesh: {fileID: 0}
+    scale: 1.36
+    brightness: 1
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  flareMaterial: {fileID: 2100000, guid: 7724528df85009d4dadb42eb105e754e, type: 2}
+  globalScale: 1
+  globalBrightness: 1
+  variationSpeed: 4.95
+  variationScale: 10
+  variationColor: {r: 1, g: 1, b: 1, a: 0.5058824}
+  showLayerSettings: 1
+  showMainSettings: 0
+  showVariationSettings: 1
+  showFadingSettings: 0
+  cameraDepthFadeStart: 0
+  cameraDepthFadeEnd: 3
+  cameraDistanceFadeStart: 35
+  cameraDistanceFadeEnd: 45
+  sceneDepthFadeStart: -5
+  sceneDepthFadeEnd: 3
+  useCameraDepthFade: 1
+  useCameraDistanceFade: 1
+  useSceneDepthFade: 1
+  useVariation: 0
+  needsToBeUpdated: 0

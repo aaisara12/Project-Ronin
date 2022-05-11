@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Default Flare
+  m_Shader: {fileID: 4800000, guid: c763699f261e8154e9e03d87b42b912c, type: 3}
+  m_ShaderKeywords: _USEUNIFORMVARIATION_ON
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AngleFade: 1
+    - _AngleFadeStart: 0.5
+    - _BumpScale: 1
+    - _CameraDepthFadeEnd: 2
+    - _CameraDepthFadeEndDistance: 2
+    - _CameraDepthFadeStart: 0
+    - _CameraDistanceFadeEnd: 30
+    - _CameraDistanceFadeStart: 20
+    - _CameraFadeEndDistance: 5
+    - _CameraFadeStartDistance: 3
+    - _Cutoff: 0.5
+    - _DepthFadeEndDistance: 3
+    - _DepthFadeStartDistance: 0
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Intensity: 0.263
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _OffsetAmount: 10
+    - _Parallax: 0.02
+    - _RenderOffset: 0
+    - _RenderSpace: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _UseAngleBasedFade: 0
+    - _UseAngleBasedFade1: 0
+    - _UseCameraDepthFade: 0
+    - _UseCameraDepthFade1: 0
+    - _UseCameraDistanceFade: 0
+    - _UseLightColor1: 0
+    - _UseSceneDepthFade: 0
+    - _UseSceneDepthFade1: 0
+    - _UseUniformVariation: 1
+    - _UseVariation: 0
+    - _UseVariation1: 1
+    - _UseZScaleFade: 0
+    - _VariationScale: 10
+    - _VariationSpeed: 2.52
+    - _ZWrite: 1
+    - __dirty: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 1.7633113, g: 1.0328609, b: 0.6404479, a: 0.4392157}
+    - _Color1: {r: 1.7633113, g: 1.0328609, b: 0.6404479, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlareColor: {r: 1.8640718, g: 1.409102, b: 0.8001441, a: 0.68235296}
+    - _MainColor: {r: 2.3541589, g: 2.3541589, b: 2.3541589, a: 1}
+    - _MainColor1: {r: 1.7633113, g: 1.0328609, b: 0.6404479, a: 0.4392157}
+    - _Offset: {r: -1, g: 1, b: 0, a: 0}
+    - _SecondaryColor: {r: 2.3541589, g: 2.3541589, b: 2.3541589, a: 1}
+    - _VariationColor: {r: 1.7633113, g: 1.0328609, b: 0.6404479, a: 0}
+    - _VariationColor1: {r: 1, g: 1, b: 1, a: 0.454902}
