@@ -12630,7 +12630,7 @@ GameObject:
   - component: {fileID: 455878291}
   - component: {fileID: 2513926860655348306}
   m_Layer: 0
-  m_Name: Ronin
+  m_Name: Ronin-Old
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
