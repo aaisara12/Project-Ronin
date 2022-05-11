@@ -12730,8 +12730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1a373c3760bd84397e69545b7febab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  dashDistance: 7
+  movementSpeed: 0
+  dashDistance: 0
   dashDuration: 0.75
   rotateSpeed: 0.5
 --- !u!114 &3572934327578028549
