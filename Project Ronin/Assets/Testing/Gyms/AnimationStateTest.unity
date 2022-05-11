@@ -1206,11 +1206,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ronin
       objectReference: {fileID: 0}
-    - target: {fileID: 6989315587336228353, guid: fa71e2a85ededf745a4327832309f64a,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa71e2a85ededf745a4327832309f64a, type: 3}
 --- !u!4 &333513913 stripped
@@ -2064,7 +2059,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.503235, y: 1}
+    m_SensorSize: {x: 1.2191781, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
