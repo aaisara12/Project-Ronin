@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7f6b0fa95d90d4ca158ba1ade569e7, type: 3}
+  m_Name: Flare 4
+  m_EditorClassIdentifier: 
+  flare:
+  - flareShape: 16
+    flareMesh: {fileID: 0}
+    scale: 3.07
+    brightness: 0.219
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 0
+    flareMesh: {fileID: 0}
+    scale: 3.02
+    brightness: 0.446
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 7
+    flareMesh: {fileID: 0}
+    scale: 1.25
+    brightness: 0.387
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 27
+    flareMesh: {fileID: 0}
+    scale: 3.6
+    brightness: 0.06
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    open: 0
+  - flareShape: 5
+    flareMesh: {fileID: 0}
+    scale: 2.41
+    brightness: 0.191
+    colorMultiplier: {r: 0.972549, g: 0.972549, b: 0.972549, a: 1}
+    open: 0
+  flareMaterial: {fileID: 2100000, guid: 7724528df85009d4dadb42eb105e754e, type: 2}
+  globalScale: 0.63
+  globalBrightness: 1
+  variationSpeed: 1
+  variationScale: 5
+  variationColor: {r: 1, g: 1, b: 1, a: 1}
+  showLayerSettings: 1
+  showMainSettings: 1
+  showVariationSettings: 0
+  showFadingSettings: 0
+  cameraDepthFadeStart: 0
+  cameraDepthFadeEnd: 0
+  cameraDistanceFadeStart: 0
+  cameraDistanceFadeEnd: 0
+  sceneDepthFadeStart: 0
+  sceneDepthFadeEnd: 0
+  useCameraDepthFade: 1
+  useCameraDistanceFade: 1
+  useSceneDepthFade: 0
+  useVariation: 0
+  needsToBeUpdated: 0

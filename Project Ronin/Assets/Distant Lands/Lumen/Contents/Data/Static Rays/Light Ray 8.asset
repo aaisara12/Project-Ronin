@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1a523e43c25be4797b9b6e423a1986, type: 3}
+  m_Name: Light Ray 8
+  m_EditorClassIdentifier: 
+  rayLayers:
+  - rayShape: 42
+    rayMesh: {fileID: 0}
+    brightness: 0.317
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 90, y: 0, z: 0}
+    scale: {x: 2.2, y: 2.2, z: 2.2}
+    open: 1
+  - rayShape: 37
+    rayMesh: {fileID: 0}
+    brightness: 0.314
+    colorMultiplier: {r: 1, g: 1, b: 1, a: 1}
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 90, y: 0, z: 0}
+    scale: {x: 2, y: 2, z: 2}
+    open: 0
+  globalScale: 0.8
+  rayMaterial: {fileID: 2100000, guid: e349799befeba9948a28f3e1a260fa29, type: 2}
+  globalRotation: {x: 0, y: 0, z: 0}
+  globalBrightness: 0.368
+  variationSpeed: 1
+  variationScale: 10
+  variationColor: {r: 1, g: 1, b: 1, a: 1}
+  showLayerSettings: 0
+  showMainSettings: 1
+  showVariationSettings: 0
+  showFadingSettings: 0
+  needsToBeUpdated: 1
+  useCameraDepthFade: 1
+  cameraDepthFadeStart: 1
+  cameraDepthFadeEnd: 3
+  useCameraDistanceFade: 1
+  cameraDistanceFadeStart: 40
+  cameraDistanceFadeEnd: 60
+  useSceneDepthFade: 1
+  sceneDepthFadeStart: 0
+  sceneDepthFadeEnd: 3
+  useAngleFade: 0
+  angleFadeStart: 0
+  angleFadeEnd: 0
+  useVariation: 0
+  useLightColor: 0
