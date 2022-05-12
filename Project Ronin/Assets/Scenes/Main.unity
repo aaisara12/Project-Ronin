@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17907412, g: 0.22422606, b: 0.30602112, a: 1}
+  m_IndirectSpecularColor: {r: 0.1790739, g: 0.2242257, b: 0.30602038, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1962,8 +1962,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 8496555722688446267, guid: 937cd215bb7076e4888958a67521fbb7,
-    type: 3}
+  m_Follow: {fileID: 919132148496660812}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 8
@@ -1973,7 +1972,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.2214766, y: 1}
+    m_SensorSize: {x: 1.699535, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7914,6 +7913,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f92aeb18ef2b64e8822dee0622c446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &919132148496660812 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8496555722688446267, guid: 937cd215bb7076e4888958a67521fbb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8242551679565733055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8242551679565733055
 PrefabInstance:
   m_ObjectHideFlags: 0
