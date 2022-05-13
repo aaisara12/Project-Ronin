@@ -1962,8 +1962,12 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
+<<<<<<< HEAD
   m_Follow: {fileID: 8496555722688446267, guid: 937cd215bb7076e4888958a67521fbb7,
     type: 3}
+=======
+  m_Follow: {fileID: 919132148496660812}
+>>>>>>> d5953b64335e583ca8e274d0990f1f59573503d3
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 8
@@ -1973,7 +1977,11 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
+<<<<<<< HEAD
     m_SensorSize: {x: 1.2214766, y: 1}
+=======
+    m_SensorSize: {x: 1.699535, y: 1}
+>>>>>>> d5953b64335e583ca8e274d0990f1f59573503d3
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7914,6 +7922,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f92aeb18ef2b64e8822dee0622c446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+=======
+--- !u!4 &919132148496660812 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8496555722688446267, guid: 937cd215bb7076e4888958a67521fbb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8242551679565733055}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> d5953b64335e583ca8e274d0990f1f59573503d3
 --- !u!1001 &8242551679565733055
 PrefabInstance:
   m_ObjectHideFlags: 0
