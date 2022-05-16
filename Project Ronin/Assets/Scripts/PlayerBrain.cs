@@ -12,6 +12,8 @@ public class PlayerBrain : MonoBehaviour
     private Player_Controls playerControls;
     public Animator animator;
 
+    [SerializeField] AttackInputProxy attackInputProxy;
+
 
 
     private void Awake(){
@@ -91,7 +93,8 @@ public class PlayerBrain : MonoBehaviour
 
         animator.SetFloat("xAttack", rotatedAttackDirection.x);
         animator.SetFloat("yAttack", rotatedAttackDirection.y);
-        animator.SetTrigger("attack");
+        
+        attackInputProxy.RequestAttack();
     }
 
     private void OnParry(InputAction.CallbackContext context){
