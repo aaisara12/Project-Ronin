@@ -3,34 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Class used to prevent animator attack parameter spamming
-public class AttackInputProxy : MonoBehaviour
+public class AnimatorTriggerProxy : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    bool isAttackInputEnabled = true;
+    bool isInputUnlocked = true;
 
     [SerializeField] int numLocking = 0;
 
     // Called on particular frames of animation
-    public void RequestUnlockAttackInput()
+    public void ReleaseInputLock()
     {
         numLocking--;
         if(numLocking == 0)
-            isAttackInputEnabled = true;
+            isInputUnlocked = true;
         //Debug.Log("Enabled attack");
     }
 
-    public void LockAttackInput()
+    public void AddInputLock()
     {
         numLocking++;
-        isAttackInputEnabled = false;
+        isInputUnlocked = false;
         //Debug.Log("Disabled attack");
     }
 
-    public void RequestAttack()
+    public void RequestTrigger(string triggerName)
     {
-        if(isAttackInputEnabled)
+        if(isInputUnlocked)
         {
-            animator.SetTrigger("attack");
+            animator.SetTrigger(triggerName);
         }
     }
 }

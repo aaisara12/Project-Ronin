@@ -2170,7 +2170,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.8190149, y: 1}
+    m_SensorSize: {x: 1.0595647, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8568,6 +8568,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4918879848461372750, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.28147
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918879848461372750, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.28147
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918879848461372750, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.28147
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918879848461372750, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.083
       objectReference: {fileID: 0}
@@ -8616,6 +8631,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4918879848834945413, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.08549615
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918879848834945413, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.07285535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918879848834945413, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.07990294
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918879848834945413, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00189
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918879848834945413, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00519
+      objectReference: {fileID: 0}
+    - target: {fileID: 4918879848834945413, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00821
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694959533272487819, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: triggerProxy
+      value: 
+      objectReference: {fileID: 919132148496660815}
     - target: {fileID: 5694959533272487819, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: attackCooldown

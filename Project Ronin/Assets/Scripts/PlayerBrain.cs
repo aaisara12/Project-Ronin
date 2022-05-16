@@ -12,7 +12,7 @@ public class PlayerBrain : MonoBehaviour
     private Player_Controls playerControls;
     public Animator animator;
 
-    [SerializeField] AttackInputProxy attackInputProxy;
+    [SerializeField] AnimatorTriggerProxy triggerProxy;
 
 
 
@@ -94,7 +94,7 @@ public class PlayerBrain : MonoBehaviour
         animator.SetFloat("xAttack", rotatedAttackDirection.x);
         animator.SetFloat("yAttack", rotatedAttackDirection.y);
         
-        attackInputProxy.RequestAttack();
+        triggerProxy.RequestTrigger("attack");
     }
 
     private void OnParry(InputAction.CallbackContext context){
@@ -110,7 +110,7 @@ public class PlayerBrain : MonoBehaviour
     }
 
     private void OnDodge(InputAction.CallbackContext context){
-        animator.SetTrigger("dodge");
+        triggerProxy.RequestTrigger("dodge");
     }
 
     private void movePlayer(InputAction.CallbackContext context){
