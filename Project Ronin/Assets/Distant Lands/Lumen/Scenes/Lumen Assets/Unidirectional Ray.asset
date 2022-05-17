@@ -69,7 +69,6 @@ MonoBehaviour:
   variationScale: 10
   variationColor: {r: 1, g: 1, b: 1, a: 0.5254902}
   autoAssignSun: 1
-  useLumenSun: 1
   sunDirection: {x: 0, y: 0, z: 0}
   bidirectional: 0
   showLayerSettings: 0
