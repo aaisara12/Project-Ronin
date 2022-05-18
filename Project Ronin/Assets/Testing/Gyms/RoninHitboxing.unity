@@ -1469,11 +1469,15 @@ MonoBehaviour:
   - soundName: swish-light
     volume: 0.2
     pitch: 1
-    clip: {fileID: 8300000, guid: 744f2085e3671eb488c5b006a2e24370, type: 3}
+    clip: {fileID: 8300000, guid: c3f5bf4569cd778488326fdada63959b, type: 3}
   - soundName: swish-heavy
     volume: 1
     pitch: 1
-    clip: {fileID: 8300000, guid: c2fa68f43b78f7046b41d27b70565130, type: 3}
+    clip: {fileID: 8300000, guid: 372185db1e9f774419a7e2111af89ed2, type: 3}
+  - soundName: swish-final
+    volume: 0.5
+    pitch: 1
+    clip: {fileID: 8300000, guid: 4bd0af90259294f42ad7b78eade90db8, type: 3}
   - soundName: hit-flesh
     volume: 0.1
     pitch: 1
@@ -1506,10 +1510,6 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     clip: {fileID: 8300000, guid: 727c2f0ba1eae724fb1961723a8681d7, type: 3}
-  - soundName: swish-final
-    volume: 0.5
-    pitch: 1
-    clip: {fileID: 8300000, guid: bb5f87726a563da45bbd5f6894ffa0f1, type: 3}
 --- !u!1 &469698398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2170,7 +2170,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0366552, y: 1}
+    m_SensorSize: {x: 1.4569939, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2379,7 +2379,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30944
+  m_Name: pb_Mesh45404
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4877,7 +4877,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30840
+  m_Name: pb_Mesh45300
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5041,7 +5041,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30562
+  m_Name: pb_Mesh45020
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
