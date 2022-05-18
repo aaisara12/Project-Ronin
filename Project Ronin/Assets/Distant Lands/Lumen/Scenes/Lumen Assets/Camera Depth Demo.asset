@@ -41,7 +41,7 @@ MonoBehaviour:
   cameraDistanceFadeEnd: 6
   useSceneDepthFade: 1
   sceneDepthFadeStart: 0
-  sceneDepthFadeEnd: 1
+  sceneDepthFadeEnd: 0
   useAngleFade: 0
   angleFadeStart: 0
   angleFadeEnd: 0

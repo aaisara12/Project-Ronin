@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 9186f316d6d2dd34fa8314ffa783cd72, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +118,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -150,9 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: f78c59f7e17ff194bbaa7b6220644c51, type: 2}
   updateFrequency: 0
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: f78c59f7e17ff194bbaa7b6220644c51, type: 2}
   localScale: 1
 --- !u!4 &131274637
 Transform:
@@ -197,9 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: bf4d937a081b1924ba6ec48f61d47833, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: bf4d937a081b1924ba6ec48f61d47833, type: 2}
   localScale: 1
 --- !u!4 &206300259
 Transform:
@@ -244,9 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: 9adc372a7df09944b8c37d133b6b4c5a, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: 9adc372a7df09944b8c37d133b6b4c5a, type: 2}
   localScale: 1
 --- !u!4 &208912590
 Transform:
@@ -291,9 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: 6f7554019e911124681e81e832c4893a, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: 6f7554019e911124681e81e832c4893a, type: 2}
   localScale: 1
 --- !u!4 &419289650
 Transform:
@@ -422,6 +424,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -500,6 +503,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -555,9 +559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: 8530cea0c4a52874b95a010ba1edfa2f, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: 8530cea0c4a52874b95a010ba1edfa2f, type: 2}
   localScale: 1
 --- !u!4 &755286819
 Transform:
@@ -657,6 +661,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -751,6 +756,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &911898666
 Canvas:
   m_ObjectHideFlags: 0
@@ -822,9 +828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: 3e4275dff66a4e0439f58799043ac79c, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: 3e4275dff66a4e0439f58799043ac79c, type: 2}
   localScale: 1
 --- !u!4 &1135450553
 Transform:
@@ -893,6 +899,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -948,9 +955,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: 7588df8b5edcb264d8897b11214d5957, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: 7588df8b5edcb264d8897b11214d5957, type: 2}
   localScale: 1
 --- !u!4 &1471163277
 Transform:
@@ -995,9 +1002,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: a4883f916a2a31c498c082e1d76ece0a, type: 2}
   updateFrequency: 0
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: a4883f916a2a31c498c082e1d76ece0a, type: 2}
   localScale: 1
 --- !u!4 &1491427565
 Transform:
@@ -1065,6 +1072,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1120,9 +1128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: 97da7b6345d61fb44afcc40dfa6e9d41, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: 97da7b6345d61fb44afcc40dfa6e9d41, type: 2}
   localScale: 1
 --- !u!4 &1526430495
 Transform:
@@ -1167,9 +1175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: f06f5641a3041fe4398af10568552eb8, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: f06f5641a3041fe4398af10568552eb8, type: 2}
   localScale: 1
 --- !u!4 &1574731331
 Transform:
@@ -1233,6 +1241,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1258,6 +1267,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1597014415
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1356,6 +1366,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1632949140
@@ -1372,6 +1383,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 41.45, y: -766.479, z: -49.037003}
+--- !u!1 &1643767120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1643767122}
+  - component: {fileID: 1643767121}
+  m_Layer: 1
+  m_Name: Post-process Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1643767121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643767120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: f928506e1d1efc742ae430b2daa5b531, type: 2}
+--- !u!4 &1643767122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643767120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1648284196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,9 +1460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: 1a6ad65748303144c9c8bb3c74eb942a, type: 2}
   updateFrequency: 0
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: 1a6ad65748303144c9c8bb3c74eb942a, type: 2}
   localScale: 1
 --- !u!4 &1648284198
 Transform:
@@ -1419,54 +1478,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 25.61, y: 90.00001, z: 0}
---- !u!1 &1734239291
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1734239293}
-  - component: {fileID: 1734239292}
-  m_Layer: 1
-  m_Name: Post-process Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1734239292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734239291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 0dddc3dbdc2359f498ce08e3fbd401a6, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
---- !u!4 &1734239293
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734239291}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1767491443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,9 +1537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: e1d1abe883589e94988ad0ec4a46c576, type: 2}
   updateFrequency: 0
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: e1d1abe883589e94988ad0ec4a46c576, type: 2}
   localScale: 1
 --- !u!4 &1834921235
 Transform:
@@ -1573,9 +1584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: ac801cfe0eb82d043b596cf3264fbf8e, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: ac801cfe0eb82d043b596cf3264fbf8e, type: 2}
   localScale: 1
 --- !u!4 &1857907001
 Transform:
@@ -1620,9 +1631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: 8171792a7a853c2408af41262b45b441, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: 8171792a7a853c2408af41262b45b441, type: 2}
   localScale: 1
 --- !u!4 &1917880306
 Transform:
@@ -1667,9 +1678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83ec0809dee84e4aba1a3c74eff80af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flareData: {fileID: 11400000, guid: dba00bfec6af2b5488440be7bdc7c270, type: 2}
   updateFrequency: 1
   localColor: {r: 1, g: 1, b: 1, a: 1}
-  flareData: {fileID: 11400000, guid: dba00bfec6af2b5488440be7bdc7c270, type: 2}
   localScale: 1
 --- !u!4 &1923431877
 Transform:
@@ -1727,57 +1738,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 2051705788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 2051705789}
-  volumeLayer:
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 2
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 0
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 1
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+    m_Bits: 3
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!81 &2051705791
 AudioListener:
   m_ObjectHideFlags: 0

@@ -28038,7 +28038,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.46666667
+        time: 0.53333336
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -57065,7 +57065,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.46666667
+        time: 0.53333336
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -57100,16 +57100,16 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.46666667
-    functionName: PlayVFX
-    data: Sword Slash 3
+  - time: 0.33333334
+    functionName: PlaySound
+    data: swish-final
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.46666667
-    functionName: PlaySound
-    data: swish-final
+    functionName: PlayVFX
+    data: Sword Slash 3
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
