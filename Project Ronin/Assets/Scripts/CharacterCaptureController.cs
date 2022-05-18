@@ -13,6 +13,8 @@ public class CharacterCaptureController : MonoBehaviour
     private bool isDashing;
     private float dashSpeed;
 
+    private bool inKnockbackState;
+
     private Vector3[] angles = new Vector3[8];
     private Quaternion targetRotation;
     [SerializeField] private float rotateSpeed;
@@ -149,4 +151,25 @@ public class CharacterCaptureController : MonoBehaviour
         isAttacking = false;
         attackSlowMultiplier = 1;
     }
+
+    public void KnockBack(Vector2 direction, float force)
+    {
+        
+        inKnockbackState = true;
+        Vector2 faceDir = direction * -1;
+        targetRotation = Quaternion.LookRotation(new Vector3(faceDir.x, 0, faceDir.y), Vector3.up);
+        //MoveInDirection(direction);
+
+
+        //MoveInDirection(direction);
+        //float knockbackForce = 0.5f;
+        //Debug.Log("test");
+        //this doesn't work
+        GetComponent<Rigidbody>().AddForce(9999, 9999, 9999, ForceMode.Impulse);
+        //Debug.Log("test2");
+        
+
+    }
+
+
 }
