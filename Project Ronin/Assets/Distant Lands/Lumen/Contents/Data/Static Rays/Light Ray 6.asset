@@ -48,17 +48,17 @@ MonoBehaviour:
   showMainSettings: 1
   showVariationSettings: 0
   showFadingSettings: 0
-  needsToBeUpdated: 0
+  needsToBeUpdated: 1
   useCameraDepthFade: 1
-  cameraDepthFadeStart: 1
-  cameraDepthFadeEnd: 3
+  cameraDepthFadeStart: 6.07
+  cameraDepthFadeEnd: 53.3
   useCameraDistanceFade: 1
   cameraDistanceFadeStart: 40
   cameraDistanceFadeEnd: 60
   useSceneDepthFade: 1
   sceneDepthFadeStart: 0
   sceneDepthFadeEnd: 3
-  useAngleFade: 0
+  useAngleFade: 1
   angleFadeStart: 0
   angleFadeEnd: 0
   useVariation: 1
