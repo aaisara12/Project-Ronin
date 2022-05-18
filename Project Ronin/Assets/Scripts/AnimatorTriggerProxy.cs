@@ -33,4 +33,11 @@ public class AnimatorTriggerProxy : MonoBehaviour
             animator.SetTrigger(triggerName);
         }
     }
+
+    // Useful for restabilizing state when animations are interrupted and certain lock requests are missed
+    public void ResetLocks()
+    {
+        numLocking = 0;
+        isInputUnlocked = true;
+    }
 }
