@@ -9,12 +9,13 @@ public class BasicMeleeMove : RemoteCollisionListener
 
     protected override void OnTriggerEnterRemote(Collider other)
     {
+        if(!AttributeSet.objectToAttributes.ContainsKey(other.gameObject)) {return;}
+
         var attSet = AttributeSet.objectToAttributes[other.gameObject];
         if(attSet != AttributeSet.objectToAttributes[gameObject])
         {
-            //Debug.LogFormat("Hit {0}", other.name);
             attSet.ModifyFloat("hp", -damage);
-            attSet.AddTag("backoff");
+            other.gameObject.GetComponent<Animator>().SetTrigger("backoff");
         }    
 
     }
