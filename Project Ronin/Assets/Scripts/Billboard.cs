@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    [SerializeField]
-    public Transform cameraToLookAt;
+    Transform cameraToLookAt;
     
     void Start()
     {
