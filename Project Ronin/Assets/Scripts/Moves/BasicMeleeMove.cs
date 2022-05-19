@@ -12,7 +12,7 @@ public class BasicMeleeMove : RemoteCollisionListener
         if(other.tag != "Untagged" && other.tag != tag)
         {
             other.gameObject.GetComponent<IHealthStat>()?.TakeDamage(damage);
-            other.gameObject.GetComponent<Animator>()?.SetTrigger("backoff");
+            other.gameObject.GetComponent<AnimatorTriggerProxy>()?.RequestTrigger("backoff");
         } 
     }
 }

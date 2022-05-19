@@ -1284,6 +1284,10 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     clip: {fileID: 8300000, guid: 744f2085e3671eb488c5b006a2e24370, type: 3}
+  - soundName: swish-heavy
+    volume: 0.5
+    pitch: 1
+    clip: {fileID: 8300000, guid: c2fa68f43b78f7046b41d27b70565130, type: 3}
   - soundName: hit-flesh
     volume: 0.1
     pitch: 1
@@ -1976,7 +1980,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0652819, y: 1}
+    m_SensorSize: {x: 0.8259149, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

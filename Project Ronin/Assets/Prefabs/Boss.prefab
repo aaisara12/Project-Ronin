@@ -8656,6 +8656,7 @@ GameObject:
   - component: {fileID: 7961618278050625151}
   - component: {fileID: 7961618278050625141}
   - component: {fileID: 5380412148742661502}
+  - component: {fileID: 5380412148742661503}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -8790,7 +8791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdbaa44bf3411741ae47ed3da580017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 5
+  attackRange: 4
+  attackCooldown: 5
   animator: {fileID: 7961618278050625150}
 --- !u!114 &5380412148742661502
 MonoBehaviour:
@@ -8806,6 +8808,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthUI: {fileID: 8591986085699746904}
   targetHealthStat: {fileID: 7961618278050625140}
+--- !u!114 &5380412148742661503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3735355305995499198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8360c4474a7555c4e891769cb20da422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7961618278050625150}
+  numLocking: 0
 --- !u!1 &3771807767200671373
 GameObject:
   m_ObjectHideFlags: 0

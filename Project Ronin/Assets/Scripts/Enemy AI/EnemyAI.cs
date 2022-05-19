@@ -10,6 +10,8 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField]
     float attackRange = 0f;
+    [SerializeField]
+    float attackCooldown = 3f;
 
     [SerializeField]
     Animator animator = null;
@@ -23,6 +25,7 @@ public class EnemyAI : MonoBehaviour
         if (!animator) animator = gameObject.GetComponent<Animator>();
     }
 
+    float nextAttackTime = 0;
     void Update()
     {
         Vector3 playerPos = playerObj.transform.position;
@@ -31,10 +34,16 @@ public class EnemyAI : MonoBehaviour
         
         if (distance < attackRange)
         {
-            animator.SetTrigger("attack");
-
+            if(nextAttackTime <= Time.time)
+            {
+                animator.SetTrigger("attack");
+                nextAttackTime += attackCooldown;
+            }
+            
             animator.SetFloat("xInput", 0);
             animator.SetFloat("yInput", 0);
+
+            
         }
         else
         {
