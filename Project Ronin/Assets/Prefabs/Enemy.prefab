@@ -545,13 +545,12 @@ GameObject:
   - component: {fileID: 1680685759440954274}
   - component: {fileID: 1680685759440954275}
   - component: {fileID: 1680685759440954280}
-  - component: {fileID: 1680685759440954287}
-  - component: {fileID: 1680685759440954285}
   - component: {fileID: 1680685759440954284}
   - component: {fileID: 1680685759440954278}
   - component: {fileID: 1680685759440954276}
   - component: {fileID: 1217026382}
   - component: {fileID: 1823908756}
+  - component: {fileID: 1958721543}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -628,13 +627,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
-    'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform 'mixamorig:RightArm'\n\tTransform
-    'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform 'mixamorig:RightFoot'\n\tTransform
-    'mixamorig:Head'\n\tTransform 'mixamorig:LeftUpLeg'\n\tand more ...\n\tFrom animation
-    clip 'Parry'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -650,40 +643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1a373c3760bd84397e69545b7febab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
-  dashDistance: 7
+  movementSpeed: 0
+  dashDistance: 0
   dashDuration: 1
   rotateSpeed: 0.5
---- !u!114 &1680685759440954287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987098001485033941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2f92aeb18ef2b64e8822dee0622c446, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onAttributeChange:
-    m_PersistentCalls:
-      m_Calls: []
-  initializer: {fileID: 11400000, guid: 9fe98c890dfa80f498319fea7c046d8d, type: 2}
---- !u!114 &1680685759440954285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987098001485033941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df31c741c88679c4a905942310b2a824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damagedParticleEffectPrefab: {fileID: 630371344014726073, guid: 3a1804504f42a154e957d53a4fd2fa93,
-    type: 3}
 --- !u!114 &1680685759440954284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,7 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthUI: {fileID: 4951825344021320388}
-  targetAttributeSet: {fileID: 1680685759440954287}
+  targetHealthStat: {fileID: 1958721543}
 --- !u!114 &1680685759440954276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,7 +701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remoteCollisionObject: {fileID: 1543813977}
-  damage: 10
+  damage: 1
 --- !u!114 &1823908756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,6 +714,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03adbcd2854827a478a73cffdb66e5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1958721543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987098001485033941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536f812747d8a5b4c9435a8c8dc8509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _maxHealth: 100
 --- !u!1 &2338623652578244504
 GameObject:
   m_ObjectHideFlags: 0

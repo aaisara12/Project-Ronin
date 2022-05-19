@@ -2783,7 +2783,6 @@ GameObject:
   - component: {fileID: 5694959533272487820}
   - component: {fileID: 5694959533272487823}
   - component: {fileID: 5694959533272487822}
-  - component: {fileID: 5694959533272487817}
   - component: {fileID: 5694959533272487819}
   - component: {fileID: 5694959533272487818}
   - component: {fileID: 1030664305873234867}
@@ -2791,9 +2790,10 @@ GameObject:
   - component: {fileID: 5694959533272487821}
   - component: {fileID: 919132148496660814}
   - component: {fileID: 919132148496660815}
+  - component: {fileID: 919132148496660816}
   m_Layer: 0
   m_Name: Ronin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2899,22 +2899,6 @@ MonoBehaviour:
   dashDistance: 0
   dashDuration: 0.75
   rotateSpeed: 0.5
---- !u!114 &5694959533272487817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5694959533272487924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2f92aeb18ef2b64e8822dee0622c446, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onAttributeChange:
-    m_PersistentCalls:
-      m_Calls: []
-  initializer: {fileID: 11400000, guid: 9fe98c890dfa80f498319fea7c046d8d, type: 2}
 --- !u!114 &5694959533272487819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2942,7 +2926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remoteCollisionObject: {fileID: 4884688521002937503}
-  damage: 10
+  damage: 1
 --- !u!114 &1030664305873234867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2956,7 +2940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remoteCollisionObject: {fileID: 677953963121529906}
-  damage: 30
+  damage: 10
 --- !u!114 &5694959533272487925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3020,6 +3004,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4884688519527622433}
   numLocking: 0
+--- !u!114 &919132148496660816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5694959533272487924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536f812747d8a5b4c9435a8c8dc8509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _maxHealth: 100
 --- !u!1 &5711160224629546530
 GameObject:
   m_ObjectHideFlags: 0

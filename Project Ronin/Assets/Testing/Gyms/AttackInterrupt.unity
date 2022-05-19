@@ -621,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthUI: {fileID: 1211532526}
-  targetAttributeSet: {fileID: 919132148496660803}
+  targetHealthStat: {fileID: 919132148496660816}
 --- !u!1 &181136493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,7 +1972,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5855588, y: 1}
+    m_SensorSize: {x: 1.3402572, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6101,10 +6101,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1217026382, guid: 31fbf3194a4245f45a2f3183a7e70db2, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1213798947304713071, guid: 31fbf3194a4245f45a2f3183a7e70db2,
         type: 3}
       propertyPath: m_RootOrder
@@ -6158,26 +6154,6 @@ PrefabInstance:
     - target: {fileID: 1213798947304713071, guid: 31fbf3194a4245f45a2f3183a7e70db2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680685759440954275, guid: 31fbf3194a4245f45a2f3183a7e70db2,
-        type: 3}
-      propertyPath: m_WarningMessage
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680685759440954276, guid: 31fbf3194a4245f45a2f3183a7e70db2,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680685759440954280, guid: 31fbf3194a4245f45a2f3183a7e70db2,
-        type: 3}
-      propertyPath: dashDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1680685759440954280, guid: 31fbf3194a4245f45a2f3183a7e70db2,
-        type: 3}
-      propertyPath: movementSpeed
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
@@ -10064,16 +10040,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &919132148496660803 stripped
+--- !u!114 &919132148496660816 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5694959533272487817, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+  m_CorrespondingSourceObject: {fileID: 919132148496660816, guid: 46e91229e8d452a4ab1e8a1d20e11551,
     type: 3}
   m_PrefabInstance: {fileID: 4884688519481962186}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2f92aeb18ef2b64e8822dee0622c446, type: 3}
+  m_Script: {fileID: 11500000, guid: 536f812747d8a5b4c9435a8c8dc8509e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &920011430343518052
@@ -19445,11 +19421,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1030664305873234867, guid: 46e91229e8d452a4ab1e8a1d20e11551,
-        type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4918879848461372750, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: m_RootOrder
@@ -19505,20 +19476,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5694959533272487818, guid: 46e91229e8d452a4ab1e8a1d20e11551,
-        type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5694959533272487924, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: m_Name
       value: Ronin
-      objectReference: {fileID: 0}
-    - target: {fileID: 5694959533272487924, guid: 46e91229e8d452a4ab1e8a1d20e11551,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46e91229e8d452a4ab1e8a1d20e11551, type: 3}
