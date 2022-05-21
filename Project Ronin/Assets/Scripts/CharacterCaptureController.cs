@@ -19,6 +19,8 @@ public class CharacterCaptureController : MonoBehaviour
     private Quaternion targetRotation;
     [SerializeField] private float rotateSpeed;
 
+
+    [SerializeField]  private float knockbackForceFalloff = 3f;
     CharacterController characterController;
 
     // Start is called before the first frame update
@@ -152,37 +154,27 @@ public class CharacterCaptureController : MonoBehaviour
         attackSlowMultiplier = 1;
     }
 
+    //feed this a normalized vector, force, and the time you want them to knockback
     public void KnockBack(Vector3 direction, float force, float knockbackDuration)
     {
-        
-        //inKnockbackState = true;
+
         Vector3 faceDir = direction * -1;
-        targetRotation = Quaternion.LookRotation(new Vector3(faceDir.x, 0, faceDir.y), Vector3.up);
-        //MoveInDirection(direction);
-
-
-        //MoveInDirection(direction);
-        //float knockbackForce = 0.5f;
-        //Debug.Log("test");
-        //this doesn't work
-        //GetComponent<Rigidbody>().AddForce(9999, 9999, 9999, ForceMode.Impulse);
-        //Debug.Log("test2");
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(1,1,1), .1f * force);
+        targetRotation = Quaternion.LookRotation(new Vector3(faceDir.x, 0, faceDir.z), Vector3.up);
         StartCoroutine(Knockback(direction, knockbackDuration, force));
 
     }
     IEnumerator Knockback(Vector3 direction, float knockbackDuration, float force)
     {
-        float forceFalloff = 1.03f;
+  
         inKnockbackState = true;
         Vector3 startPosition = transform.position;
         float knockbackStartTime = 0;
         while (knockbackStartTime <= knockbackDuration)// && Vector3.Distance(startPosition, transform.position) <= dashDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, direction, .1f * force);
+            //transform.position = Vector3.MoveTowards(transform.position, endPosition, .1f * force);
+            characterController.Move(direction * force * Time.deltaTime);
             knockbackStartTime += Time.deltaTime;
-            force = force / (forceFalloff);//* Time.deltaTime);
-            // Debug.Log(dashStartTime + "-" + Vector3.Distance(startPosition, transform.position)); // test moving set distance over set amt of time
+            force = force / (1 + knockbackForceFalloff * Time.deltaTime);
             yield return null;
         }
         inKnockbackState = false;
