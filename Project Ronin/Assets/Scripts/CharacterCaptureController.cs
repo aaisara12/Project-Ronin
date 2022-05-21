@@ -152,11 +152,11 @@ public class CharacterCaptureController : MonoBehaviour
         attackSlowMultiplier = 1;
     }
 
-    public void KnockBack(Vector2 direction, float force)
+    public void KnockBack(Vector3 direction, float force, float knockbackDuration)
     {
         
-        inKnockbackState = true;
-        Vector2 faceDir = direction * -1;
+        //inKnockbackState = true;
+        Vector3 faceDir = direction * -1;
         targetRotation = Quaternion.LookRotation(new Vector3(faceDir.x, 0, faceDir.y), Vector3.up);
         //MoveInDirection(direction);
 
@@ -165,11 +165,26 @@ public class CharacterCaptureController : MonoBehaviour
         //float knockbackForce = 0.5f;
         //Debug.Log("test");
         //this doesn't work
-        GetComponent<Rigidbody>().AddForce(9999, 9999, 9999, ForceMode.Impulse);
+        //GetComponent<Rigidbody>().AddForce(9999, 9999, 9999, ForceMode.Impulse);
         //Debug.Log("test2");
-        
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(1,1,1), .1f * force);
+        StartCoroutine(Knockback(direction, knockbackDuration, force));
 
     }
-
-
+    IEnumerator Knockback(Vector3 direction, float knockbackDuration, float force)
+    {
+        float forceFalloff = 1.03f;
+        inKnockbackState = true;
+        Vector3 startPosition = transform.position;
+        float knockbackStartTime = 0;
+        while (knockbackStartTime <= knockbackDuration)// && Vector3.Distance(startPosition, transform.position) <= dashDistance)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, direction, .1f * force);
+            knockbackStartTime += Time.deltaTime;
+            force = force / (forceFalloff);//* Time.deltaTime);
+            // Debug.Log(dashStartTime + "-" + Vector3.Distance(startPosition, transform.position)); // test moving set distance over set amt of time
+            yield return null;
+        }
+        inKnockbackState = false;
+    }
 }
