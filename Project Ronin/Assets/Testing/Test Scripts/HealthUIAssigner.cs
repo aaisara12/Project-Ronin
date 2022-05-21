@@ -5,11 +5,11 @@ using UnityEngine;
 public class HealthUIAssigner : MonoBehaviour
 {
     [SerializeField] HealthUI healthUI;
-    [SerializeField] AttributeSet targetAttributeSet;
+    [SerializeField] HealthStat targetHealthStat;
 
     void Start()
     {
-        healthUI.Initialize(targetAttributeSet);
+        healthUI.Initialize(targetHealthStat);
     }
 
 }
