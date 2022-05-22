@@ -13,7 +13,7 @@ public class backoff_state : StateMachineBehaviour
         {
             throw new MissingComponentException("Animator State Error: Character doesn't have CharacterCaptureController component!");
         }
-        movementController.KnockBack(new Vector3(1, 0, 1), 15, 2);
+        movementController.KnockBack(new Vector3(animator.GetFloat("xKnock"), 0, animator.GetFloat("yKnock")), animator.GetFloat("powKnock") * (1/animator.GetFloat("tenacity")), 0.5f);
     }
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
