@@ -132005,6 +132005,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.8
+    functionName: PlayVFX
+    data: Boss Stomp
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.1666666
     functionName: ReleaseInputLock
     data: 
