@@ -159,7 +159,9 @@ public class CharacterCaptureController : MonoBehaviour
     {
 
         Vector3 faceDir = direction * -1;
-        targetRotation = Quaternion.LookRotation(new Vector3(faceDir.x, 0, faceDir.z), Vector3.up);
+
+        // Setting the target rotation prevents any attached NavMesh Agent from steering character
+        //targetRotation = Quaternion.LookRotation(new Vector3(faceDir.x, 0, faceDir.z), Vector3.up);
         StartCoroutine(Knockback(direction, knockbackDuration, force));
 
     }

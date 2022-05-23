@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Project Ronin/Assets/Scripts/FSM.meta
+guid: bb694a2b7533694469e2be85fac0a561
+folderAsset: yes
+========
 guid: 5033d45d93d3d1f4083d665043627f6f
+>>>>>>>> main:Project Ronin/Assets/Animations/Packages/Giant Animations/Giant Animations - Example Scene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

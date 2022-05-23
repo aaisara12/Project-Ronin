@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Project Ronin/Assets/Scripts/Enemy AI/FSM_Shit.meta
+guid: 570fd1a5b977a7642a667675cac28292
+folderAsset: yes
+========
 guid: 36d441831dcdbf44ea0a633bc7b59c68
+>>>>>>>> main:Project Ronin/Assets/unitytoldmetosavethis.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

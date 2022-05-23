@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 1680685759460137521}
   - component: {fileID: 1680685759460137522}
   - component: {fileID: 1680685759460137523}
-  - component: {fileID: 1964240791}
+  - component: {fileID: 177608159}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1964240791
+--- !u!114 &177608159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,13 +558,16 @@ GameObject:
   - component: {fileID: 1680685759440954274}
   - component: {fileID: 1680685759440954275}
   - component: {fileID: 1680685759440954280}
-  - component: {fileID: 1680685759440954284}
   - component: {fileID: 1680685759440954278}
-  - component: {fileID: 1680685759440954276}
   - component: {fileID: 1217026382}
   - component: {fileID: 1823908756}
-  - component: {fileID: 1958721543}
-  - component: {fileID: 680171962}
+  - component: {fileID: 1314554824}
+  - component: {fileID: 1314554825}
+  - component: {fileID: 1314554838}
+  - component: {fileID: 1314554839}
+  - component: {fileID: 1336255501}
+  - component: {fileID: 1336255502}
+  - component: {fileID: 1336255503}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -662,19 +665,6 @@ MonoBehaviour:
   dashDuration: 1
   rotateSpeed: 0.5
   knockbackForceFalloff: 3
---- !u!114 &1680685759440954284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987098001485033941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e7a7c1b48b4054f81e4c00b4d33a1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 5
 --- !u!114 &1680685759440954278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,22 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthUI: {fileID: 4951825344021320388}
-  targetHealthStat: {fileID: 1958721543}
---- !u!114 &1680685759440954276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987098001485033941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cdbaa44bf3411741ae47ed3da580017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackRange: 2
-  attackCooldown: 3
-  animator: {fileID: 0}
+  targetHealthStat: {fileID: 1336255501}
 --- !u!114 &1217026382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,7 +692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   remoteCollisionObject: {fileID: 1543813977}
-  damage: 1
+  damage: 10
   knockback: 0
 --- !u!114 &1823908756
 MonoBehaviour:
@@ -731,7 +706,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03adbcd2854827a478a73cffdb66e5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1958721543
+--- !u!114 &1314554824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987098001485033941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b383f553bdfd83941b22c96c059080a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &1314554825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987098001485033941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5d79a2a5e02314cbee51946b62e45e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ignoreMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &1314554838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987098001485033941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b01de0ff6d148345b53dd852e179871, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _initialState: {fileID: 11400000, guid: 2e1d7131aac4b364a8173b5dbf43c43b, type: 2}
+--- !u!195 &1314554839
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987098001485033941}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 1000
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1336255501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -745,7 +785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _maxHealth: 100
---- !u!114 &680171962
+--- !u!114 &1336255502
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -759,6 +799,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1680685759440954275}
   numLocking: 0
+--- !u!114 &1336255503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987098001485033941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0550f4d806086a45b816b6bbe37918e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 5
 --- !u!1 &2338623652578244504
 GameObject:
   m_ObjectHideFlags: 0
