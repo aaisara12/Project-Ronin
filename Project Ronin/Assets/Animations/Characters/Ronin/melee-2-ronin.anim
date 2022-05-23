@@ -41368,7 +41368,7 @@ AnimationClip:
     messageOptions: 0
   - time: 0.4
     functionName: PlaySound
-    data: swish-heavy
+    data: ronin-melee-2
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
