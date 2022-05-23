@@ -638,7 +638,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 6c0aee8705c9a314fa9c506eea6de85e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -661,6 +661,7 @@ MonoBehaviour:
   dashDistance: 0
   dashDuration: 1
   rotateSpeed: 0.5
+  knockbackForceFalloff: 3
 --- !u!114 &1680685759440954284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remoteCollisionObject: {fileID: 1543813977}
   damage: 1
+  knockback: 0
 --- !u!114 &1823908756
 MonoBehaviour:
   m_ObjectHideFlags: 0

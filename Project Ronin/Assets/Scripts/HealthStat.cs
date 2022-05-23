@@ -8,6 +8,7 @@ public interface IHealthStat
     int maxHealth { get; set; }
 
     event System.Action<HealthInfo> OnHealthChanged;
+    event System.Action<HealthStat> OnDied;
 
     void TakeDamage(int damage);
 
@@ -50,6 +51,7 @@ public class HealthStat : MonoBehaviour, IHealthStat
     }
 
     public event System.Action<HealthInfo> OnHealthChanged;
+    public event System.Action<HealthStat> OnDied;
 
     void Start()
     {
@@ -60,6 +62,11 @@ public class HealthStat : MonoBehaviour, IHealthStat
     public void TakeDamage(int damage)
     {
         health -= damage;
+        if(health <= 0)
+        {
+            OnDied?.Invoke(this);
+            gameObject.SetActive(false);
+        }
     }
 
 

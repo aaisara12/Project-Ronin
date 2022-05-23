@@ -49,7 +49,7 @@ public class CharacterCaptureController : MonoBehaviour
         isDashing = false;
         dashSpeed = dashDistance / dashDuration;
 
-        characterController.Move(movementDirection * movementSpeed * attackSlowMultiplier * Time.deltaTime);   
+        //characterController.Move(movementDirection * movementSpeed * attackSlowMultiplier * Time.deltaTime);   
         
     }
 
