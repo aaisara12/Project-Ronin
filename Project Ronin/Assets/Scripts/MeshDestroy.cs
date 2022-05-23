@@ -30,7 +30,7 @@ public class MeshDestroy : MonoBehaviour
 
     private void DestroyMesh()
     {
-        var originalMesh = GetComponent<MeshFilter>().mesh;
+        var originalMesh = GetComponent<SkinnedMeshRenderer>().sharedMesh;
         originalMesh.RecalculateBounds();
         var parts = new List<PartMesh>();
         var subParts = new List<PartMesh>();
@@ -273,7 +273,7 @@ public class MeshDestroy : MonoBehaviour
             GameObject.transform.localScale = original.transform.localScale;
 
             var mesh = new Mesh();
-            mesh.name = original.GetComponent<MeshFilter>().mesh.name;
+            mesh.name = original.GetComponent<SkinnedMeshRenderer>().sharedMesh.name;
 
             mesh.vertices = Vertices;
             mesh.normals = Normals;
@@ -282,11 +282,11 @@ public class MeshDestroy : MonoBehaviour
                 mesh.SetTriangles(Triangles[i], i, true);
             Bounds = mesh.bounds;
             
-            var renderer = GameObject.AddComponent<MeshRenderer>();
-            renderer.materials = original.GetComponent<MeshRenderer>().materials;
+            var renderer = GameObject.AddComponent<SkinnedMeshRenderer>();
+            renderer.materials = original.GetComponent<SkinnedMeshRenderer>().materials;
 
-            var filter = GameObject.AddComponent<MeshFilter>();
-            filter.mesh = mesh;
+            var filter = GameObject.AddComponent<SkinnedMeshRenderer>();
+            filter.sharedMesh = mesh;
 
             var collider = GameObject.AddComponent<MeshCollider>();
             collider.convex = true;
