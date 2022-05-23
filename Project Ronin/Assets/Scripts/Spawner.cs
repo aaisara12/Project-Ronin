@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
 
     public HealthStat Spawn()
     {
-        return Instantiate<GameObject>(creaturePrefab, transform.position, transform.rotation).GetComponent<HealthStat>();
+        var creature = Instantiate<GameObject>(creaturePrefab, transform.position, transform.rotation).GetComponent<HealthStat>();
+        creature.GetComponent<Demo.Enemy.PatrolPoints>().Initialize(new List<Transform> {transform});
+        return creature;
     }
 }
