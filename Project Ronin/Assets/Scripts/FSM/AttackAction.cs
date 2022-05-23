@@ -12,7 +12,13 @@ namespace Demo.MyFSM
         {
             var animator = stateMachine.GetComponent<Animator>();
             
-            animator.SetTrigger("attack");
+            var at = stateMachine.GetComponent<AttackTimer>();
+
+            if(at.TryAttack())
+            {
+                animator.SetTrigger("attack");
+            }
+            
         }
     }
 }
