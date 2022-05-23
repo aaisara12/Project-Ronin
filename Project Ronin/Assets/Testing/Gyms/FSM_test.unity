@@ -5721,7 +5721,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3075571, y: 1}
+    m_SensorSize: {x: 1.7772853, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6587,7 +6587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthUI: {fileID: 107212715}
-  targetAttributeSet: {fileID: 0}
+  targetHealthStat: {fileID: 0}
 --- !u!114 &1782530636
 MonoBehaviour:
   m_ObjectHideFlags: 0
