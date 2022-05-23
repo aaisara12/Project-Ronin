@@ -2016,7 +2016,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7782258, y: 1}
+    m_SensorSize: {x: 1.7782857, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
