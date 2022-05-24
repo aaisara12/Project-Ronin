@@ -22,6 +22,7 @@ public class WaveManager : MonoBehaviour
     {
         if(currentWave < waves.Count)
         {
+            AudioManager.instance.PlaySound("wave-spawn");
             currentWave++;
             OnStartWave?.Invoke(currentWave);
 
