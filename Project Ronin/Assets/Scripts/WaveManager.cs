@@ -6,6 +6,7 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField] List<Wave> waves = new List<Wave>();
     [SerializeField] int currentWave = 0;
+    [SerializeField] bool autoStart = true;
 
     public event System.Action<int> OnStartWave;
     public event System.Action<int> OnClearedWave;
@@ -14,11 +15,12 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-        TrySpawnNextWave();
+        if(autoStart)
+            TrySpawnNextWave();
     }
 
 
-    bool TrySpawnNextWave()
+    public bool TrySpawnNextWave()
     {
         if(currentWave < waves.Count)
         {

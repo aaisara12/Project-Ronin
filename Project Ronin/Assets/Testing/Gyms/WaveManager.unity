@@ -1825,7 +1825,7 @@ MonoBehaviour:
     - {fileID: 419680994}
     - {fileID: 1222232807}
   currentWave: 0
-  timeBeforeSpawn: 5
+  autoStart: 1
 --- !u!1 &492471816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,7 +2369,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7763779, y: 1}
+    m_SensorSize: {x: 1.7783402, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8563,6 +8563,11 @@ PrefabInstance:
         type: 3}
       propertyPath: damage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694959533272487823, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5694959533272487924, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
