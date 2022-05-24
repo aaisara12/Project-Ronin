@@ -54,9 +54,18 @@ public class WaveManager : MonoBehaviour
 
         if(unitsSpawned.Count == 0)
         {
+            StartCoroutine(SlowKill());
             OnClearedWave?.Invoke(currentWave);
             TrySpawnNextWave();
         }
+    }
+
+    IEnumerator SlowKill()
+    {
+        Time.timeScale = 0.1f;
+        yield return new WaitForSeconds(0.1f);
+        Time.timeScale = 1;
+
     }
 
 
