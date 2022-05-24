@@ -6,6 +6,7 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField] List<Wave> waves = new List<Wave>();
     [SerializeField] int currentWave = 0;
+    [SerializeField] float timeBeforeSpawn = 5; // Time after wave officially starts that spawning occurs (to give time for any transitions)
 
     public event System.Action<int> OnStartWave;
     public event System.Action<int> OnClearedWave;
