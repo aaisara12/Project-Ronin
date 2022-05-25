@@ -1550,6 +1550,14 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     clip: {fileID: 8300000, guid: 429632973e8cbac4591261ad38969419, type: 3}
+  - soundName: hit-boss
+    volume: 0.5
+    pitch: 1
+    clip: {fileID: 8300000, guid: e8240922ca7e8074cb0fcb308958c275, type: 3}
+  - soundName: hit-boss
+    volume: 0.5
+    pitch: 1
+    clip: {fileID: 8300000, guid: 42747120d0c2e8242bd5ed6433b74556, type: 3}
 --- !u!1 &469698398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,7 +2383,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7194526, y: 1}
+    m_SensorSize: {x: 1.5200391, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
