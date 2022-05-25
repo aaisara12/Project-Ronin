@@ -1441,12 +1441,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &255491035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5694959533272487924, guid: 46e91229e8d452a4ab1e8a1d20e11551,
-    type: 3}
-  m_PrefabInstance: {fileID: 4884688519481962186}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &265125752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2795,7 +2789,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.8091216, y: 1}
+    m_SensorSize: {x: 1.7543186, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8846,33 +8840,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4884688519481962186}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255491035}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 536f812747d8a5b4c9435a8c8dc8509e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &543450652219057040 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4884688519527622433, guid: 46e91229e8d452a4ab1e8a1d20e11551,
-    type: 3}
-  m_PrefabInstance: {fileID: 4884688519481962186}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &543450652219057041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255491035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fd1635fa2073c74d94d73e06acd5b7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visualEffect: {fileID: 4884688519481962187}
-  animator: {fileID: 543450652219057040}
-  moveAnimationName: Move
 --- !u!1001 &4884688519481962186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8940,16 +8913,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ronin
       objectReference: {fileID: 0}
-    - target: {fileID: 5694959533272487924, guid: 46e91229e8d452a4ab1e8a1d20e11551,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46e91229e8d452a4ab1e8a1d20e11551, type: 3}
---- !u!2083052967 &4884688519481962187 stripped
-VisualEffect:
-  m_CorrespondingSourceObject: {fileID: 3358530579849431932, guid: 46e91229e8d452a4ab1e8a1d20e11551,
-    type: 3}
-  m_PrefabInstance: {fileID: 4884688519481962186}
-  m_PrefabAsset: {fileID: 0}
