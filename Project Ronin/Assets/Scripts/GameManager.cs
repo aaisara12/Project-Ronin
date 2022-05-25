@@ -38,9 +38,19 @@ public class GameManager : MonoBehaviour
     // the pause state of the game can be changed (since it is globally readable)
     private void SetPauseState(bool shouldPause)
     {
-        pauseState = shouldPause? PauseState.PAUSED : PauseState.UNPAUSED;
-        Time.timeScale = (pauseState == PauseState.PAUSED)? 0 : 1;
-        OnNewPauseState?.Invoke(pauseState);
+        if(pauseState == PauseState.PAUSED && shouldPause == false)
+        {
+            Time.timeScale = 1;
+            pauseState = PauseState.UNPAUSED;
+            OnNewPauseState?.Invoke(pauseState);
+        }
+        if(pauseState == PauseState.UNPAUSED && shouldPause == true)
+        {
+            Time.timeScale = 0;
+            pauseState = PauseState.PAUSED;
+            OnNewPauseState?.Invoke(pauseState);
+        }
+            
     }
 
     
