@@ -8860,8 +8860,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects:
   - {fileID: 4235153113222250483, guid: fae998e144c11cd45a07a7bd1c79320d, type: 3}
+  - {fileID: 2774480303489920198, guid: cdbee849325246f4a9926e87b92ad781, type: 3}
   transforms:
   - {fileID: 687914912}
+  - {fileID: 4018942836442214279}
 --- !u!114 &594303065
 MonoBehaviour:
   m_ObjectHideFlags: 0
