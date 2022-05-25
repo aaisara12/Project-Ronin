@@ -7,6 +7,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] List<Wave> waves = new List<Wave>();
     [SerializeField] int currentWave = 0;
     [SerializeField] bool autoStart = true;
+    [SerializeField] float timeBeforeSpawn = 3f;
 
     public event System.Action<int> OnStartWave;
     public event System.Action<int> OnClearedWave;
@@ -16,35 +17,39 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         if(autoStart)
-            TrySpawnNextWave();
+            TryStartNextWave();
     }
 
 
-    public bool TrySpawnNextWave()
+    public bool TryStartNextWave()
     {
         if(currentWave < waves.Count)
         {
-            AudioManager.instance.PlaySound("wave-spawn");
             currentWave++;
             OnStartWave?.Invoke(currentWave);
-
-            // Spawn enemy from each spawner location
-            foreach(Spawner s in waves[currentWave - 1].spawners)
-            {
-                HealthStat healthStat = s.Spawn();
-                unitsSpawned.Add(healthStat);
-                healthStat.OnDied += HandleUnitDied;
-            }
-
-            if(waves[currentWave - 1].spawners.Count == 0)
-            {
-                Debug.LogWarning("No spawners specified for wave " + currentWave + "!");
-                TrySpawnNextWave();
-            }
+            StartCoroutine(DelayedSpawn());
 
             return true;
         }
         return false;
+    }
+
+    void SpawnUnits()
+    {
+        AudioManager.instance.PlaySound("wave-spawn");
+        // Spawn enemy from each spawner location
+        foreach (Spawner s in waves[currentWave - 1].spawners)
+        {
+            HealthStat healthStat = s.Spawn();
+            unitsSpawned.Add(healthStat);
+            healthStat.OnDied += HandleUnitDied;
+        }
+
+        if (waves[currentWave - 1].spawners.Count == 0)
+        {
+            Debug.LogWarning("No spawners specified for wave " + currentWave + "!");
+            TryStartNextWave();
+        }
     }
 
     void HandleUnitDied(HealthStat healthStat)
@@ -56,16 +61,21 @@ public class WaveManager : MonoBehaviour
         {
             StartCoroutine(SlowKill());
             OnClearedWave?.Invoke(currentWave);
-            TrySpawnNextWave();
+            TryStartNextWave();
         }
     }
 
     IEnumerator SlowKill()
     {
         Time.timeScale = 0.1f;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1;
-
+    }
+    
+    IEnumerator DelayedSpawn()
+    {
+        yield return new WaitForSeconds(timeBeforeSpawn);
+        SpawnUnits();
     }
 
 
