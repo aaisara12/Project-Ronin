@@ -1826,6 +1826,7 @@ MonoBehaviour:
     - {fileID: 1222232807}
   currentWave: 0
   autoStart: 1
+  timeBeforeSpawn: 3
 --- !u!1 &492471816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,7 +2370,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783402, y: 1}
+    m_SensorSize: {x: 1.7785863, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

@@ -65,7 +65,7 @@ public class HealthStat : MonoBehaviour, IHealthStat
         if(health <= 0)
         {
             OnDied?.Invoke(this);
-            gameObject.SetActive(false);
+            GetComponent<Animator>().SetTrigger("dead");
         }
     }
 
