@@ -13,6 +13,11 @@ namespace Demo.Enemy
 
         private int _currentPoint = 0;
 
+        public void Initialize(List<Transform> patrolPoints)
+        {
+            patrolPoints.CopyTo(_patrolPoints);
+        }
+
         /// <summary>
         /// Gets the next point to patrol to
         /// </summary>
