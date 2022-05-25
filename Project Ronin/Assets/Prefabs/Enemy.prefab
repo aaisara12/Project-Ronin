@@ -2914,6 +2914,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3550282050727088399, guid: c494b426e2227ea44969acddfc05fb27,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.046956383
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550282050727088399, guid: c494b426e2227ea44969acddfc05fb27,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3550282052055617241, guid: c494b426e2227ea44969acddfc05fb27,
         type: 3}
       propertyPath: m_Color.a
@@ -3068,6 +3078,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Default Health Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550282052709403737, guid: c494b426e2227ea44969acddfc05fb27,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550282052709403737, guid: c494b426e2227ea44969acddfc05fb27,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550282052709403737, guid: c494b426e2227ea44969acddfc05fb27,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3550282052709403738, guid: c494b426e2227ea44969acddfc05fb27,
         type: 3}

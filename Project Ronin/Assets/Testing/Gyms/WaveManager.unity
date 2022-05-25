@@ -1808,6 +1808,7 @@ MonoBehaviour:
   - spawners:
     - {fileID: 484962408}
     - {fileID: 1944376965}
+    - {fileID: 1222232807}
   - spawners:
     - {fileID: 484962408}
     - {fileID: 1944376965}
@@ -2374,7 +2375,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778638, y: 1}
+    m_SensorSize: {x: 1.0739261, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
