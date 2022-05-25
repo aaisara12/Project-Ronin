@@ -1433,7 +1433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
     type: 3}
-  spawnPrefab: {fileID: 3511352164616026247, guid: 019a3963343dd664f99b29b38c318aab,
+  spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
   spawnDelay: 1.5
 --- !u!1 &459255676
@@ -1771,7 +1771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
     type: 3}
-  spawnPrefab: {fileID: 3511352164616026247, guid: 019a3963343dd664f99b29b38c318aab,
+  spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
   spawnDelay: 1.5
 --- !u!1 &489060548
@@ -2342,7 +2342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
     type: 3}
-  spawnPrefab: {fileID: 3511352164616026247, guid: 019a3963343dd664f99b29b38c318aab,
+  spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
   spawnDelay: 1.5
 --- !u!1 &584561569
@@ -2392,7 +2392,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.96410775, y: 1}
+    m_SensorSize: {x: 1.105683, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3835,7 +3835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
     type: 3}
-  spawnPrefab: {fileID: 3511352164616026247, guid: 019a3963343dd664f99b29b38c318aab,
+  spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
   spawnDelay: 1.5
 --- !u!1 &1001957965
@@ -3884,7 +3884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
     type: 3}
-  spawnPrefab: {fileID: 3511352164616026247, guid: 019a3963343dd664f99b29b38c318aab,
+  spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
   spawnDelay: 1.5
 --- !u!1 &1009515514
@@ -3933,7 +3933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
     type: 3}
-  spawnPrefab: {fileID: 3511352164616026247, guid: 019a3963343dd664f99b29b38c318aab,
+  spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
   spawnDelay: 1.5
 --- !u!1 &1051539240
@@ -4592,7 +4592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
     type: 3}
-  spawnPrefab: {fileID: 3511352164616026247, guid: 019a3963343dd664f99b29b38c318aab,
+  spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
   spawnDelay: 1.5
 --- !u!1 &1179527938
@@ -7983,7 +7983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
     type: 3}
-  spawnPrefab: {fileID: 3511352164616026247, guid: 019a3963343dd664f99b29b38c318aab,
+  spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
   spawnDelay: 1.5
 --- !u!4 &1944376966
