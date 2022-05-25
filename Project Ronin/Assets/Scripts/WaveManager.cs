@@ -67,6 +67,7 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator SlowKill()
     {
+        AudioManager.instance.PlaySound("hit-final");
         Time.timeScale = 0.1f;
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1;

@@ -827,7 +827,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effects:
   - {fileID: 2774480303489920198, guid: cdbee849325246f4a9926e87b92ad781, type: 3}
+  - {fileID: 4997064753098266578, guid: e8a2cf2b432be1e44aeb494a64f14672, type: 3}
   transforms:
+  - {fileID: 1754150233459561102}
   - {fileID: 1754150233459561102}
 --- !u!1 &2338623652578244504
 GameObject:
