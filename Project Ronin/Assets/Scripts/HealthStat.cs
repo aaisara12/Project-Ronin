@@ -62,6 +62,7 @@ public class HealthStat : MonoBehaviour, IHealthStat
     public void TakeDamage(int damage)
     {
         health -= damage;
+        MainDamagePopup.Create(transform.position + new Vector3(4,0,1), damage);
         if(health <= 0)
         {
             OnDied?.Invoke(this);
