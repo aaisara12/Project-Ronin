@@ -8,6 +8,6 @@ public class DeathState : StateMachineBehaviour
     {
         animator.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 0;
 
-        GameObject.Destroy(animator.gameObject, 2);
+        GameObject.Destroy(animator.gameObject, 5);
     }
 }
