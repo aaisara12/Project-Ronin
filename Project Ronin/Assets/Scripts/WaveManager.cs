@@ -70,9 +70,8 @@ public class WaveManager : MonoBehaviour
         Time.timeScale = 0.1f;
         yield return new WaitForSecondsRealtime(1f);
         Time.timeScale = 1;
-
     }
-
+    
     IEnumerator DelayedSpawn()
     {
         yield return new WaitForSeconds(timeBeforeSpawn);
