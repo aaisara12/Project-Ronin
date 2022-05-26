@@ -22,6 +22,7 @@ public class BossCinematicController : MonoBehaviour
     {
         GetComponent<Cinemachine.CinemachineImpulseSource>().GenerateImpulse();
         AudioManager.instance.PlaySound("final-kill");
+        cinematicAnimator.SetTrigger("final_kill");
     }
 
     void OnDestroy()
