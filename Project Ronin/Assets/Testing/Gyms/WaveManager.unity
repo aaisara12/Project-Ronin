@@ -2042,7 +2042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &489060549
 Transform:
   m_ObjectHideFlags: 0
@@ -2096,7 +2096,7 @@ MonoBehaviour:
     - {fileID: 419680994}
     - {fileID: 1222232807}
   currentWave: 0
-  autoStart: 1
+  autoStart: 0
   timeBeforeSpawn: 3
 --- !u!1 &492471816
 GameObject:
@@ -5774,6 +5774,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1390285398}
   - component: {fileID: 1390285399}
+  - component: {fileID: 1390285400}
   m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
@@ -5822,6 +5823,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1390285400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390285397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95fd6b9490e9444193415f819912a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1429596677
 GameObject:
   m_ObjectHideFlags: 0
@@ -6938,6 +6951,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remoteCollisionObject: {fileID: 809844094}
   cinematicAnimator: {fileID: 1390285399}
+  relay: {fileID: 1390285400}
+  playerBrain: {fileID: 919132148496660824}
+  waveManager: {fileID: 489060550}
 --- !u!1 &1642646678
 GameObject:
   m_ObjectHideFlags: 0
@@ -9412,6 +9428,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 536f812747d8a5b4c9435a8c8dc8509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &919132148496660824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5694959533272487819, guid: 46e91229e8d452a4ab1e8a1d20e11551,
+    type: 3}
+  m_PrefabInstance: {fileID: 4884688519481962186}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c5fd5e483ab784d99ba313c6d39177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4884688519481962186
