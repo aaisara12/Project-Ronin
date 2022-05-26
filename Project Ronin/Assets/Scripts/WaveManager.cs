@@ -10,7 +10,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField] float timeBeforeSpawn = 3f;
 
     public event System.Action<int> OnStartWave;
+    public event System.Action OnStartFinalWave;    // So game knows when to play boss music
     public event System.Action<int> OnClearedWave;
+    public event System.Action OnClearedFinalWave;
 
     List<HealthStat> unitsSpawned = new List<HealthStat>();
 
@@ -27,6 +29,11 @@ public class WaveManager : MonoBehaviour
         {
             currentWave++;
             OnStartWave?.Invoke(currentWave);
+            if(currentWave == waves.Count)
+            {
+                OnStartFinalWave?.Invoke();
+            }
+                
             StartCoroutine(DelayedSpawn());
 
             return true;
@@ -61,6 +68,8 @@ public class WaveManager : MonoBehaviour
         {
             StartCoroutine(SlowKill());
             OnClearedWave?.Invoke(currentWave);
+            if(currentWave == waves.Count)
+                OnClearedFinalWave?.Invoke();
             TryStartNextWave();
         }
     }
