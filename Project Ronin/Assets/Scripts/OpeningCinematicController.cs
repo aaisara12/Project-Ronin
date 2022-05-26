@@ -10,6 +10,7 @@ public class OpeningCinematicController : RemoteCollisionListener
     {
         if(!hasTriggeredCinematic && other.CompareTag("Player"))
         {
+            cinematicAnimator.SetTrigger("start");
             AudioManager.instance.SwapTrack("soundtrack-battle");
             hasTriggeredCinematic = true;
         }
