@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4606152, y: 1}
+    m_SensorSize: {x: 1.7260813, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1897,6 +1897,10 @@ MonoBehaviour:
     volume: 0.3
     pitch: 0.5
     clip: {fileID: 8300000, guid: 22fedc5a880706f4794d30470e76d7a0, type: 3}
+  - soundName: empty
+    volume: 0.3
+    pitch: 0.5
+    clip: {fileID: 0}
   primaryTrackSlot: {fileID: 1087566137}
   secondaryTrackSlot: {fileID: 1087566136}
   fadeTime: 1.5
@@ -2751,7 +2755,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4606152, y: 1}
+    m_SensorSize: {x: 1.7260813, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
