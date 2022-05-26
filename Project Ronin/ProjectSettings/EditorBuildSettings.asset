@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Testing/Gyms/WaveManager.unity
     guid: c3c720bdad4c9e04c9e3d701db966251
+  - enabled: 1
+    path: Assets/Testing/Gyms/EndScreen.unity
+    guid: 45a9ac1599c72a44eb42240aff5aba06
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e099a800bba5c974e9038d9735614974,
       type: 2}
