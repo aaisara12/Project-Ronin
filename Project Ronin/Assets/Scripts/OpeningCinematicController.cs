@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpeningCinematicController : MonoBehaviour
+public class OpeningCinematicController : RemoteCollisionListener
 {
-    void OnTriggerEnter(Collider other)
+    [SerializeField] Animator cinematicAnimator;
+    bool hasTriggeredCinematic = false;
+    protected override void OnTriggerEnterRemote(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(!hasTriggeredCinematic && other.CompareTag("Player"))
         {
-            AudioManager.instance.SwapTrack("soundtrack-boss");
+            AudioManager.instance.SwapTrack("soundtrack-battle");
+            hasTriggeredCinematic = true;
         }
+        
     }
 }
