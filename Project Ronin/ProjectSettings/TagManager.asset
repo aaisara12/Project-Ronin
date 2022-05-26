@@ -12,7 +12,7 @@ TagManager:
   - Post Processing
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Top
+    uniqueID: 3301499955
     locked: 0

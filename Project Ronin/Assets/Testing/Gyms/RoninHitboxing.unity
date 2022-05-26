@@ -1473,7 +1473,7 @@ MonoBehaviour:
   - soundName: swish-heavy
     volume: 1
     pitch: 1
-    clip: {fileID: 8300000, guid: 372185db1e9f774419a7e2111af89ed2, type: 3}
+    clip: {fileID: 8300000, guid: c58d0fe09f74ba9418ba3df95712ffee, type: 3}
   - soundName: swish-final
     volume: 0.5
     pitch: 1
@@ -2170,7 +2170,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4569939, y: 1}
+    m_SensorSize: {x: 1.3587711, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

@@ -44742,7 +44742,7 @@ AnimationClip:
     messageOptions: 0
   - time: 0.36666667
     functionName: PlaySound
-    data: swish-light
+    data: ronin-melee-1
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

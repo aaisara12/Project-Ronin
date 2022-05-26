@@ -13,10 +13,14 @@ public class CharacterCaptureController : MonoBehaviour
     private bool isDashing;
     private float dashSpeed;
 
+    private bool inKnockbackState;
+
     private Vector3[] angles = new Vector3[8];
     private Quaternion targetRotation;
     [SerializeField] private float rotateSpeed;
 
+
+    [SerializeField]  private float knockbackForceFalloff = 3f;
     CharacterController characterController;
 
     // Start is called before the first frame update
@@ -45,7 +49,7 @@ public class CharacterCaptureController : MonoBehaviour
         isDashing = false;
         dashSpeed = dashDistance / dashDuration;
 
-        characterController.Move(movementDirection * movementSpeed * attackSlowMultiplier * Time.deltaTime);   
+        //characterController.Move(movementDirection * movementSpeed * attackSlowMultiplier * Time.deltaTime);   
         
     }
 
@@ -148,5 +152,33 @@ public class CharacterCaptureController : MonoBehaviour
     {
         isAttacking = false;
         attackSlowMultiplier = 1;
+    }
+
+    //feed this a normalized vector, force, and the time you want them to knockback
+    public void KnockBack(Vector3 direction, float force, float knockbackDuration)
+    {
+
+        Vector3 faceDir = direction * -1;
+
+        // Setting the target rotation prevents any attached NavMesh Agent from steering character
+        //targetRotation = Quaternion.LookRotation(new Vector3(faceDir.x, 0, faceDir.z), Vector3.up);
+        StartCoroutine(Knockback(direction, knockbackDuration, force));
+
+    }
+    IEnumerator Knockback(Vector3 direction, float knockbackDuration, float force)
+    {
+  
+        inKnockbackState = true;
+        Vector3 startPosition = transform.position;
+        float knockbackStartTime = 0;
+        while (knockbackStartTime <= knockbackDuration)// && Vector3.Distance(startPosition, transform.position) <= dashDistance)
+        {
+            //transform.position = Vector3.MoveTowards(transform.position, endPosition, .1f * force);
+            characterController.Move(direction * force * Time.deltaTime);
+            knockbackStartTime += Time.deltaTime;
+            force = force / (1 + knockbackForceFalloff * Time.deltaTime);
+            yield return null;
+        }
+        inKnockbackState = false;
     }
 }
