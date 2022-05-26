@@ -11,6 +11,11 @@ public class OpeningCinematicController : RemoteCollisionListener
     [SerializeField] WaveManager waveManager;
     bool hasTriggeredCinematic = false;
 
+    void Start()
+    {
+        cinematicAnimator.SetTrigger("fade_in");
+    }
+
     void OnEnable()
     {
         relay.OnCutsceneStart += HandleCutsceneStart;
