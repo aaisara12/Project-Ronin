@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.2630996, y: 1}
+    m_SensorSize: {x: 1.5204201, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1259,7 +1259,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32234
+  m_Name: pb_Mesh146788
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1809,10 +1809,18 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     clip: {fileID: 8300000, guid: abacf17b29368e24ebdc19642bae30ae, type: 3}
+  - soundName: boss-fall-1
+    volume: 0.5
+    pitch: 1
+    clip: {fileID: 8300000, guid: 3b6188f8ea202a945a32691de4aec65d, type: 3}
+  - soundName: boss-fall-2
+    volume: 0.5
+    pitch: 1
+    clip: {fileID: 8300000, guid: d171389833021ad4d8c4f9a7027ae232, type: 3}
   primaryTrackSlot: {fileID: 1087566137}
   secondaryTrackSlot: {fileID: 1087566136}
-  fadeTime: 0.75
-  maxVolume: 0.2
+  fadeTime: 1.5
+  maxVolume: 0.3
 --- !u!1 &469698398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,7 +1831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469698400}
   - component: {fileID: 469698399}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Global Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1846,7 +1854,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 24d7c7a0a38c1874cb451a6b69af42cd, type: 2}
+  sharedProfile: {fileID: 11400000, guid: f1af91db0fc33ea4895e12fb375a06e3, type: 2}
 --- !u!4 &469698400
 Transform:
   m_ObjectHideFlags: 0
@@ -2036,6 +2044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 489060549}
   - component: {fileID: 489060550}
+  - component: {fileID: 489060551}
   m_Layer: 0
   m_Name: Wave Manager
   m_TagString: Untagged
@@ -2066,6 +2075,28 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 489060548}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5f1fac05be0cc4994c894ec91709e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - spawners:
+    - {fileID: 484962408}
+  - spawners:
+    - {fileID: 484962408}
+    - {fileID: 1944376965}
+    - {fileID: 1222232807}
+  currentWave: 0
+  autoStart: 0
+  timeBeforeSpawn: 3
+--- !u!114 &489060551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489060548}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef5f1fac05be0cc4994c894ec91709e3, type: 3}
   m_Name: 
@@ -2157,7 +2188,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2204,7 +2235,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
@@ -2608,7 +2639,7 @@ GameObject:
   - component: {fileID: 584561571}
   - component: {fileID: 584561570}
   - component: {fileID: 584561572}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2644,7 +2675,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.2630996, y: 1}
+    m_SensorSize: {x: 1.5204201, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6367,7 +6398,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32132
+  m_Name: pb_Mesh146680
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6915,6 +6946,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1619977738}
   - component: {fileID: 1619977739}
+  - component: {fileID: 1619977740}
+  - component: {fileID: 1619977741}
   m_Layer: 0
   m_Name: Cinematic System
   m_TagString: Untagged
@@ -6954,6 +6987,75 @@ MonoBehaviour:
   relay: {fileID: 1390285400}
   playerBrain: {fileID: 919132148496660824}
   waveManager: {fileID: 489060550}
+--- !u!114 &1619977740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619977737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa61ddc46fca5947a96b7b74a6dcfff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinematicAnimator: {fileID: 1390285399}
+  waveManager: {fileID: 489060550}
+  relay: {fileID: 1390285400}
+  playerBrain: {fileID: 919132148496660824}
+--- !u!114 &1619977741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619977737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &1642646678
 GameObject:
   m_ObjectHideFlags: 0
@@ -9002,7 +9104,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31796
+  m_Name: pb_Mesh146294
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
