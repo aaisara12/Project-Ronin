@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5204201, y: 1}
+    m_SensorSize: {x: 1.4429679, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1817,6 +1817,10 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     clip: {fileID: 8300000, guid: d171389833021ad4d8c4f9a7027ae232, type: 3}
+  - soundName: final-kill
+    volume: 0.3
+    pitch: 0.5
+    clip: {fileID: 8300000, guid: 22fedc5a880706f4794d30470e76d7a0, type: 3}
   primaryTrackSlot: {fileID: 1087566137}
   secondaryTrackSlot: {fileID: 1087566136}
   fadeTime: 1.5
@@ -2081,10 +2085,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - spawners:
-    - {fileID: 484962408}
-  - spawners:
-    - {fileID: 484962408}
-    - {fileID: 1944376965}
     - {fileID: 1222232807}
   currentWave: 0
   autoStart: 0
@@ -2675,7 +2675,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5204201, y: 1}
+    m_SensorSize: {x: 1.4429679, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7017,7 +7017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
-    m_ImpulseShape: 2
+    m_ImpulseShape: 4
     m_CustomImpulseShape:
       serializedVersion: 2
       m_Curve: []

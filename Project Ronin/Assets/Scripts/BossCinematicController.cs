@@ -20,7 +20,8 @@ public class BossCinematicController : MonoBehaviour
 
     private void HandleFinalWaveEnd()
     {
-        
+        GetComponent<Cinemachine.CinemachineImpulseSource>().GenerateImpulse();
+        AudioManager.instance.PlaySound("final-kill");
     }
 
     void OnDestroy()
