@@ -41,6 +41,13 @@ public class WaveManager : MonoBehaviour
         return false;
     }
 
+    // For spawning units after initial wave start
+    public void AddUnitToWave(HealthStat unitHealthStat)
+    {
+        unitsSpawned.Add(unitHealthStat);
+        unitHealthStat.OnDied += HandleUnitDied;
+    }
+
     void SpawnUnits()
     {
         AudioManager.instance.PlaySound("wave-spawn");

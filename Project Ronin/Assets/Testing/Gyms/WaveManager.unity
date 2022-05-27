@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.9592713, y: 1}
+    m_SensorSize: {x: 1.5133268, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1259,7 +1259,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh98580
+  m_Name: pb_Mesh32346
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1853,9 +1853,9 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     clip: {fileID: 8300000, guid: d03818241c14d3c44843fc6817a2c0a4, type: 3}
-  - soundName: ronin-hit
-    volume: 0.5
-    pitch: 1
+  - soundName: hit-monk
+    volume: 1
+    pitch: 1.25
     clip: {fileID: 8300000, guid: 2532b7b02827eac46ae5e44a73212ea9, type: 3}
   - soundName: wave-spawn
     volume: 0.5
@@ -1901,6 +1901,18 @@ MonoBehaviour:
     volume: 0.3
     pitch: 0.5
     clip: {fileID: 0}
+  - soundName: clink
+    volume: 0.75
+    pitch: 1
+    clip: {fileID: 8300000, guid: 3326682cd822c214096bdcfed4ea24b6, type: 3}
+  - soundName: tick
+    volume: 0.75
+    pitch: 0.75
+    clip: {fileID: 8300000, guid: 2ab6f4a34b7a3d64d9d1857f2cb7c386, type: 3}
+  - soundName: boss-scream
+    volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: adc2c0cdd7680d641957cb877a2f1bdf, type: 3}
   primaryTrackSlot: {fileID: 1087566137}
   secondaryTrackSlot: {fileID: 1087566136}
   fadeTime: 1.5
@@ -2113,7 +2125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba75016e8833a749a4e559655746400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 8127996761166622487, guid: cf3c856ab8ffebf419f0628334698f45,
+  creaturePrefab: {fileID: 9150384742960640158, guid: ca21162b40e05bf47be809be7d3ffa79,
     type: 3}
   spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
@@ -2165,7 +2177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - spawners:
-    - {fileID: 1944376965}
+    - {fileID: 1001957967}
   - spawners:
     - {fileID: 561431277}
     - {fileID: 1001957967}
@@ -2174,7 +2186,7 @@ MonoBehaviour:
     - {fileID: 419680994}
     - {fileID: 1222232807}
   currentWave: 0
-  autoStart: 0
+  autoStart: 1
   timeBeforeSpawn: 3
 --- !u!114 &489060551
 MonoBehaviour:
@@ -2710,7 +2722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba75016e8833a749a4e559655746400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 8127996761166622487, guid: cf3c856ab8ffebf419f0628334698f45,
+  creaturePrefab: {fileID: 9150384742960640158, guid: ca21162b40e05bf47be809be7d3ffa79,
     type: 3}
   spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
@@ -2762,7 +2774,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.9592713, y: 1}
+    m_SensorSize: {x: 1.5133268, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4298,7 +4310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba75016e8833a749a4e559655746400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 8127996761166622487, guid: cf3c856ab8ffebf419f0628334698f45,
+  creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
     type: 3}
   spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
@@ -6563,7 +6575,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh98466
+  m_Name: pb_Mesh32232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7120,7 +7132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1619977738
 Transform:
   m_ObjectHideFlags: 0
@@ -9050,7 +9062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba75016e8833a749a4e559655746400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 8127996761166622487, guid: cf3c856ab8ffebf419f0628334698f45,
+  creaturePrefab: {fileID: 9150384742960640158, guid: ca21162b40e05bf47be809be7d3ffa79,
     type: 3}
   spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
@@ -9284,7 +9296,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh98068
+  m_Name: pb_Mesh31834
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9844,7 +9856,7 @@ PrefabInstance:
     - target: {fileID: 5694959533272487818, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: damage
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5694959533272487819, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
