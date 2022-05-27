@@ -19904,8 +19904,8 @@ GameObject:
   - component: {fileID: 7309991960642047469}
   - component: {fileID: 4715828759890797024}
   - component: {fileID: 8155546307003781445}
-  - component: {fileID: 5539673364912710734}
   - component: {fileID: 3236976107114532863}
+  - component: {fileID: 259677053318339741}
   - component: {fileID: 5236354258406996987}
   - component: {fileID: 3366304207071081225}
   - component: {fileID: 6216540964942774786}
@@ -19914,6 +19914,7 @@ GameObject:
   - component: {fileID: 3935430688121284274}
   - component: {fileID: 8326506616234439540}
   - component: {fileID: 431583257753008852}
+  - component: {fileID: 8687059649106073594}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -20024,20 +20025,6 @@ MonoBehaviour:
   dashDuration: 1
   rotateSpeed: 0.5
   knockbackForceFalloff: 3
---- !u!114 &5539673364912710734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8123310803103208078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536f812747d8a5b4c9435a8c8dc8509e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 500
-  _maxHealth: 500
 --- !u!114 &3236976107114532863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20050,6 +20037,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03adbcd2854827a478a73cffdb66e5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &259677053318339741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123310803103208078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 910d7b57cb50962419ceca8c775f8762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 500
+  _maxHealth: 500
+  isArmorActivated: 0
+  flatMitigation: 10
 --- !u!114 &5236354258406996987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20063,7 +20066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthUI: {fileID: 2616257153668216666}
-  targetHealthStat: {fileID: 5539673364912710734}
+  targetHealthStat: {fileID: 259677053318339741}
 --- !u!114 &3366304207071081225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20174,6 +20177,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 5
+--- !u!114 &8687059649106073594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8123310803103208078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0179e2a1a051f19428088ebaaf14fda9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthStat: {fileID: 259677053318339741}
+  damageSoundName: hit-boss
 --- !u!1 &8124576790545945604
 GameObject:
   m_ObjectHideFlags: 0

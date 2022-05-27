@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0409129, y: 1}
+    m_SensorSize: {x: 1.5899403, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1853,7 +1853,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     clip: {fileID: 8300000, guid: d03818241c14d3c44843fc6817a2c0a4, type: 3}
-  - soundName: ronin-hit
+  - soundName: hit-monk
     volume: 0.5
     pitch: 1
     clip: {fileID: 8300000, guid: 2532b7b02827eac46ae5e44a73212ea9, type: 3}
@@ -1901,6 +1901,10 @@ MonoBehaviour:
     volume: 0.3
     pitch: 0.5
     clip: {fileID: 0}
+  - soundName: clink
+    volume: 0.75
+    pitch: 1
+    clip: {fileID: 8300000, guid: 3326682cd822c214096bdcfed4ea24b6, type: 3}
   primaryTrackSlot: {fileID: 1087566137}
   secondaryTrackSlot: {fileID: 1087566136}
   fadeTime: 1.5
@@ -2165,7 +2169,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - spawners:
-    - {fileID: 1222232807}
+    - {fileID: 484962408}
+    - {fileID: 1944376965}
+    - {fileID: 561431277}
   - spawners:
     - {fileID: 561431277}
     - {fileID: 1001957967}
@@ -2762,7 +2768,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.0409129, y: 1}
+    m_SensorSize: {x: 1.5899403, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9734,7 +9740,7 @@ PrefabInstance:
     - target: {fileID: 1030664305873234867, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: damage
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4918879848461372750, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
@@ -9844,7 +9850,7 @@ PrefabInstance:
     - target: {fileID: 5694959533272487818, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: damage
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5694959533272487819, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}

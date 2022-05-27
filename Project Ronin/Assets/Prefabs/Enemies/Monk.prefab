@@ -16348,6 +16348,7 @@ GameObject:
   - component: {fileID: 8127996761166622465}
   - component: {fileID: 8127996761166622464}
   - component: {fileID: 8127996761166622495}
+  - component: {fileID: 7076705209542981461}
   m_Layer: 0
   m_Name: Monk
   m_TagString: Enemy
@@ -16610,6 +16611,20 @@ MonoBehaviour:
   transforms:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &7076705209542981461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127996761166622487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0179e2a1a051f19428088ebaaf14fda9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthStat: {fileID: 8127996761166622489}
+  damageSoundName: hit-monk
 --- !u!1 &8155604137315258129
 GameObject:
   m_ObjectHideFlags: 0

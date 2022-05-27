@@ -59,7 +59,7 @@ public class HealthStat : MonoBehaviour, IHealthStat
         SendHealthUpdate();
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         health -= damage;
         MainDamagePopup.Create(transform.position + new Vector3(4,0,1), damage);
