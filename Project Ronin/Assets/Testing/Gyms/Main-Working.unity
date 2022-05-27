@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17907412, g: 0.22422606, b: 0.30602112, a: 1}
+  m_IndirectSpecularColor: {r: 0.1790739, g: 0.2242257, b: 0.30602038, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,9 +97,9 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: f688ad4d862c0494386418787a746077,
+  m_LightingDataAsset: {fileID: 112000000, guid: 097c5aed60faba94b8c41c5d21dc8930,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 9caa7aed1e7e9a1489c38332beed7639,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 8c8716b671a199644acb7ad51917eda6,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -490,7 +490,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7791563, y: 1}
+    m_SensorSize: {x: 1.1866384, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9761,7 +9761,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7791563, y: 1}
+    m_SensorSize: {x: 1.1866384, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -34037,7 +34037,7 @@ PrefabInstance:
     - target: {fileID: 1030664305873234867, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: damage
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4918879848461372750, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
@@ -34147,7 +34147,7 @@ PrefabInstance:
     - target: {fileID: 5694959533272487818, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: damage
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5694959533272487819, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
