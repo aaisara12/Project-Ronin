@@ -13260,7 +13260,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6585890284367276813
 Transform:
   m_ObjectHideFlags: 0
@@ -13285,10 +13285,10 @@ SphereCollider:
   m_GameObject: {fileID: 6585890284367276811}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.14
-  m_Center: {x: 0.12, y: 0, z: 0}
+  m_Radius: 0.0049495827
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6588757328178360129
 GameObject:
   m_ObjectHideFlags: 0
