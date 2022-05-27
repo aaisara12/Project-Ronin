@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.7856302, y: 1}
+    m_SensorSize: {x: 1.0409129, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1259,7 +1259,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh220978
+  m_Name: pb_Mesh32346
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2165,7 +2165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - spawners:
-    - {fileID: 1944376965}
+    - {fileID: 1222232807}
   - spawners:
     - {fileID: 561431277}
     - {fileID: 1001957967}
@@ -2174,7 +2174,7 @@ MonoBehaviour:
     - {fileID: 419680994}
     - {fileID: 1222232807}
   currentWave: 0
-  autoStart: 0
+  autoStart: 1
   timeBeforeSpawn: 3
 --- !u!114 &489060551
 MonoBehaviour:
@@ -2710,7 +2710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba75016e8833a749a4e559655746400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 8127996761166622487, guid: cf3c856ab8ffebf419f0628334698f45,
+  creaturePrefab: {fileID: 9150384742960640158, guid: ca21162b40e05bf47be809be7d3ffa79,
     type: 3}
   spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
@@ -2762,7 +2762,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.7856302, y: 1}
+    m_SensorSize: {x: 1.0409129, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6563,7 +6563,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh220772
+  m_Name: pb_Mesh32232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7120,7 +7120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1619977738
 Transform:
   m_ObjectHideFlags: 0
@@ -9284,7 +9284,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh220002
+  m_Name: pb_Mesh31834
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9734,7 +9734,7 @@ PrefabInstance:
     - target: {fileID: 1030664305873234867, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: damage
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4918879848461372750, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
@@ -9844,7 +9844,7 @@ PrefabInstance:
     - target: {fileID: 5694959533272487818, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
       propertyPath: damage
-      value: 50
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5694959533272487819, guid: 46e91229e8d452a4ab1e8a1d20e11551,
         type: 3}
