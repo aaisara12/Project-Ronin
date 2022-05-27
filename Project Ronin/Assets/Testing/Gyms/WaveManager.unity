@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4576118, y: 1}
+    m_SensorSize: {x: 1.5834305, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1909,6 +1909,10 @@ MonoBehaviour:
     volume: 0.75
     pitch: 0.75
     clip: {fileID: 8300000, guid: 2ab6f4a34b7a3d64d9d1857f2cb7c386, type: 3}
+  - soundName: boss-scream
+    volume: 1
+    pitch: 1
+    clip: {fileID: 8300000, guid: adc2c0cdd7680d641957cb877a2f1bdf, type: 3}
   primaryTrackSlot: {fileID: 1087566137}
   secondaryTrackSlot: {fileID: 1087566136}
   fadeTime: 1.5
@@ -2173,9 +2177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - spawners:
-    - {fileID: 1001957967}
-    - {fileID: 1009515516}
-    - {fileID: 975407268}
+    - {fileID: 1222232807}
   - spawners:
     - {fileID: 561431277}
     - {fileID: 1001957967}
@@ -2772,7 +2774,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.4576118, y: 1}
+    m_SensorSize: {x: 1.5834305, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
