@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Main.unity
-    guid: 4e9924ad52c42b74093367bb589d86e4
   - enabled: 1
-    path: Assets/Testing/Gyms/WaveManager.unity
-    guid: c3c720bdad4c9e04c9e3d701db966251
+    path: Assets/Testing/Gyms/StartScreen.unity
+    guid: af87b3e2c75a7e84284f49fa1a027051
+  - enabled: 1
+    path: Assets/Testing/Gyms/Main-Working.unity
+    guid: 9c231e14b26b2fe4b8eb26d76f3c6be4
   - enabled: 1
     path: Assets/Testing/Gyms/EndScreen.unity
     guid: 45a9ac1599c72a44eb42240aff5aba06
