@@ -15,6 +15,7 @@ public class DamageAudio : MonoBehaviour
 
     private void HandleHealthChanged(HealthInfo obj)
     {
-        AudioManager.instance.PlaySoundAtLocation(damageSoundName, transform.position);
+        if(obj.isDamaged)
+            AudioManager.instance.PlaySoundAtLocation(damageSoundName, transform.position);
     }
 }
