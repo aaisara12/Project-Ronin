@@ -19,7 +19,8 @@ public abstract class RemoteCollisionListener : MonoBehaviour
         relay.OnMyCollisionEnter += OnCollisionEnterRemote;
     }
 
-    void OnDisable()
+    // Use OnDestroy since animations will enable/disable components frequently
+    void OnDestroy()
     {
         relay.OnMyTriggerEnter -= OnTriggerEnterRemote;
         relay.OnMyCollisionEnter -= OnCollisionEnterRemote;

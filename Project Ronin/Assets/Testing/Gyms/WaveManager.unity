@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5133268, y: 1}
+    m_SensorSize: {x: 1.3096501, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2774,7 +2774,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5133268, y: 1}
+    m_SensorSize: {x: 1.3096501, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4310,7 +4310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba75016e8833a749a4e559655746400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 1987098001485033941, guid: 31fbf3194a4245f45a2f3183a7e70db2,
+  creaturePrefab: {fileID: 8127996761166622487, guid: cf3c856ab8ffebf419f0628334698f45,
     type: 3}
   spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
