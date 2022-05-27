@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.9592713, y: 1}
+    m_SensorSize: {x: 0.7856302, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1259,7 +1259,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh98580
+  m_Name: pb_Mesh220978
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba75016e8833a749a4e559655746400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 8127996761166622487, guid: cf3c856ab8ffebf419f0628334698f45,
+  creaturePrefab: {fileID: 9150384742960640158, guid: ca21162b40e05bf47be809be7d3ffa79,
     type: 3}
   spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
@@ -2762,7 +2762,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.9592713, y: 1}
+    m_SensorSize: {x: 0.7856302, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6563,7 +6563,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh98466
+  m_Name: pb_Mesh220772
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9050,7 +9050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ba75016e8833a749a4e559655746400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creaturePrefab: {fileID: 8127996761166622487, guid: cf3c856ab8ffebf419f0628334698f45,
+  creaturePrefab: {fileID: 9150384742960640158, guid: ca21162b40e05bf47be809be7d3ffa79,
     type: 3}
   spawnPrefab: {fileID: 3511352164616026247, guid: 4b94acc8ae9c76b4e8da8a403e71ea5b,
     type: 3}
@@ -9284,7 +9284,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh98068
+  m_Name: pb_Mesh220002
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
