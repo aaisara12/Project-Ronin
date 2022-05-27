@@ -229,7 +229,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5899403, y: 1}
+    m_SensorSize: {x: 1.4576118, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1854,8 +1854,8 @@ MonoBehaviour:
     pitch: 1
     clip: {fileID: 8300000, guid: d03818241c14d3c44843fc6817a2c0a4, type: 3}
   - soundName: hit-monk
-    volume: 0.5
-    pitch: 1
+    volume: 1
+    pitch: 1.25
     clip: {fileID: 8300000, guid: 2532b7b02827eac46ae5e44a73212ea9, type: 3}
   - soundName: wave-spawn
     volume: 0.5
@@ -1905,6 +1905,10 @@ MonoBehaviour:
     volume: 0.75
     pitch: 1
     clip: {fileID: 8300000, guid: 3326682cd822c214096bdcfed4ea24b6, type: 3}
+  - soundName: tick
+    volume: 0.75
+    pitch: 0.75
+    clip: {fileID: 8300000, guid: 2ab6f4a34b7a3d64d9d1857f2cb7c386, type: 3}
   primaryTrackSlot: {fileID: 1087566137}
   secondaryTrackSlot: {fileID: 1087566136}
   fadeTime: 1.5
@@ -2169,9 +2173,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - spawners:
-    - {fileID: 484962408}
-    - {fileID: 1944376965}
-    - {fileID: 561431277}
+    - {fileID: 1001957967}
+    - {fileID: 1009515516}
+    - {fileID: 975407268}
   - spawners:
     - {fileID: 561431277}
     - {fileID: 1001957967}
@@ -2768,7 +2772,7 @@ MonoBehaviour:
     ModeOverride: 1
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5899403, y: 1}
+    m_SensorSize: {x: 1.4576118, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
