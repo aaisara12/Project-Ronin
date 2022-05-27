@@ -14,6 +14,10 @@ namespace Demo.MyFSM
             
             var at = stateMachine.GetComponent<AttackTimer>();
 
+            // if(at.TrySummon())
+            // {
+            //     animator.SetTrigger("summon");
+            // }
             if(at.TryAttack())
             {
                 animator.SetTrigger("attack");

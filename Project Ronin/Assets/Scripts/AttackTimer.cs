@@ -5,15 +5,28 @@ using UnityEngine;
 public class AttackTimer : MonoBehaviour
 {
     // MonoBehaviour for keeping track of attack cooldown state for enemies
-    [SerializeField] float cooldown = 5;
+    [SerializeField] float mainCooldown = 5;
+    [SerializeField] float specialCooldown = 20;
+    [SerializeField] bool specialEnabled = false;
 
-    float lastUsed = 0;
+    float mainLastUsed = 0;
+    float specialLastUsed = 0;
 
     public bool TryAttack()
     {
-        if(lastUsed + cooldown < Time.time)
+        if(mainLastUsed + mainCooldown < Time.time)
         {
-            lastUsed = Time.time;
+            mainLastUsed = Time.time;
+            return true;
+        }
+        return false;
+    }
+
+    public bool TrySummon()
+    {
+        if(specialEnabled && specialLastUsed + specialCooldown < Time.time)
+        {
+            specialLastUsed = Time.time;
             return true;
         }
         return false;

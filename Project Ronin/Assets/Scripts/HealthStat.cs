@@ -28,8 +28,10 @@ public class HealthStat : MonoBehaviour, IHealthStat
         // Setter is public in cases where we want to hard set health to some value (think Hearthstone)
         set
         {
+            bool hasBeenDamaged = value < _health;
             _health = GetClampedHealth(value);
-            SendHealthUpdate();
+            SendHealthUpdate(hasBeenDamaged);
+            
         }
     }
 
@@ -46,7 +48,7 @@ public class HealthStat : MonoBehaviour, IHealthStat
             _health = GetClampedHealth(_health);
 
             _maxHealth = value;
-            SendHealthUpdate();
+            SendHealthUpdate(false);
         }
     }
 
@@ -56,10 +58,10 @@ public class HealthStat : MonoBehaviour, IHealthStat
     void Start()
     {
         // Update the UI, which registers during awake
-        SendHealthUpdate();
+        SendHealthUpdate(false);
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         health -= damage;
         MainDamagePopup.Create(transform.position + new Vector3(4,0,1), damage);
@@ -73,7 +75,7 @@ public class HealthStat : MonoBehaviour, IHealthStat
 
 
     // Keep health event call details in one place only (DRY code)
-    void SendHealthUpdate() => OnHealthChanged?.Invoke(new HealthInfo { current = health, max = maxHealth });
+    void SendHealthUpdate(bool damaged) => OnHealthChanged?.Invoke(new HealthInfo { current = health, max = maxHealth, isDamaged = damaged });
 
     // Prevent health from going beyond boundaries
     int GetClampedHealth(int newHealth)
@@ -92,4 +94,5 @@ public struct HealthInfo
 {
     public float current;
     public float max;
+    public bool isDamaged;
 }

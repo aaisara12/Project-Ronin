@@ -21,7 +21,7 @@ public class HealthUI : MonoBehaviour
     public void Initialize(IHealthStat healthStat)
     {
         this.healthStat = healthStat;
-        HandleHealthChange(new HealthInfo {current = healthStat.health, max = healthStat.maxHealth});
+        HandleHealthChange(new HealthInfo {current = healthStat.health, max = healthStat.maxHealth, isDamaged = false});
 
         this.healthStat.OnHealthChanged += HandleHealthChange;
     }
